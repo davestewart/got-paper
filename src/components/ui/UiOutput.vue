@@ -1,7 +1,7 @@
 <template>
   <div class="uiOutput form-group row" :class="classes">
-    <label class="uiOutput__label col-6 col-form-label">{{ label }}</label>
-    <span class="uiOutput__slot col-6">
+    <label class="uiOutput__label col-6 col-md-9 col-form-label">{{ label }}</label>
+    <span class="uiOutput__slot col-6 col-md-3">
       <slot>
         <output class="uiOutput__value">{{ output }}</output>
       </slot>

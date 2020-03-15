@@ -1,7 +1,7 @@
 <template>
 
   <div>
-<!--    <h1>Calculator</h1>-->
+    <!--    <h1>Calculator</h1>-->
 
     <h2>Usage</h2>
     <article>
@@ -106,7 +106,7 @@ export default {
   data () {
     return {
       periods,
-      ...getData()
+      ...getData(),
     }
   },
 
@@ -132,8 +132,8 @@ export default {
   methods: {
     reset () {
       Object.assign(this, getData())
-      window.scrollTo(0, 0);
-    }
+      window.scrollTo(0, 0)
+    },
   },
 }
 

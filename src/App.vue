@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <header>
-      <div class="img">
+      <div class="image">
         <img alt="Got Paper logo" src="./assets/images/logo.svg" width="100%">
       </div>
-      <h5>Calculate how much toilet paper you need</h5>
+      <div class="strapline">
+        <h5>Calculate how much toilet paper you need</h5>
+      </div>
     </header>
 
 <!--
@@ -16,9 +18,21 @@
 -->
     <main>
       <router-view/>
+      <ShareLinks/>
     </main>
+
   </div>
 </template>
+
+<script>
+import ShareLinks from './components/ShareLinks'
+
+export default {
+  components: {
+    ShareLinks,
+  }
+}
+</script>
 
 <style lang="scss">
 html, body {
@@ -39,8 +53,12 @@ body {
 }
 
 header {
-  .img {
+  .image {
     background: #1660A6;
+  }
+
+  .strapline {
+    background: #f0f4f5;
   }
 
   img {
@@ -54,7 +72,7 @@ header {
     margin: auto;
     text-align: center;
     padding: 20px;
-    color: #AAA;
+    color: #919ba1;
   }
 }
 
