@@ -7,7 +7,7 @@ Vue.use(Router)
 
 function route (path: string, page: string, title: string) {
   const component = require(`../views/pages/${page}.vue`).default
-  return { path, component, meta: { title }}
+  return { path, component, meta: { title } }
 }
 
 const router = new Router({
@@ -21,9 +21,10 @@ const router = new Router({
     }
   },
   routes: [
-    route('/', 'Home', 'Calculate your <span>actual</span> toilet paper needs'),
-    route('/media', 'Media', 'Some fun stuff to cheer you up'),
+    route('/', 'Home', 'Calculate your <em>actual</em> toilet paper needs'),
+    route('/media', 'Media', 'Some fun stuff to perk you up'),
     route('/about', 'About', 'Why does this site exist?'),
+    route('/contact', 'Contact', 'Send us a message'),
   ],
 })
 

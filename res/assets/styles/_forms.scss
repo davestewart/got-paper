@@ -41,3 +41,15 @@ select:focus {
 select option {
   font-weight:normal;
 }
+
+.btn-primary {
+  background-color: $blue-dark;
+  border-color: $blue-dark;
+  &:hover {
+    background-color: lighten($blue-dark, 10%)
+  }
+}
+
+.form-control:focus {
+  color: #000;
+}
