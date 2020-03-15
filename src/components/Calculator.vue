@@ -49,9 +49,13 @@
             <option v-for="period in periods" :value="period.days">{{ period.label }}</option>
           </select>
         </UiOutput>
-        <UiOutput class="rollsRequired" label="Rolls required" v-model="rollsRequired" :precision="0"/>
+<!--        <UiOutput class="rollsRequired" label="Rolls required" v-model="rollsRequired" :precision="0"/>-->
       </section>
     </article>
+
+    <div class="result">
+      Buy <span>{{ rollsRequired }}</span> {{ plural(rollsRequired, 'roll') }}
+    </div>
 
     <div>
       <button type="reset" class="btn btn-secondary reset" @click="reset">Start again</button>
@@ -136,6 +140,13 @@ export default {
       Object.assign(this, getData())
       window.scrollTo(0, 0)
     },
+
+    plural (value, single) {
+      if (value !== 1) {
+        single += 's'
+      }
+      return `${single}`
+    }
   },
 }
 
@@ -159,6 +170,26 @@ h3 {
 .rollsRequired {
   .uiOutput__value {
     font-size: 3rem;
+  }
+}
+
+.result {
+  margin: 20px 0;
+  text-align: center;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 900;
+  font-size: 3.2rem;
+
+  span {
+    vertical-align: middle;
+    font-size: 2em;
+    color: #df0f1b;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .result {
+    font-size: 5rem;
   }
 }
 
