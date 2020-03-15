@@ -52,6 +52,10 @@ export default {
     justify-content: space-around;
   }
 
+  &__label {
+    font-weight: bold;
+  }
+
   &__value {
     font-size: 2em;
     font-weight: 700;

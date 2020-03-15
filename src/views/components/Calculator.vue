@@ -6,21 +6,29 @@
     <h2>Usage</h2>
     <article>
       <section>
-        <h3>Poop</h3>
-        <UiNumber label="Sheets per wipe" v-model="sitting.sheetsWipe" :min="1"/>
-        <UiNumber label="Wipes per poop" v-model="sitting.wipesPoop" :min="1"/>
-        <UiNumber label="Poops per day" v-model="sitting.poopsDay" :min="1"/>
-        <UiOutput label="Total sheets, per poop, per day" v-model="sheetsDay"></UiOutput>
+        <h3>Poops</h3>
+        <UiNumber label="Poops per day" v-model="poops.poopsDay" :min="1"/>
+        <UiNumber label="Wipes per poop" v-model="poops.wipesPoop" :min="1"/>
+        <UiNumber label="Sheets per wipe" v-model="poops.sheetsWipe" :min="1"/>
+        <UiOutput label="Total poop sheets per day" v-model="poopSheetsDay"></UiOutput>
+      </section>
+
+      <section>
+        <h3>Pees</h3>
+        <UiNumber label="Pees per day" v-model="pees.peesDay"/>
+        <UiNumber label="Sheets per pee" v-model="pees.sheetsPee"/>
+        <UiOutput label="Total pee sheets per day" v-model="peeSheetsDay"></UiOutput>
       </section>
 
       <section>
         <h3>Extras</h3>
-        <UiNumber label="Extra sheets per day" v-model="extras.sheetsDay"/>
+        <UiNumber label="Sheets per day" v-model="extras.sheetsDay"/>
+        <UiNumber label="Sheets per month" v-model="extras.sheetsMonth"/>
       </section>
 
       <section>
         <h3>Total</h3>
-        <UiOutput label="Total sheets per day" v-model="totalSheetsDay"></UiOutput>
+        <UiOutput label="Total sheets per day" v-model="totalSheetsDay" :precision="1"></UiOutput>
       </section>
 
     </article>
@@ -84,18 +92,24 @@ const periods = [
 
 function getData () {
   return {
-    sitting: {
-      sheetsWipe: 3,
-      wipesPoop: 6,
+    poops: {
       poopsDay: 1,
+      wipesPoop: 6,
+      sheetsWipe: 3,
+    },
+
+    pees: {
+      peesDay: 2,
+      sheetsPee: 0,
     },
 
     extras: {
       sheetsDay: 0,
+      sheetsMonth: 0,
     },
 
     other: {
-      sheetsRoll: 160,
+      sheetsRoll: 200,
       daysQuarantined: 14,
     },
   }
@@ -114,13 +128,23 @@ export default {
   },
 
   computed: {
-    sheetsDay () {
-      const { sheetsWipe, wipesPoop, poopsDay } = this.sitting
+    poopSheetsDay () {
+      const { sheetsWipe, wipesPoop, poopsDay } = this.poops
       return sheetsWipe * wipesPoop * poopsDay
     },
 
+    peeSheetsDay () {
+      const { sheetsPee, peesDay } = this.pees
+      return sheetsPee * peesDay
+    },
+
+    extraSheetsDay () {
+      const { sheetsDay, sheetsMonth } = this.extras
+      return sheetsDay + (sheetsMonth / 31)
+    },
+
     totalSheetsDay () {
-      return (this.sheetsDay + this.extras.sheetsDay)
+      return (this.poopSheetsDay + this.peeSheetsDay + this.extraSheetsDay)
     },
 
     daysRoll () {

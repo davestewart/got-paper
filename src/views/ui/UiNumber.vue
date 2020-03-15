@@ -116,10 +116,26 @@ export default {
     }
 
     button {
-      width: 30px;
+      width: 35px;
       text-align: center;
       vertical-align: top;
+      background: #f4f4f5;
+      font-weight: bold;
+      font-family: $display-font;
     }
   }
 }
+/*
+@media only screen and (max-width: 600px) {
+  select {
+    font-size: 1.1em;
+  }
+
+  .uiNumber {
+    input, button {
+      font-size: 1.2em;
+    }
+  }
+}
+*/
 </style>
