@@ -3,7 +3,9 @@
     <SiteHeader/>
 
     <main class="inner">
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </main>
 
     <SiteFooter/>
