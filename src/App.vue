@@ -9,11 +9,11 @@
       </div>
     </header>
 
-<!--
-    <div id="nav">
-    </div>
+    <!--
+        <div id="nav">
+        </div>
 
--->
+    -->
     <main class="inner">
       <router-view/>
     </main>
@@ -22,9 +22,15 @@
       <div class="footer__links">
         <div class="inner">
           <ul>
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
-            <li><router-link to="/media">Media</router-link></li>
+            <li>
+              <router-link to="/">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/about">About</router-link>
+            </li>
+            <li>
+              <router-link to="/media">Media</router-link>
+            </li>
             <a href="mailto:info@got-paper.com?subject=Hello&body=">Contact</a>
           </ul>
         </div>
@@ -35,6 +41,15 @@
           <ShareLinks/>
         </div>
       </div>
+
+      <!--
+            <div class="footer__links footer__site">
+              <div class="inner">
+                <a href="http://got-paper.com">got-paper.com</a>
+              </div>
+            </div>
+      -->
+
     </footer>
 
   </div>
@@ -46,7 +61,7 @@ import ShareLinks from './components/ShareLinks'
 export default {
   components: {
     ShareLinks,
-  }
+  },
 }
 </script>
 
@@ -111,7 +126,13 @@ main {
 
   &__sharing {
     background: darken($grey-light, 3%);
+    padding: 0 0 50px;
+  }
+
+  &__site {
+    background: darken($grey-light, 6%);
     padding: 20px 0 50px;
+    text-align: center;
   }
 
   &__links {

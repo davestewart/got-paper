@@ -36,7 +36,7 @@ export default {
 
     classes () {
       return this.$slots.default ? '' : 'hasSlot'
-    }
+    },
   },
 }
 </script>

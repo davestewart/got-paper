@@ -145,7 +145,7 @@ export default {
         single += 's'
       }
       return `${single}`
-    }
+    },
   },
 }
 

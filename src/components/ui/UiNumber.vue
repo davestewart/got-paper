@@ -55,7 +55,7 @@ export default {
 
     value (value) {
       this.input = value
-    }
+    },
   },
 
   methods: {
@@ -71,7 +71,7 @@ export default {
       const interval = 150
       const start = () => {
         // console.log('starting!')
-        this.intervalId = setInterval(() =>{
+        this.intervalId = setInterval(() => {
           this[action]()
         }, interval)
         // console.log('started:', this.intervalId)
@@ -93,7 +93,7 @@ export default {
         mouseout: stop,
         mouseleave: stop,
       }
-    }
+    },
   },
 }
 </script>

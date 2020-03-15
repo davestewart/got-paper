@@ -34,7 +34,7 @@ export default {
       summary: '',
       hashtags: 'coronavirus',
     }
-  }
+  },
 }
 </script>
 
@@ -43,6 +43,7 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 8px;
 
   .sr-only {
     position: absolute;
