@@ -72,6 +72,7 @@ export default {
 
   &__value {
     align-content: start;
+    text-align: right;
 
     input {
       display: inline-block;
