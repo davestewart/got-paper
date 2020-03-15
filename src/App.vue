@@ -5,7 +5,7 @@
         <img alt="Got Paper logo" src="./assets/images/logo.svg" width="100%">
       </div>
       <div class="strapline">
-        <h5>Calculate how much toilet paper you need</h5>
+        <h5>Calculate your <em>actual</em> toilet paper needs</h5>
       </div>
     </header>
 
@@ -141,6 +141,7 @@ main {
 
       &.router-link-exact-active {
         color: $blue-dark;
+        text-decoration: none;
       }
     }
   }

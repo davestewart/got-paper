@@ -10,7 +10,7 @@
     <p><strong>Got Paper</strong> exists for several reasons:</p>
     <ul>
       <li>To be a useful resource</li>
-      <li>To ridicule those who would take too much paper</li>
+      <li>To ridicule the hoarders</li>
       <li>To raise a laugh or two</li>
     </ul>
     <p>If you find it useful, or funny, please share.</p>
