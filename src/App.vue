@@ -46,7 +46,7 @@ header {
 
 main {
   margin: auto;
-  width: 500px;
+  width: 700px;
 }
 
 #nav {

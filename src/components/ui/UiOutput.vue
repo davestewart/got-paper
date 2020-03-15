@@ -1,9 +1,9 @@
 <template>
-  <div class="uiOutput">
+  <div class="uiOutput" :class="classes">
     <label class="uiOutput__label">{{ label }}</label>
-    <span class="uiOutput__value">
+    <span class="uiOutput__slot">
       <slot>
-        <output>{{ output }}</output>
+        <output class="uiOutput__value">{{ output }}</output>
       </slot>
     </span>
   </div>
@@ -14,12 +14,17 @@ export default {
   props: {
     label: String,
     value: Number,
+    precision: {
+      type: Number,
+      default: 0,
+    },
   },
 
   computed: {
     output () {
-      return (this.value || 0).toFixed(2)
+      return (this.value || 0).toFixed(this.precision)
     },
+
     model: {
       get () {
         return this.value
@@ -28,6 +33,12 @@ export default {
         this.$emit('input', value)
       },
     },
+
+    classes () {
+      return this.$slots.default
+        ? ''
+        : 'hasSlot'
+    }
   },
 }
 </script>
@@ -35,16 +46,17 @@ export default {
 <style lang="scss">
 .uiOutput {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
 
-  &__label {
-    width: 70%;
+  &__value {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
   }
 
-  &__value {
-    width: 30%;
-    text-align: center;
-    padding-right: 20px;
+  &.hasSlot &__value {
+    padding-right: 60px;
   }
 }
 </style>

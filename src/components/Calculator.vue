@@ -37,7 +37,7 @@
         </select>
         -->
         <UiNumber label="Sheets per roll" v-model="other.sheetsRoll"/>
-        <UiOutput label="Days per roll" v-model="daysRoll"/>
+        <UiOutput label="Days per roll" v-model="daysRoll" :precision="2"/>
       </section>
     </article>
 
@@ -49,7 +49,7 @@
             <option v-for="period in periods" :value="period.days">{{ period.label }} ({{ Math.floor(period.days) }} days)</option>
           </select>
         </UiOutput>
-        <UiOutput label="Rolls required" v-model="rollsRequired"/>
+        <UiOutput class="rollsRequired" label="Rolls required" v-model="rollsRequired" :precision="0"/>
       </section>
     </article>
 
@@ -115,7 +115,7 @@ export default {
     },
 
     rollsRequired () {
-      return this.other.daysQuarantined / this.daysRoll
+      return Math.ceil(this.other.daysQuarantined / this.daysRoll)
     }
   },
 
@@ -131,5 +131,9 @@ article {
 
 section {
 
+}
+
+.rollsRequired {
+  font-size: 2rem;
 }
 </style>
