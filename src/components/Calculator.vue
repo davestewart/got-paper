@@ -121,11 +121,13 @@ export default {
     },
 
     daysRoll () {
-      return this.other.sheetsRoll / this.totalSheetsDay
+      const value = this.other.sheetsRoll / this.totalSheetsDay
+      return value === Number.POSITIVE_INFINITY ? 0 : value
     },
 
     rollsRequired () {
-      return Math.ceil(this.other.daysQuarantined / this.daysRoll)
+      const value = Math.ceil(this.other.daysQuarantined / this.daysRoll)
+      return value === Number.POSITIVE_INFINITY ? 0 : value
     },
   },
 
