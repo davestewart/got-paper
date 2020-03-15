@@ -25,7 +25,7 @@
 
     </article>
 
-    <h2>Roll</h2>
+    <h2>Toilet paper</h2>
     <article>
       <section>
         <!--
