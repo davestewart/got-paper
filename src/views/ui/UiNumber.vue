@@ -100,12 +100,6 @@ export default {
 
 <style lang="scss">
 .uiNumber {
-  /*
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  */
-
   &__label {
   }
 

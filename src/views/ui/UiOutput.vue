@@ -43,10 +43,6 @@ export default {
 
 <style lang="scss">
 .uiOutput {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-
   &__label,
   &__slot,
   &__value {
@@ -57,14 +53,14 @@ export default {
   }
 
   &__value {
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: 700;
     display: block;
     vertical-align: center;
   }
 
   &.hasSlot &__value {
-    padding-right: 60px;
+    padding-right: 36px;
     text-align: right;
     vertical-align: center;
   }

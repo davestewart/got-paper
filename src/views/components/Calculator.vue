@@ -7,9 +7,9 @@
     <article>
       <section>
         <h3>Poop</h3>
-        <UiNumber label="Sheets per wipe" v-model="sitting.sheetsWipe"/>
-        <UiNumber label="Wipes per poop" v-model="sitting.wipesPoop"/>
-        <UiNumber label="Poops per day" v-model="sitting.poopsDay"/>
+        <UiNumber label="Sheets per wipe" v-model="sitting.sheetsWipe" :min="1"/>
+        <UiNumber label="Wipes per poop" v-model="sitting.wipesPoop" :min="1"/>
+        <UiNumber label="Poops per day" v-model="sitting.poopsDay" :min="1"/>
         <UiOutput label="Total sheets, per poop, per day" v-model="sheetsDay"></UiOutput>
       </section>
 
@@ -36,8 +36,8 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" v-model="other.sheetsRoll" :step="10"/>
-        <UiOutput label="Days per roll" v-model="daysRoll" :precision="2"/>
+        <UiNumber label="Sheets per roll" v-model="other.sheetsRoll" :step="10" :min="100"/>
+        <UiOutput label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
     </article>
 
