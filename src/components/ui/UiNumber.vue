@@ -1,7 +1,7 @@
 <template>
-  <div class="uiNumber">
-    <label class="uiNumber__label">{{ label }}</label>
-    <span class="uiNumber__value">
+  <div class="uiNumber form-group row">
+    <label class="uiNumber__label col-6 col-form-label">{{ label }}</label>
+    <span class="uiNumber__value col-6">
       <button class="btn btn-light" @click="subtract">-</button>
       <input class="form-control" type="number" :min="min" v-model.number="input">
       <button class="btn btn-light" @click="add">+</button>
@@ -17,12 +17,12 @@ export default {
     min: {
       type: Number,
       default: 0,
-    }
+    },
   },
 
   data () {
     return {
-      input: this.value
+      input: this.value,
     }
   },
 
@@ -44,7 +44,7 @@ export default {
         value = this.min
       }
       this.$emit('input', value)
-    }
+    },
   },
 
   methods: {
@@ -54,31 +54,37 @@ export default {
 
     subtract () {
       this.input--
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .uiNumber {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  /*
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  */
 
   &__label {
   }
 
   &__value {
+    align-content: start;
+
     input {
       display: inline-block;
       width: 70px;
-      margin: 0 5px;
       text-align: right;
+      margin: 0 5px;
+      vertical-align: top;
     }
 
     button {
-      width: 40px;
+      width: 30px;
       text-align: center;
+      vertical-align: top;
     }
   }
 }

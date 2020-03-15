@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <h1>Calculator</h1>
+<!--    <h1>Calculator</h1>-->
 
     <h2>Usage</h2>
     <article>
@@ -46,7 +46,7 @@
       <section>
         <UiOutput label="Time in quarantine">
           <select v-model="other.daysQuarantined" name="quarantine" id="quarantine">
-            <option v-for="period in periods" :value="period.days">{{ period.label }} ({{ Math.floor(period.days) }} days)</option>
+            <option v-for="period in periods" :value="period.days">{{ period.label }}</option>
           </select>
         </UiOutput>
         <UiOutput class="rollsRequired" label="Rolls required" v-model="rollsRequired" :precision="0"/>
@@ -96,7 +96,7 @@ export default {
       other: {
         sheetsRoll: 160,
         daysQuarantined: 14,
-      }
+      },
     }
   },
 
@@ -116,7 +116,7 @@ export default {
 
     rollsRequired () {
       return Math.ceil(this.other.daysQuarantined / this.daysRoll)
-    }
+    },
   },
 
   methods: {},
@@ -126,7 +126,10 @@ export default {
 
 <style lang="scss">
 article {
-  margin: 10px 20px;
+  // margin: 10px 20px;
+  border-left: 2px dashed #CCC;
+  padding-left: 20px;
+  margin-left: 10px;
 }
 
 section {
@@ -134,6 +137,8 @@ section {
 }
 
 .rollsRequired {
-  font-size: 2rem;
+  .uiOutput__value {
+    font-size: 3rem;
+  }
 }
 </style>

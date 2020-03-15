@@ -16,7 +16,4 @@ export default Vue.extend({
 </script>
 
 <style>
-header {
-  background: #1660A6;
-}
 </style>

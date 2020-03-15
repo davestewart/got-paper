@@ -1,7 +1,7 @@
 <template>
-  <div class="uiOutput" :class="classes">
-    <label class="uiOutput__label">{{ label }}</label>
-    <span class="uiOutput__slot">
+  <div class="uiOutput form-group row" :class="classes">
+    <label class="uiOutput__label col-6 col-form-label">{{ label }}</label>
+    <span class="uiOutput__slot col-6">
       <slot>
         <output class="uiOutput__value">{{ output }}</output>
       </slot>
@@ -35,9 +35,7 @@ export default {
     },
 
     classes () {
-      return this.$slots.default
-        ? ''
-        : 'hasSlot'
+      return this.$slots.default ? '' : 'hasSlot'
     }
   },
 }
@@ -49,14 +47,26 @@ export default {
   justify-content: space-between;
   margin-bottom: 10px;
 
+  &__label,
+  &__slot,
   &__value {
-    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__value {
     font-size: 1.2em;
     font-weight: 700;
+    display: block;
+    vertical-align: center;
   }
 
   &.hasSlot &__value {
     padding-right: 60px;
+    text-align: right;
+    vertical-align: center;
   }
 }
 </style>

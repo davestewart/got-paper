@@ -1,14 +1,19 @@
 <template>
   <div id="app">
     <header>
-      <img alt="Got Paper logo" src="./assets/images/logo.svg" width="100%">
-      <p>Online calculator to buy the right amount of toilet paper</p>
+      <div class="img">
+        <img alt="Got Paper logo" src="./assets/images/logo.svg" width="100%">
+      </div>
+      <h5>Calculate how much toilet paper you need</h5>
     </header>
 
+<!--
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+
+-->
     <main>
       <router-view/>
     </main>
@@ -16,6 +21,11 @@
 </template>
 
 <style lang="scss">
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #FFFFFF;
   margin: 0 0 100px;
@@ -29,24 +39,29 @@ body {
 }
 
 header {
+  .img {
+    background: #1660A6;
+  }
+
   img {
     display: block;
-    padding: 30px 0;
+    padding: 40px;
     max-width: 600px;
     margin: auto;
   }
 
-  p {
+  h5 {
     margin: auto;
-    color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    color: #AAA;
   }
 }
 
 main {
   margin: auto;
-  width: 700px;
+  max-width: 700px;
+  padding: 15px;
 }
 
 #nav {
