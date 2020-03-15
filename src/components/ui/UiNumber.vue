@@ -2,9 +2,9 @@
   <div class="uiNumber form-group row">
     <label class="uiNumber__label col-6 col-form-label">{{ label }}</label>
     <span class="uiNumber__value col-6">
-      <button class="btn btn-light" @click="subtract">-</button>
+      <button class="btn btn-light" @click="subtract" v-on="touch('subtract')">-</button>
       <input class="form-control" type="number" :min="min" v-model.number="input">
-      <button class="btn btn-light" @click="add">+</button>
+      <button class="btn btn-light" @click="add" v-on="touch('add')">+</button>
     </span>
   </div>
 </template>
@@ -43,6 +43,9 @@ export default {
         this.input = this.min
         value = this.min
       }
+      if (value === undefined || value === '' || value === null) {
+        value = 0
+      }
       this.$emit('input', value)
     },
 
@@ -59,6 +62,34 @@ export default {
     subtract () {
       this.input--
     },
+
+    touch (action) {
+      const interval = 150
+      const start = () => {
+        // console.log('starting!')
+        this.intervalId = setInterval(() =>{
+          this[action]()
+        }, interval)
+        // console.log('started:', this.intervalId)
+      }
+
+      const stop = () => {
+        if (this.intervalId) {
+          // console.log('stopping!')
+          clearInterval(this.intervalId)
+          this.intervalId = null
+        }
+      }
+
+      return {
+        touchstart: start,
+        mousedown: start,
+        touchend: stop,
+        mouseup: stop,
+        mouseout: stop,
+        mouseleave: stop,
+      }
+    }
   },
 }
 </script>
