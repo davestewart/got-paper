@@ -1,29 +1,29 @@
 <template>
   <header>
-    <div class="image">
-      <img alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
-    </div>
+    <router-link class="banner" to="/">
+      <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
+    </router-link>
     <div class="strapline">
-      <h5>Calculate your <em>actual</em> toilet paper needs</h5>
+      <h5 v-html="$route.meta.title"></h5>
     </div>
   </header>
 </template>
 
 <style lang="scss">
 header {
-  .image {
+  .banner {
     background: $blue-dark;
+    display: block;
+    text-align: center;
   }
 
   .strapline {
     background: $grey-light;
   }
 
-  img {
-    display: block;
+  .image {
     padding: 40px;
     max-width: 600px;
-    margin: auto;
   }
 
   h5 {

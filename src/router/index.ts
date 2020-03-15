@@ -5,8 +5,9 @@ import Media from '../views/pages/Media.vue'
 
 Vue.use(Router)
 
-function route (path: string, component: any, options = {}) {
-  return { path, component, ...options }
+function route (path: string, page: string, title: string) {
+  const component = require(`../views/pages/${page}.vue`).default
+  return { path, component, meta: { title }}
 }
 
 const router = new Router({
@@ -20,9 +21,9 @@ const router = new Router({
     }
   },
   routes: [
-    route('/', Home),
-    route('/media', Media),
-    route('/about', () => import(/* webpackChunkName: "about" */ '../views/pages/About.vue')),
+    route('/', 'Home', 'Calculate your <span>actual</span> toilet paper needs'),
+    route('/media', 'Media', 'Some fun stuff to cheer you up'),
+    route('/about', 'About', 'Why does this site exist?'),
   ],
 })
 
