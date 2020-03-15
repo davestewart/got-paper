@@ -1,9 +1,9 @@
 <template>
   <div class="share-buttons">
-    <a :href="`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`"
+    <a :href="`https://www.facebook.com/sharer/sharer.php?u=${url}`"
        title="Share on Facebook"
        target="_blank"><img alt="Share on Facebook" src="/images/sharing/Facebook.svg"/></a>
-    <a :href="`https://twitter.com/intent/tweet?source=${url}&title=${title} ${url}`"
+    <a :href="`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}&via=dave_stewart`"
        target="_blank"
        title="Tweet"><img alt="Tweet" src="/images/sharing/Twitter.svg"/></a>
     <a :href="`https://plus.google.com/share?url=${url}`"
@@ -28,9 +28,11 @@
 export default {
   data () {
     return {
-      url: 'https://got-paper.netlify.com',
-      title: 'Calculate how much toilet paper you need',
-      source: location.hostname
+      url: encodeURIComponent('https://got-paper.netlify.com'),
+      title: encodeURIComponent('Calculate how much toilet paper you need'),
+      source: encodeURIComponent(location.hostname),
+      summary: '',
+      hashtags: 'coronavirus',
     }
   }
 }
