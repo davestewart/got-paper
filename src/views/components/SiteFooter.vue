@@ -3,16 +3,13 @@
     <div class="footer__links">
       <div class="inner">
         <ul>
-          <li>
-            <router-link to="/">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/about">About</router-link>
-          </li>
-          <li>
-            <router-link to="/media">Media</router-link>
-          </li>
-          <a href="mailto:info@got-paper.com?subject=Hello&body=">Contact</a>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+<!--
+          <li><router-link to="/tips">Tips</router-link></li>
+          <li><router-link to="/media">Media</router-link></li>
+-->
+          <li><router-link to="/contact">Contact</router-link></li>
         </ul>
       </div>
     </div>
@@ -29,7 +26,7 @@
 import ShareLinks from './ShareLinks'
 export default {
   components: {
-    ShareLinks
+    ShareLinks,
   },
 }
 </script>

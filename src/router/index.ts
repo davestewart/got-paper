@@ -22,8 +22,9 @@ const router = new Router({
   },
   routes: [
     route('/', 'Home', 'Calculate your <em>actual</em> toilet paper needs'),
-    route('/media', 'Media', 'Some fun stuff to perk you up'),
+    route('/tips', 'Tips', 'A few handy tips to keep you sane'),
     route('/about', 'About', 'Why does this site exist?'),
+    route('/media', 'Media', 'Some fun stuff to perk you up'),
     route('/contact', 'Contact', 'Send us a message'),
   ],
 })
