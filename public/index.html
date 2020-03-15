@@ -34,6 +34,20 @@
     <meta name="og:site_name" content="Got Paper">
     <meta name="og:type" content="website">
 
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Got Paper?">
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>images/icons/apple-touch-icon-152x152.png">
+
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>images/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#1660A6">
+
     <!-- assets -->
     <link rel="stylesheet" href="https://use.typekit.net/lvl2shj.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
