@@ -41,7 +41,6 @@ export default {
 <style lang="scss">
 .share-buttons {
   width: 100%;
-  padding: 20px 0;
   display: flex;
   justify-content: space-between;
 

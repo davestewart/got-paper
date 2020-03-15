@@ -11,15 +11,31 @@
 
 <!--
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
 
 -->
-    <main>
+    <main class="inner">
       <router-view/>
-      <ShareLinks/>
     </main>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <div class="inner">
+          <ul>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/media">Media</router-link></li>
+            <a href="mailto:info@got-paper.com?subject=Hello&body=">Contact</a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__sharing">
+        <div class="inner">
+          <ShareLinks/>
+        </div>
+      </div>
+    </footer>
 
   </div>
 </template>
@@ -35,6 +51,9 @@ export default {
 </script>
 
 <style lang="scss">
+$grey-light: #f0f4f5;
+$blue-dark: #1660A6;
+
 html, body {
   margin: 0;
   padding: 0;
@@ -42,7 +61,7 @@ html, body {
 
 body {
   background-color: #FFFFFF;
-  margin: 0 0 100px;
+  margin: 0;
 }
 
 #app {
@@ -54,11 +73,11 @@ body {
 
 header {
   .image {
-    background: #1660A6;
+    background: $blue-dark;
   }
 
   .strapline {
-    background: #f0f4f5;
+    background: $grey-light;
   }
 
   img {
@@ -77,20 +96,54 @@ header {
 }
 
 main {
+  min-height: 60vh;
   margin: auto;
-  max-width: 700px;
-  padding: 15px;
+  padding: 30px 15px 100px;
 }
 
-#nav {
-  padding: 30px;
-  text-align: center;
-  a {
-    font-weight: bold;
-    color: #000000;
-    &.router-link-exact-active {
-      color: blue;
+.inner {
+  max-width: 700px;
+  margin: auto;
+}
+
+.footer {
+  background: $grey-light;
+
+  &__sharing {
+    background: darken($grey-light, 3%);
+    padding: 20px 0 50px;
+  }
+
+  &__links {
+
+    padding: 15px;
+
+    ul, li {
+      list-style: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    li:not(:last-child) {
+      border-right: 1px solid #CCC;
+    }
+
+    a {
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+      color: #000000;
+
+      &.router-link-exact-active {
+        color: $blue-dark;
+      }
     }
   }
 }
+
 </style>

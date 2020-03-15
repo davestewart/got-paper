@@ -144,8 +144,8 @@ export default {
 <style lang="scss">
 article {
   border-left: 2px dashed #CCC;
-  padding-left: 20px;
-  margin-left: 10px;
+  padding: 10px 0 10px 20px;
+  margin: 15px 0 15px 10px;
 }
 
 section {
