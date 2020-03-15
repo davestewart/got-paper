@@ -25,7 +25,7 @@
 export default {
   data () {
     return {
-      url: encodeURIComponent('https://got-paper.netlify.com'),
+      url: encodeURIComponent('https://got-paper.com'),
       title: encodeURIComponent('Calculate how much toilet paper you need'),
       source: encodeURIComponent(location.hostname),
       summary: '',
