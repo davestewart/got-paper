@@ -14,6 +14,10 @@ export default {
   props: {
     label: String,
     value: Number,
+    step: {
+      type: Number,
+      default: 1,
+    },
     min: {
       type: Number,
       default: 0,
@@ -56,11 +60,11 @@ export default {
 
   methods: {
     add () {
-      this.input++
+      this.input += this.step
     },
 
     subtract () {
-      this.input--
+      this.input -= this.step
     },
 
     touch (action) {

@@ -36,7 +36,7 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" v-model="other.sheetsRoll"/>
+        <UiNumber label="Sheets per roll" v-model="other.sheetsRoll" :step="10"/>
         <UiOutput label="Days per roll" v-model="daysRoll" :precision="2"/>
       </section>
     </article>
@@ -49,7 +49,6 @@
             <option v-for="period in periods" :value="period.days">{{ period.label }}</option>
           </select>
         </UiOutput>
-<!--        <UiOutput class="rollsRequired" label="Rolls required" v-model="rollsRequired" :precision="0"/>-->
       </section>
     </article>
 
