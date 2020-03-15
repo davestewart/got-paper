@@ -116,12 +116,14 @@ export default {
       display: inline-block;
       width: 70px;
       text-align: right;
-      margin: 0 5px;
+      margin: 0 3px;
       vertical-align: top;
     }
 
     button {
-      width: 35px;
+      box-sizing: content-box;
+      width: 10px;
+      padding: .375rem .55rem;
       text-align: center;
       vertical-align: top;
       background: #f4f4f5;
