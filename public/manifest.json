@@ -1,6 +1,6 @@
 {
   "name": "Got Paper?",
-  "short_name": "got-paper",
+  "short_name": "Got Paper?",
   "icons": [
     {
       "src": "./images/icons/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#f0f4f5",
+  "theme_color": "#1660A6"
 }

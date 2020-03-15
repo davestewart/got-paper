@@ -21,6 +21,8 @@ const router = new Router({
   },
   routes: [
     route('/', Home),
+    // @see https://stackoverflow.com/questions/53092009/router-part-of-pwa-opens-blank-on-device-with-vue
+    route('/index.html', Home, { alias: '/' }),
     route('/media', Media),
     route('/about', () => import(/* webpackChunkName: "about" */ './views/About.vue')),
   ],
