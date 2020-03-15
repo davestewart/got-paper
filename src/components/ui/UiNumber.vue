@@ -45,6 +45,10 @@ export default {
       }
       this.$emit('input', value)
     },
+
+    value (value) {
+      this.input = value
+    }
   },
 
   methods: {

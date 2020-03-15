@@ -8,8 +8,8 @@
       <section>
         <h3>Poop</h3>
         <UiNumber label="Sheets per wipe" v-model="sitting.sheetsWipe"/>
-        <UiNumber label="Wipes per poop" v-model="sitting.wipesSitting"/>
-        <UiNumber label="Poops per day" v-model="sitting.sittingsDay"/>
+        <UiNumber label="Wipes per poop" v-model="sitting.wipesPoop"/>
+        <UiNumber label="Poops per day" v-model="sitting.poopsDay"/>
         <UiOutput label="Total sheets, per poop, per day" v-model="sheetsDay"></UiOutput>
       </section>
 
@@ -53,6 +53,11 @@
       </section>
     </article>
 
+    <div>
+      <button type="reset" class="btn btn-secondary reset" @click="reset">Start again</button>
+    </div>
+
+
   </div>
 
 </template>
@@ -74,6 +79,25 @@ const periods = [
   time(365, 'One year'),
 ]
 
+function getData () {
+  return {
+    sitting: {
+      sheetsWipe: 3,
+      wipesPoop: 6,
+      poopsDay: 1,
+    },
+
+    extras: {
+      sheetsDay: 0,
+    },
+
+    other: {
+      sheetsRoll: 160,
+      daysQuarantined: 14,
+    },
+  }
+}
+
 export default {
   components: {},
 
@@ -82,28 +106,14 @@ export default {
   data () {
     return {
       periods,
-
-      sitting: {
-        sheetsWipe: 3,
-        wipesSitting: 6,
-        sittingsDay: 2,
-      },
-
-      extras: {
-        sheetsDay: 0,
-      },
-
-      other: {
-        sheetsRoll: 160,
-        daysQuarantined: 14,
-      },
+      ...getData()
     }
   },
 
   computed: {
     sheetsDay () {
-      const { sheetsWipe, wipesSitting, sittingsDay } = this.sitting
-      return sheetsWipe * wipesSitting * sittingsDay
+      const { sheetsWipe, wipesPoop, poopsDay } = this.sitting
+      return sheetsWipe * wipesPoop * poopsDay
     },
 
     totalSheetsDay () {
@@ -119,14 +129,18 @@ export default {
     },
   },
 
-  methods: {},
+  methods: {
+    reset () {
+      Object.assign(this, getData())
+      window.scrollTo(0, 0);
+    }
+  },
 }
 
 </script>
 
 <style lang="scss">
 article {
-  // margin: 10px 20px;
   border-left: 2px dashed #CCC;
   padding-left: 20px;
   margin-left: 10px;
@@ -136,9 +150,21 @@ section {
 
 }
 
+h3 {
+  color: #1660A6;
+}
+
 .rollsRequired {
   .uiOutput__value {
     font-size: 3rem;
   }
+}
+
+.reset {
+  margin-top: 30px;
+  width: 100%;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 </style>
