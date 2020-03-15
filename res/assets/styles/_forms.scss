@@ -1,22 +1,4 @@
-h1, h2, h3, h4, h5 {
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-body {
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-strong {
-  font-family: brandon-grotesque, sans-serif;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
-$border: 1px solid #ced4da;
+@import "./variables.scss";
 
 select {
   display: inline-block;
@@ -32,7 +14,7 @@ select {
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
-  border: $border;
+  border: $border-light;
   border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;

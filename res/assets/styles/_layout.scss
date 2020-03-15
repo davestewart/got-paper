@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+main {
+  min-height: 60vh;
+  margin: auto;
+  padding: 30px 15px 100px;
+}
+
+.inner {
+  max-width: 700px;
+  margin: auto;
+}

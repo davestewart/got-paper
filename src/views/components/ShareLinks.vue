@@ -6,9 +6,6 @@
     <a :href="`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}&via=dave_stewart`"
        target="_blank"
        title="Tweet"><img alt="Tweet" src="/images/sharing/Twitter.svg"/></a>
-    <a :href="`https://plus.google.com/share?url=${url}`"
-       target="_blank"
-       title="Share on Google+"><img alt="Share on Google+" src="/images/sharing/Google+.svg"/></a>
     <a :href="`http://pinterest.com/pin/create/button/?url=${url}&description=${title}`"
        target="_blank"
        title="Pin it"><img alt="Pin it" src="/images/sharing/Pinterest.svg"/></a>

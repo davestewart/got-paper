@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Media from './views/Media.vue'
+import Home from '../views/pages/Home.vue'
+import Media from '../views/pages/Media.vue'
 
 Vue.use(Router)
 
@@ -21,10 +21,8 @@ const router = new Router({
   },
   routes: [
     route('/', Home),
-    // @see https://stackoverflow.com/questions/53092009/router-part-of-pwa-opens-blank-on-device-with-vue
-    route('/index.html', Home, { alias: '/' }),
     route('/media', Media),
-    route('/about', () => import(/* webpackChunkName: "about" */ './views/About.vue')),
+    route('/about', () => import(/* webpackChunkName: "about" */ '../views/pages/About.vue')),
   ],
 })
 

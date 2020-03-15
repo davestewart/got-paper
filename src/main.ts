@@ -1,12 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
 import router from './router'
 import store from './store'
+
+// global
 import './registerServiceWorker'
+import 'assets/styles/index.scss'
 
 // local
-import './assets/styles/index.scss'
-import './components/ui'
+import App from './views/App.vue'
+import './views/ui'
 
 Vue.config.productionTip = false
 
