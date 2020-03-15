@@ -10,14 +10,14 @@
         <UiNumber label="Poops per day" v-model="poops.poopsDay" :min="1"/>
         <UiNumber label="Wipes per poop" v-model="poops.wipesPoop" :min="1"/>
         <UiNumber label="Sheets per wipe" v-model="poops.sheetsWipe" :min="1"/>
-        <UiOutput label="Total poop sheets per day" v-model="poopSheetsDay"></UiOutput>
+        <UiOutput label="Total poop sheets per day" v-model="poopSheetsDay"/>
       </section>
 
       <section>
         <h3>Pees</h3>
         <UiNumber label="Pees per day" v-model="pees.peesDay"/>
         <UiNumber label="Sheets per pee" v-model="pees.sheetsPee"/>
-        <UiOutput label="Total pee sheets per day" v-model="peeSheetsDay"></UiOutput>
+        <UiOutput label="Total pee sheets per day" v-model="peeSheetsDay"/>
       </section>
 
       <section>
@@ -28,7 +28,7 @@
 
       <section>
         <h3>Total</h3>
-        <UiOutput label="Total sheets per day" v-model="totalSheetsDay" :precision="1"></UiOutput>
+        <UiOutput label="Total sheets per day" v-model="totalSheetsDay" :precision="1"/>
       </section>
 
     </article>
@@ -44,7 +44,7 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" v-model="other.sheetsRoll" :step="10" :min="100"/>
+        <UiNumber label="Sheets per roll" hint="This information will on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
         <UiOutput label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
     </article>

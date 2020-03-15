@@ -1,6 +1,9 @@
 <template>
   <div class="uiNumber form-group row">
-    <label class="uiNumber__label col-6 col-form-label">{{ label }}</label>
+    <div class="col-6 col-form-label">
+      <label class="uiNumber__label">{{ label }}</label>
+      <div v-if="hint" class="small text-muted font-italic">{{ hint }}</div>
+    </div>
     <span class="uiNumber__value col-6">
       <button class="btn btn-light" @click="subtract" v-on="touch('subtract')">-</button>
       <input class="form-control" type="number" :min="min" v-model.number="input">
@@ -13,6 +16,7 @@
 export default {
   props: {
     label: String,
+    hint: String,
     value: Number,
     step: {
       type: Number,
@@ -101,6 +105,7 @@ export default {
 <style lang="scss">
 .uiNumber {
   &__label {
+    margin-bottom: 0;
   }
 
   &__value {
