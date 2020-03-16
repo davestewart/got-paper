@@ -1,12 +1,25 @@
 <template>
   <div class="about">
     <h1>Contact</h1>
-    <form name="contact" netlify>
+
+    <ValidationObserver v-slot="{ invalid }">
+      <form name="contact"
+            method="post"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+            data-netlify-honeypot="bot-field"
+            @submit.prevent="submit">
+        <!-- name -->
+        <input type="hidden" name="form-name" value="contact"/>
+
         <!-- Name input-->
         <div class="form-group row">
           <label class="col-md-3 control-label" for="name">Name</label>
           <div class="col-md-9">
-            <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+            <ValidationProvider :rules="rules.name" v-slot="v">
+              <input id="name" v-model="form.name" name="name" type="text" placeholder="Your name" class="form-control">
+              <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
+            </ValidationProvider>
           </div>
         </div>
 
@@ -14,7 +27,10 @@
         <div class="form-group row">
           <label class="col-md-3 control-label" for="email">Your E-mail</label>
           <div class="col-md-9">
-            <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+            <ValidationProvider :rules="rules.email" v-slot="v">
+              <input id="email" v-model="form.email" name="email" type="text" placeholder="Your email" class="form-control">
+              <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
+            </ValidationProvider>
           </div>
         </div>
 
@@ -22,16 +38,107 @@
         <div class="form-group row">
           <label class="col-md-3 control-label" for="message">Your message</label>
           <div class="col-md-9">
-            <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+            <ValidationProvider :rules="rules.message" v-slot="v">
+              <textarea class="form-control" id="message" v-model="form.message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+              <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
+            </ValidationProvider>
+          </div>
+        </div>
+
+        <div class="form-group row mb-0">
+          <div class="offset-md-3 col-md-9 mb-0">
+            <div v-if="result.message" class="alert alert-dismissible fade show" role="alert" :class="`alert-${result.state}`">
+              {{ result.message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="() => showResult()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Form actions -->
         <div class="form-group row">
           <div class="offset-md-3 col-9">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" :disabled="invalid">Submit</button>
           </div>
         </div>
-    </form>
+      </form>
+    </ValidationObserver>
   </div>
 </template>
+
+<script>
+import axios from 'axios'
+import { ValidationObserver, ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm';
+
+
+function reset () {
+  return {
+    name: '',
+    email: '',
+    message: '',
+  }
+}
+
+function encode () {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+}
+
+const rules = {
+  name: 'required|min:2',
+  email: 'required|email',
+  message: 'required|min:10',
+}
+
+export default {
+  components: {
+    ValidationObserver,
+    ValidationProvider,
+  },
+
+  data () {
+    return {
+      rules,
+      form: reset(),
+      result: {
+        message: '',
+        state: '',
+      },
+    }
+  },
+
+  methods: {
+    submit () {
+      const config = {
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+      }
+      const payload = {
+        'form-name': 'contact',
+        ...this.form,
+      }
+      return axios
+        .post('/', encode(payload), config)
+        .then(() => {
+          this.showResult('Thanks! We received your message', 'success')
+          this.reset()
+        })
+        .catch(() => {
+          this.showResult('Oh poo. Your message was not sent', 'danger')
+        })
+    },
+
+    reset () {
+      this.form = reset()
+    },
+
+    showResult (message = '', state = '') {
+      this.result.message = message
+      this.result.state = state
+    },
+  },
+}
+</script>
