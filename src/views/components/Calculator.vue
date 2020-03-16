@@ -22,8 +22,8 @@
 
       <section>
         <h3>Extras</h3>
-        <UiNumber label="Sheets per day" v-model="extras.sheetsDay"/>
-        <UiNumber label="Sheets per month" v-model="extras.sheetsMonth"/>
+        <UiNumber label="Sheets per day" hint="Two words: Porn. Hub." v-model="extras.sheetsDay"/>
+        <UiNumber label="Sheets per month" hint="Life is messy, right? Spills, sex, periods, :)" v-model="extras.sheetsMonth"/>
       </section>
 
       <section>
