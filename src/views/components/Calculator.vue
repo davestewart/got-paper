@@ -44,7 +44,7 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" hint="This information will on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
+        <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
         <UiOutput label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
     </article>
