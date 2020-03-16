@@ -1,4 +1,6 @@
 import Vue from 'vue'
+
+// app
 import router from './router'
 import store from './store'
 

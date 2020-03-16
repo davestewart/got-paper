@@ -9,6 +9,7 @@ module.exports = {
     alias: {
       // resources
       'assets'      : resolve('../res/assets/'),
+      'plugins'     : resolve('plugins/'),
 
       // views
       'components'  : resolve('views/components/'),
