@@ -6,7 +6,7 @@
       <form name="contact"
             method="post"
             data-netlify="true"
-            data-netlify-recaptcha="true"
+            data-x-netlify-recaptcha="true"
             data-netlify-honeypot="bot-field"
             @submit.prevent="submit">
         <!-- name -->
@@ -69,8 +69,7 @@
 
 <script>
 import axios from 'axios'
-import { ValidationObserver, ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm';
-
+import { ValidationObserver, ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm'
 
 function reset () {
   return {
@@ -83,7 +82,7 @@ function reset () {
 function encode (data) {
   return Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
+    .join('&')
 }
 
 const rules = {
@@ -113,7 +112,7 @@ export default {
     submit () {
       const config = {
         header: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       }
       const payload = {
