@@ -26,10 +26,10 @@ export default {
   data () {
     return {
       url: encodeURIComponent('https://got-paper.com'),
-      title: encodeURIComponent('Calculate how much toilet paper you need'),
+      title: encodeURIComponent('A cheeky online calculator to buy the right amount of toilet paper'),
       source: encodeURIComponent(location.hostname),
       summary: '',
-      hashtags: 'coronavirus',
+      hashtags: 'gotpaper,coronavirus',
     }
   },
 }
