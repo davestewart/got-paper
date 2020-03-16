@@ -106,6 +106,7 @@ export default {
   }
 
   &__value {
+    white-space: nowrap;
     align-content: start;
     text-align: right;
 
