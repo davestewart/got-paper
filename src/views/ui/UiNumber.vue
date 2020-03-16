@@ -72,18 +72,15 @@ export default {
     },
 
     touch (action) {
-      const interval = 150
       const start = () => {
-        // console.log('starting!')
+        stop()
         this.intervalId = setInterval(() => {
           this[action]()
-        }, interval)
-        // console.log('started:', this.intervalId)
+        }, 150)
       }
 
       const stop = () => {
         if (this.intervalId) {
-          // console.log('stopping!')
           clearInterval(this.intervalId)
           this.intervalId = null
         }
