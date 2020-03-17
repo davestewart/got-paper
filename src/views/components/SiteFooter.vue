@@ -10,6 +10,7 @@
           <li><router-link to="/media">Media</router-link></li>
 -->
           <li><router-link to="/contact">Contact</router-link></li>
+          <li><router-link to="/privacy">Privacy</router-link></li>
 <!--          <li><router-link to="/translations">Translations</router-link></li>-->
         </ul>
       </div>
