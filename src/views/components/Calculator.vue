@@ -1,6 +1,6 @@
 <template>
 
-  <div style="position: relative">
+  <div class="calculator">
 
     <div class="form-check form-check-right">
       <label for="showTotals">Show totals</label>
@@ -95,7 +95,7 @@ const periods = [
 function getData () {
   return {
     options: {
-      totals: true,
+      totals: false,
     },
 
     poops: {
@@ -178,52 +178,57 @@ export default {
 </script>
 
 <style lang="scss">
-article {
-  border-left: 2px dashed #CCC;
-  padding: 10px 0 10px 20px;
-  margin: 15px 0 15px 10px;
-}
+.calculator {
+  position: relative;
 
-section {
-
-}
-
-h3 {
-  color: #1660A6;
-}
-
-.rollsRequired {
-  .uiOutput__value {
-    font-size: 3rem;
+  article {
+    border-left: 2px dashed #CCC;
+    padding: 10px 0 10px 20px;
+    margin: 15px 0 15px 10px;
   }
-}
 
-.result {
-  margin: 20px 0;
-  text-align: center;
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 900;
-  font-size: 3.2rem;
-
-  span {
-    vertical-align: middle;
-    font-size: 2em;
-    color: #df0f1b;
+  h3 {
+    color: #1660A6;
   }
-}
 
-@media only screen and (min-width: 600px) {
+  h2, h3, h4 {
+    margin: 0;
+  }
+
+  .rollsRequired {
+    .uiOutput__value {
+      font-size: 3rem;
+    }
+  }
+
   .result {
-    font-size: 5rem;
-  }
-}
+    margin: 20px 0;
+    text-align: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
 
-.reset {
-  margin-top: 30px;
-  width: 100%;
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 700;
-  font-size: 1.2em;
+    span {
+      vertical-align: middle;
+      font-size: 2em;
+      color: #df0f1b;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .result {
+      font-size: 5rem;
+    }
+  }
+
+  .reset {
+    margin-top: 30px;
+    width: 100%;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
 }
 
 .form-check-right {
@@ -238,7 +243,6 @@ h3 {
   input {
     margin-top: .3rem;
     margin-left: .3rem;
-    transform: translateY(2px);
   }
 }
 </style>
