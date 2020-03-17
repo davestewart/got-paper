@@ -37,11 +37,11 @@ export default {
       done: [
         'German',
         'Swedish',
+        'Spanish',
         'Czech',
       ],
       wanted: [
         'French',
-        'Spanish',
         'Romanian',
         'Dutch',
         'Chinese',
