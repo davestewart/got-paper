@@ -36,15 +36,16 @@ export default {
     return {
       done: [
         'German',
+        'French',
         'Swedish',
         'Spanish',
         'Czech',
+        'Chinese (Traditional)',
       ],
       wanted: [
-        'French',
+        'Chinese (Mandarin)',
         'Romanian',
         'Dutch',
-        'Chinese',
       ],
     }
   },
