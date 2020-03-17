@@ -1,34 +1,35 @@
 <template>
 
-  <div>
-    <!--    <h1>Calculator</h1>-->
+  <div style="position: relative">
+
+    <div class="form-check form-check-right">
+      <label for="showTotals">Show totals</label>
+      <input type="checkbox" v-model="options.totals" id="showTotals">
+    </div>
 
     <h2>Usage</h2>
     <article>
+
       <section>
         <h3>Poops</h3>
         <UiNumber label="Poops per day" v-model="poops.poopsDay" :min="1"/>
         <UiNumber label="Wipes per poop" v-model="poops.wipesPoop" :min="1"/>
         <UiNumber label="Sheets per wipe" v-model="poops.sheetsWipe" :min="1"/>
-        <UiOutput label="Total poop sheets per day" v-model="poopSheetsDay"/>
+        <UiOutput v-if="options.totals" label="Total poop sheets per day" v-model="poopSheetsDay"/>
       </section>
 
       <section>
         <h3>Pees</h3>
         <UiNumber label="Pees per day" v-model="pees.peesDay"/>
         <UiNumber label="Sheets per pee" v-model="pees.sheetsPee"/>
-        <UiOutput label="Total pee sheets per day" v-model="peeSheetsDay"/>
+        <UiOutput v-if="options.totals" label="Total pee sheets per day" v-model="peeSheetsDay"/>
       </section>
 
       <section>
         <h3>Extras</h3>
-        <UiNumber label="Sheets per day" hint="Two words: Porn. Hub." v-model="extras.sheetsDay"/>
-        <UiNumber label="Sheets per month" hint="Life is messy, right? Spillages, sex, periods :)" v-model="extras.sheetsMonth"/>
-      </section>
-
-      <section>
-        <h3>Total</h3>
-        <UiOutput label="Total sheets per day" v-model="totalSheetsDay" :precision="1"/>
+        <UiNumber label="Sheets per day" hint="For daily cleanup" v-model="extras.sheetsDay"/>
+        <UiNumber label="Sheets per month" hint="For monthly cleanup" v-model="extras.sheetsMonth"/>
+        <UiOutput v-if="options.totals"label="Total extra sheets per day" v-model="extraSheetsDay" :precision="1"/>
       </section>
 
     </article>
@@ -45,7 +46,8 @@
         </select>
         -->
         <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
-        <UiOutput label="Days per roll" v-model="daysRoll" :precision="1"/>
+<!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
+        <UiOutput v-if="options.totals" label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
     </article>
 
@@ -92,6 +94,10 @@ const periods = [
 
 function getData () {
   return {
+    options: {
+      totals: true,
+    },
+
     poops: {
       poopsDay: 1,
       wipesPoop: 6,
@@ -99,7 +105,7 @@ function getData () {
     },
 
     pees: {
-      peesDay: 2,
+      peesDay: 5,
       sheetsPee: 0,
     },
 
@@ -116,10 +122,6 @@ function getData () {
 }
 
 export default {
-  components: {},
-
-  props: {},
-
   data () {
     return {
       periods,
@@ -222,5 +224,21 @@ h3 {
   font-family: brandon-grotesque, sans-serif;
   font-weight: 700;
   font-size: 1.2em;
+}
+
+.form-check-right {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+
+  label {
+    line-height: .8em;
+  }
+
+  input {
+    margin-top: .3rem;
+    margin-left: .3rem;
+    transform: translateY(2px);
+  }
 }
 </style>
