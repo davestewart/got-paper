@@ -26,7 +26,7 @@ const router = new Router({
     route('/about', 'About', 'Why does this site exist?'),
     route('/media', 'Media', 'Some fun stuff to perk you up'),
     route('/contact', 'Contact', 'Send us a message'),
-    route('/translations', 'Translations', 'Can you help?'),
+    route('/translations', 'Translations', 'Got Paper where you are?'),
   ],
 })
 
