@@ -26,6 +26,15 @@
         <ShareLinks/>
       </div>
     </div>
+
+    <div class="footer__links">
+      <div class="inner">
+        <ul>
+          <a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a>
+        </ul>
+      </div>
+    </div>
+
   </footer>
 </template>
 
@@ -46,7 +55,6 @@ export default {
 
   &__sharing {
     background: darken($grey-light, 3%);
-    padding: 0 0 50px;
   }
 
   &__site {

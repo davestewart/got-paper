@@ -53,7 +53,7 @@ export default {
   }
 
   &__label {
-    font-weight: bold;
+    // font-weight: bold;
   }
 
   &__value {
