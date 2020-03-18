@@ -1,7 +1,7 @@
 <template>
   <div class="kofi">
     <a class="kofi__link" href='https://ko-fi.com/gotpaper' target='_blank'>
-      <span class="kofi__text">Want to support me?</span>
+      <span class="kofi__text">If you're feeling generous, maybe you could </span>
       <img class="kofi__image" src="https://az743702.vo.msecnd.net/cdn/kofi3.png?v=2" alt="Buy Me a Coffee at ko-fi.com"/>
     </a>
   </div>
@@ -10,14 +10,15 @@
 <style lang="scss" scoped>
 .kofi {
   text-align: center;
-  padding: 20px;
+  padding: 20px 0 100px;
 
   &__link {
     text-decoration: none;
   }
 
   &__text {
-    padding-right: 10px;
+    padding: 0 3px;
+    vertical-align: -5%;
     font-family: $display-font;
     color: black;
     font-size: 1.3em;
@@ -29,4 +30,6 @@
     border: none;
   }
 }
+
+
 </style>
