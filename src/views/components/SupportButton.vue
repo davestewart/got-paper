@@ -15,15 +15,15 @@ export default {
   computed: {
     html () {
       return kofiwidget2.getHTML()
-    }
+    },
   },
 
   created () {
     const text = 'Buy me a coffee :)'
     const page = 'gotpaper'
     const color = colors.red
-    kofiwidget2.init(text, color, page);
-  }
+    kofiwidget2.init(text, color, page)
+  },
 }
 </script>
 
