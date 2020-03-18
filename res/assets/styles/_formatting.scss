@@ -24,3 +24,32 @@ strong {
   font-weight: 700;
 }
 
+.h-links {
+  ul, li {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:not(:first-child) {
+    border-left: 1px solid #CCC;
+  }
+
+  a {
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    color: #000000;
+
+    &.router-link-exact-active {
+      color: $blue-dark;
+      text-decoration: none;
+    }
+  }
+}
+

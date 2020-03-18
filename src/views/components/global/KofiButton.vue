@@ -19,7 +19,7 @@ export default {
   },
 
   created () {
-    const text = 'Like the site? You can buy me a coffee!'
+    const text = 'Like the free app? You can buy me a coffee!'
     const page = 'gotpaper'
     const color = colors.red
     kofiwidget2.init(text, color, page)

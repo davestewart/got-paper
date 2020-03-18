@@ -7,23 +7,7 @@
       </div>
     </div>
 
-    <div class="footer__nav footer--links">
-      <div class="inner">
-        <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
-<!--
-          <li><router-link to="/tips">Tips</router-link></li>
-          <li><router-link to="/media">Media</router-link></li>
--->
-          <li><router-link to="/contact">Contact</router-link></li>
-          <li><router-link to="/privacy">Privacy</router-link></li>
-<!--          <li><router-link to="/translations">Translations</router-link></li>-->
-
-          <li class="footer__navTwitter"><a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a></li>
-        </ul>
-      </div>
-    </div>
+    <SiteLinks/>
 
     <div class="footer__sharing">
       <div class="inner">
@@ -31,7 +15,7 @@
       </div>
     </div>
 
-    <div class="footer__twitter footer--links">
+    <div class="footer__twitter h-links">
       <div class="inner">
         <ul>
           <a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a>
@@ -43,11 +27,13 @@
 </template>
 
 <script>
+import SiteLinks from './SiteLinks'
 import ShareLinks from './ShareLinks'
 import SupportButton from './KofiButton'
 
 export default {
   components: {
+    SiteLinks,
     SupportButton,
     ShareLinks,
   },
@@ -80,36 +66,6 @@ export default {
     background: darken($grey-light, 10%);
     padding: 15px;
   }
-
-  &--links {
-    ul, li {
-      list-style: none;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      display: inline-block;
-    }
-
-    li:not(:first-child) {
-      border-left: 1px solid #CCC;
-    }
-
-    a {
-      padding: 5px;
-      margin: 5px;
-      font-weight: bold;
-      color: #000000;
-
-      &.router-link-exact-active {
-        color: $blue-dark;
-        text-decoration: none;
-      }
-    }
-  }
-
 
   @media only screen and (min-width: 600px) {
     &__twitter {

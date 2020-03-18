@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import ShareLinks from './components/ShareLinks'
-import SiteHeader from './components/SiteHeader'
-import SiteFooter from './components/SiteFooter'
+import ShareLinks from 'components/global/ShareLinks'
+import SiteHeader from 'components/global/SiteHeader'
+import SiteFooter from 'components/global/SiteFooter'
 
 export default {
   components: {
