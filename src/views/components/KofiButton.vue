@@ -32,8 +32,11 @@ export default {
   padding: 60px 0;
   text-align: center;
 
-  .btn-container {
-    zoom: 130%;
+
+  @media only screen and (min-width: 600px) {
+    .btn-container {
+      zoom: 130%;
+    }
   }
 }
 </style>
