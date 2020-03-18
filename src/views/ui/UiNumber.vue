@@ -5,9 +5,9 @@
       <div v-if="hint" class="small text-muted font-italic">{{ hint }}</div>
     </div>
     <span class="uiNumber__value col-6">
-      <button class="btn btn-light" @click="subtract" v-on="touch('subtract')">-</button>
+      <UiIconButton icon="minus" @click="subtract" v-on="touch('subtract')" />
       <input class="form-control" type="number" :min="min" v-model.number="input">
-      <button class="btn btn-light" @click="add" v-on="touch('add')">+</button>
+      <UiIconButton icon="plus" @click="add" v-on="touch('add')" />
     </span>
   </div>
 </template>
@@ -117,17 +117,6 @@ export default {
       margin: 0 3px;
       vertical-align: top;
     }
-
-    button {
-      box-sizing: content-box;
-      width: 10px;
-      padding: .375rem .55rem;
-      text-align: center;
-      vertical-align: top;
-      background: #f4f4f5;
-      font-weight: bold;
-      font-family: $display-font;
-    }
   }
 }
 /*
@@ -143,4 +132,13 @@ export default {
   }
 }
 */
+
+@media only screen and (max-width: 600px) {
+  .uiNumber {
+    input {
+      width: 4rem
+    }
+  }
+}
+
 </style>
