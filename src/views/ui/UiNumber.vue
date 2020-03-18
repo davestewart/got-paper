@@ -6,7 +6,7 @@
     </div>
     <span class="uiNumber__value col-6">
       <UiIconButton icon="minus" @click="subtract" v-on="touch('subtract')" />
-      <input class="form-control" type="number" :min="min" v-model.number="input">
+      <input class="form-control" type="number" :min="min" :max="max" v-model.number="input">
       <UiIconButton icon="plus" @click="add" v-on="touch('add')" />
     </span>
   </div>
@@ -25,6 +25,10 @@ export default {
     min: {
       type: Number,
       default: 0,
+    },
+    max: {
+      type: Number,
+      default: 999,
     },
   },
 
@@ -47,12 +51,16 @@ export default {
 
   watch: {
     input (value, oldValue) {
+      if (value === undefined || value === '' || value === null) {
+        value = 0
+      }
       if (value < this.min) {
         this.input = this.min
         value = this.min
       }
-      if (value === undefined || value === '' || value === null) {
-        value = 0
+      else if (value > this.max) {
+        this.input = this.max
+        value = this.max
       }
       this.$emit('input', value)
     },

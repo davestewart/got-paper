@@ -6,7 +6,7 @@
         <UiIcon icon="info-circle" fill="#856404" size="24"/>
         <span class="ml-2"><slot></slot></span>
       </div>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="$emit('close')">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="$emit('close')" style="outline: none">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -18,7 +18,7 @@
 
 export default {
   props: {
-    type: String
+    type: String,
   },
 }
 

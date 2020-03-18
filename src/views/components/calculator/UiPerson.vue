@@ -10,7 +10,10 @@
                type="text"
                class="form-control"
         >
-        <button class="uiPerson__button btn btn-default w-100 text-left" @click="click" v-else>{{ value }} <span v-if="active"> (editing)</span></button>
+        <button class="uiPerson__button btn btn-default w-100 text-left" @click="click" v-else>
+          <span class="uiPerson__name">{{ value }}</span>
+          <span class="uiPerson__stats">{{ total | round }} sheets / day</span>
+        </button>
       </div>
       <UiIconButton icon="pen" class="ml-1" @click="edit" />
       <UiIconButton icon="times" class="ml-1" @click="remove" :disabled="!removable" />
@@ -20,8 +23,15 @@
 
 <script>
 export default {
+  filters: {
+    round (value = 0) {
+      return Math.floor(value)
+    }
+  },
+
   props: {
     value: String,
+    total: Number,
     active: Boolean,
     removable: {
       type: Boolean,
@@ -56,7 +66,6 @@ export default {
         input.addEventListener('blur', this.onBlur)
         input.focus()
         input.select()
-
       })
     },
 
@@ -92,6 +101,17 @@ $light-grey: #e2e6ea;
 
   &__button {
     // background: $light-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+
+  }
+
+  &__stats {
+    font-size: 70%;
   }
 
   & button {
@@ -109,12 +129,17 @@ $light-grey: #e2e6ea;
 
     &:hover {
       color: #212529;
-      // hover
-      // need to extend to other buttons too
-      // background-color: $light-blue !important;
       background-color: $light-blue;
       border-color: transparent;
     }
+  }
+
+  button.uiPerson__button {
+    background-color: transparent;
+  }
+
+  button:hover {
+    background-color: $light-blue !important;
   }
 
   &.active {
@@ -128,18 +153,6 @@ $light-grey: #e2e6ea;
     input:focus,
     button:focus {
       box-shadow: none;
-    }
-
-    button.uiPerson__button {
-      background: none;
-    }
-
-    button:hover {
-      background-color: $light-blue !important;
-    }
-
-    &:hover {
-      // background-color: darken($light-blue, 40%) !important;
     }
   }
 
