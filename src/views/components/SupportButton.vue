@@ -1,35 +1,38 @@
 <template>
-  <div class="kofi">
-    <a class="kofi__link" href='https://ko-fi.com/gotpaper' target='_blank'>
-      <span class="kofi__text">If you're feeling generous, maybe you could </span>
-      <img class="kofi__image" src="https://az743702.vo.msecnd.net/cdn/kofi3.png?v=2" alt="Buy Me a Coffee at ko-fi.com"/>
-    </a>
-  </div>
+  <div class="kofi" v-html="html"></div>
 </template>
+
+<script>
+export default {
+  computed: {
+    html () {
+      return kofiwidget2.getHTML()
+    }
+  },
+
+  created () {
+    kofiwidget2.init('Buy me a coffee :)', '#29abe0', 'gotpaper');
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .kofi {
   text-align: center;
-  padding: 20px 0 100px;
+  padding: 20px 0 120px;
 
-  &__link {
-    text-decoration: none;
+  .btn-container {
+
   }
 
-  &__text {
-    padding: 0 3px;
-    vertical-align: -5%;
-    font-family: $display-font;
-    color: black;
-    font-size: 1.3em;
-    line-height: 50px;
+  a {
+
   }
 
-  &__image {
-    height: 50px !important;
-    border: none;
+  span.kofitext {
+    img.kofiimg {
+
+    }
   }
 }
-
-
 </style>
