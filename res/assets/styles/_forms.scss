@@ -72,3 +72,7 @@ select option {
 .form-control:focus {
   color: #000;
 }
+
+button.btn {
+  border-color: transparent !important;
+}

@@ -2,7 +2,8 @@
 
   <div class="calculator">
 
-    <UiAlert v-if="options.welcome" @close="options.welcome = false">
+    <!-- alert -->
+    <UiAlert v-if="options.welcome" @close="options.welcome = false" class="mb-4">
       Press and hold -/+ buttons to add/subtract quickly!
     </UiAlert>
 
@@ -13,35 +14,13 @@
         </div>
     -->
 
+    <!-- usage -->
     <h2 class="d-flex justify-content-between">
       <span>Usage <template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
-    <article>
+    <CalculatorUsage ref="usage" :showTotals="options.totals" @change="onUsageChange"/>
 
-      <section>
-        <h3>Poops</h3>
-        <UiNumber label="Poops per day" v-model="poops.poopsDay" :min="1"/>
-        <UiNumber label="Wipes per poop" v-model="poops.wipesPoop" :min="1"/>
-        <UiNumber label="Sheets per wipe" v-model="poops.sheetsWipe" :min="1"/>
-        <UiOutput v-if="options.totals" label="Total poop sheets per day" v-model="poopSheetsDay"/>
-      </section>
-
-      <section>
-        <h3>Pees</h3>
-        <UiNumber label="Pees per day" v-model="pees.peesDay"/>
-        <UiNumber label="Sheets per pee" v-model="pees.sheetsPee"/>
-        <UiOutput v-if="options.totals" label="Total pee sheets per day" v-model="peeSheetsDay"/>
-      </section>
-
-      <section>
-        <h3>Extras</h3>
-        <UiNumber label="Sheets per day" hint="For daily cleanup" v-model="extras.sheetsDay"/>
-        <UiNumber label="Sheets per month" hint="For monthly cleanup" v-model="extras.sheetsMonth"/>
-        <UiOutput v-if="options.totals" label="Total extra sheets per day" v-model="extraSheetsDay" :precision="1"/>
-      </section>
-
-    </article>
-
+    <!-- people -->
     <h2>People <span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
     <article>
       <UiPerson v-for="(person, index) in people"
@@ -49,6 +28,7 @@
                 ref="people"
                 :key="person.id"
                 :active="person.id === personId"
+                :total="person.total"
                 :removable="index > 0"
                 @click="selectPerson(index)"
                 @remove="removePerson(index)"
@@ -56,7 +36,7 @@
       <a href="#" class="ml-3 small" @click.prevent="addPerson">Add another person</a>
     </article>
 
-
+    <!-- paper -->
     <h2>Toilet paper</h2>
     <article>
       <section>
@@ -74,6 +54,7 @@
       </section>
     </article>
 
+    <!-- quarantine -->
     <h2>Quarantine</h2>
     <article>
       <section>
@@ -85,22 +66,24 @@
       </section>
     </article>
 
+    <!-- result -->
     <div class="result">
       Buy <span>{{ rollsRequired }}</span> {{ plural(rollsRequired, 'roll') }}
     </div>
 
     <div>
-      <!--      <button type="reset" class="btn btn-secondary reset" @click="reset">Buy now</button>-->
       <button type="reset" class="btn btn-secondary reset" @click="reset">Start again</button>
+      <!--      <button type="reset" class="btn btn-secondary reset" @click="reset">Buy now</button>-->
     </div>
-
 
   </div>
 
 </template>
 
 <script>
-import UiPerson from './calculator/UiPerson'
+import UiPerson from './UiPerson'
+import CalculatorUsage from './CalculatorUsage'
+import { clone, getPaperData } from './utils'
 
 function time (days, label) {
   return { days, label }
@@ -121,8 +104,12 @@ const periods = [
 let id = 0
 
 function makePerson (name) {
-  id++
-  return { id: String(id), name, total: 0 }
+  return {
+    id: String(++id),
+    name,
+    data: getPaperData(),
+    total: 18
+  }
 }
 
 function getData () {
@@ -139,22 +126,6 @@ function getData () {
       person,
     ],
 
-    poops: {
-      poopsDay: 1,
-      wipesPoop: 6,
-      sheetsWipe: 3,
-    },
-
-    pees: {
-      peesDay: 5,
-      sheetsPee: 0,
-    },
-
-    extras: {
-      sheetsDay: 0,
-      sheetsMonth: 0,
-    },
-
     other: {
       sheetsRoll: 200,
       daysQuarantined: 14,
@@ -164,6 +135,7 @@ function getData () {
 
 export default {
   components: {
+    CalculatorUsage,
     UiPerson,
   },
 
@@ -179,23 +151,11 @@ export default {
       return this.getPerson(this.personId) || {}
     },
 
-    poopSheetsDay () {
-      const { sheetsWipe, wipesPoop, poopsDay } = this.poops
-      return sheetsWipe * wipesPoop * poopsDay
-    },
-
-    peeSheetsDay () {
-      const { sheetsPee, peesDay } = this.pees
-      return sheetsPee * peesDay
-    },
-
-    extraSheetsDay () {
-      const { sheetsDay, sheetsMonth } = this.extras
-      return sheetsDay + (sheetsMonth / 31)
-    },
-
-    totalSheetsDay () {
-      return (this.poopSheetsDay + this.peeSheetsDay + this.extraSheetsDay)
+    totalSheetsDay() {
+      return this.people.reduce((total, person) => {
+        total+= person.total || 0
+        return total
+      }, 0)
     },
 
     daysRoll () {
@@ -218,33 +178,52 @@ export default {
   },
 
   methods: {
-    getPerson (personId) {
+    onUsageChange (total, data) {
+      const person = this.getPerson()
+      person.total = total
+      person.data = clone(data)
+    },
+
+    getPerson (personId = undefined) {
       personId = personId || this.personId
       return this.people.find(person => person.id === personId)
     },
 
     addPerson () {
+      // add person
       const index = this.people.length + 1
       const person = makePerson('Person ' + index)
       this.people.push(person)
       this.personId = person.id
+
+      // update usage component
+      this.$refs.usage.setData(person.data)
+
+      // immediately edit name
       this.$nextTick(() => {
         this.$refs.people[this.people.length - 1].edit()
       })
     },
 
-    selectPerson (index) {
+    selectPerson (index, scroll = true) {
       this.personId = this.people[index].id
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-      }, 400)
+      this.$refs.usage.setData(this.getPerson().data)
+      if (scroll) {
+        setTimeout(() => {
+          window.scrollTo(0, 0)
+        }, 400)
+      }
     },
 
     removePerson (index) {
-      this.people.splice(index, 1)
+      const person = this.people.splice(index, 1).shift()
+      if (person.id === this.personId) {
+        this.selectPerson(index - 1, false)
+      }
     },
 
     reset () {
+      this.$refs.usage.reset()
       Object.assign(this, getData())
       window.scrollTo(0, 0)
     },
