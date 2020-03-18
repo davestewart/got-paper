@@ -58,7 +58,7 @@ export default {
 .footer {
 
   &__kofi {
-    background: rgba(240, 244, 245, .2);
+    background: rgba(240, 244, 245, .5);
   }
 
   &__sharing {
