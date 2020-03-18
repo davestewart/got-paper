@@ -45,6 +45,8 @@ export default {
       wanted: [
         'Chinese (Mandarin)',
         'Romanian',
+        'Russian',
+        'Polish',
         'Dutch',
       ],
     }
