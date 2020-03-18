@@ -1,5 +1,10 @@
 <template>
   <footer class="footer">
+    <div class="share">
+      <div class="inner">
+        <SupportButton/>
+      </div>
+    </div>
     <div class="footer__links">
       <div class="inner">
         <ul>
@@ -26,8 +31,11 @@
 
 <script>
 import ShareLinks from './ShareLinks'
+import SupportButton from './SupportButton'
+
 export default {
   components: {
+    SupportButton,
     ShareLinks,
   },
 }
@@ -35,7 +43,6 @@ export default {
 
 <style lang="scss">
 .footer {
-  background: $grey-light;
 
   &__sharing {
     background: darken($grey-light, 3%);
@@ -49,6 +56,7 @@ export default {
   }
 
   &__links {
+    background: $grey-light;
 
     padding: 15px;
 
