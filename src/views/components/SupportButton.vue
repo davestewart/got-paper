@@ -3,6 +3,14 @@
 </template>
 
 <script>
+const colors = {
+  blue: '#019cde',
+  grey: '#4b798d',
+  red: '#ff5f5f',
+  green: '#46b798',
+  black: '#323b43',
+}
+
 export default {
   computed: {
     html () {
@@ -11,7 +19,10 @@ export default {
   },
 
   created () {
-    kofiwidget2.init('Buy me a coffee :)', '#29abe0', 'gotpaper');
+    const text = 'Buy me a coffee :)'
+    const page = 'gotpaper'
+    const color = colors.red
+    kofiwidget2.init(text, color, page);
   }
 }
 </script>
