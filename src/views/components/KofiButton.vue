@@ -19,7 +19,7 @@ export default {
   },
 
   created () {
-    const text = 'Buy me a coffee :)'
+    const text = 'Like the site? You can buy me a coffee!'
     const page = 'gotpaper'
     const color = colors.red
     kofiwidget2.init(text, color, page)
@@ -27,23 +27,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .kofi {
+  padding: 60px 0;
   text-align: center;
-  padding: 20px 0 120px;
 
   .btn-container {
-
-  }
-
-  a {
-
-  }
-
-  span.kofitext {
-    img.kofiimg {
-
-    }
+    zoom: 130%;
   }
 }
 </style>

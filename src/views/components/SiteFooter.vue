@@ -1,11 +1,13 @@
 <template>
   <footer class="footer">
-    <div class="share">
+
+    <div class="footer__kofi">
       <div class="inner">
         <SupportButton/>
       </div>
     </div>
-    <div class="footer__links">
+
+    <div class="footer__nav footer--links">
       <div class="inner">
         <ul>
           <li><router-link to="/">Home</router-link></li>
@@ -17,6 +19,8 @@
           <li><router-link to="/contact">Contact</router-link></li>
           <li><router-link to="/privacy">Privacy</router-link></li>
 <!--          <li><router-link to="/translations">Translations</router-link></li>-->
+
+          <li class="footer__navTwitter"><a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a></li>
         </ul>
       </div>
     </div>
@@ -27,7 +31,7 @@
       </div>
     </div>
 
-    <div class="footer__links">
+    <div class="footer__twitter footer--links">
       <div class="inner">
         <ul>
           <a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a>
@@ -40,7 +44,7 @@
 
 <script>
 import ShareLinks from './ShareLinks'
-import SupportButton from './SupportButton'
+import SupportButton from './KofiButton'
 
 export default {
   components: {
@@ -53,6 +57,10 @@ export default {
 <style lang="scss">
 .footer {
 
+  &__kofi {
+    background: rgba(240, 244, 245, .2);
+  }
+
   &__sharing {
     background: darken($grey-light, 3%);
   }
@@ -63,11 +71,17 @@ export default {
     text-align: center;
   }
 
-  &__links {
+  &__nav {
     background: $grey-light;
-
     padding: 15px;
+  }
 
+  &__twitter {
+    background: darken($grey-light, 10%);
+    padding: 15px;
+  }
+
+  &--links {
     ul, li {
       list-style: none;
       text-align: center;
@@ -79,8 +93,8 @@ export default {
       display: inline-block;
     }
 
-    li:not(:last-child) {
-      border-right: 1px solid #CCC;
+    li:not(:first-child) {
+      border-left: 1px solid #CCC;
     }
 
     a {
@@ -95,5 +109,19 @@ export default {
       }
     }
   }
+
+
+  @media only screen and (min-width: 600px) {
+    &__twitter {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &__navTwitter {
+      display: none !important;
+    }
+  }
 }
+
 </style>
