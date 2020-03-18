@@ -2,12 +2,20 @@
 
   <div class="calculator">
 
-    <div class="form-check form-check-right">
-      <label for="showTotals">Show totals</label>
-      <input type="checkbox" v-model="options.totals" id="showTotals">
-    </div>
+    <UiAlert v-if="options.welcome" @close="options.welcome = false">
+      Press and hold -/+ buttons to add/subtract quickly!
+    </UiAlert>
 
-    <h2>Usage</h2>
+    <!--
+        <div class="form-check form-check-right">
+          <label for="showTotals">Show totals</label>
+          <input type="checkbox" v-model="options.totals" id="showTotals">
+        </div>
+    -->
+
+    <h2 class="d-flex justify-content-between">
+      <span>Usage <template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
+    </h2>
     <article>
 
       <section>
@@ -29,10 +37,25 @@
         <h3>Extras</h3>
         <UiNumber label="Sheets per day" hint="For daily cleanup" v-model="extras.sheetsDay"/>
         <UiNumber label="Sheets per month" hint="For monthly cleanup" v-model="extras.sheetsMonth"/>
-        <UiOutput v-if="options.totals"label="Total extra sheets per day" v-model="extraSheetsDay" :precision="1"/>
+        <UiOutput v-if="options.totals" label="Total extra sheets per day" v-model="extraSheetsDay" :precision="1"/>
       </section>
 
     </article>
+
+    <h2>People <span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
+    <article>
+      <UiPerson v-for="(person, index) in people"
+                v-model="person.name"
+                ref="people"
+                :key="person.id"
+                :active="person.id === personId"
+                :removable="index > 0"
+                @click="selectPerson(index)"
+                @remove="removePerson(index)"
+      />
+      <a href="#" class="ml-3 small" @click.prevent="addPerson">Add another person</a>
+    </article>
+
 
     <h2>Toilet paper</h2>
     <article>
@@ -46,7 +69,7 @@
         </select>
         -->
         <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
-<!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
+        <!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
         <UiOutput v-if="options.totals" label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
     </article>
@@ -67,6 +90,7 @@
     </div>
 
     <div>
+      <!--      <button type="reset" class="btn btn-secondary reset" @click="reset">Buy now</button>-->
       <button type="reset" class="btn btn-secondary reset" @click="reset">Start again</button>
     </div>
 
@@ -76,6 +100,8 @@
 </template>
 
 <script>
+import UiPerson from './calculator/UiPerson'
+
 function time (days, label) {
   return { days, label }
 }
@@ -92,11 +118,26 @@ const periods = [
   time(365, 'One year'),
 ]
 
+let id = 0
+
+function makePerson (name) {
+  id++
+  return { id: String(id), name, total: 0 }
+}
+
 function getData () {
+  const person = makePerson('You')
   return {
     options: {
+      welcome: true,
       totals: false,
     },
+
+    personId: person.id,
+
+    people: [
+      person,
+    ],
 
     poops: {
       poopsDay: 1,
@@ -122,6 +163,10 @@ function getData () {
 }
 
 export default {
+  components: {
+    UiPerson,
+  },
+
   data () {
     return {
       periods,
@@ -130,6 +175,10 @@ export default {
   },
 
   computed: {
+    person () {
+      return this.getPerson(this.personId) || {}
+    },
+
     poopSheetsDay () {
       const { sheetsWipe, wipesPoop, poopsDay } = this.poops
       return sheetsWipe * wipesPoop * poopsDay
@@ -160,7 +209,41 @@ export default {
     },
   },
 
+  watch: {
+    personId (value, oldValue) {
+      if (!value) {
+        this.addPerson()
+      }
+    },
+  },
+
   methods: {
+    getPerson (personId) {
+      personId = personId || this.personId
+      return this.people.find(person => person.id === personId)
+    },
+
+    addPerson () {
+      const index = this.people.length + 1
+      const person = makePerson('Person ' + index)
+      this.people.push(person)
+      this.personId = person.id
+      this.$nextTick(() => {
+        this.$refs.people[this.people.length - 1].edit()
+      })
+    },
+
+    selectPerson (index) {
+      this.personId = this.people[index].id
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, 400)
+    },
+
+    removePerson (index) {
+      this.people.splice(index, 1)
+    },
+
     reset () {
       Object.assign(this, getData())
       window.scrollTo(0, 0)
@@ -185,6 +268,10 @@ export default {
     border-left: 2px dashed #CCC;
     padding: 10px 0 10px 20px;
     margin: 15px 0 15px 10px;
+  }
+
+  .form-group.row:last-child {
+    // margin-bottom: 0;
   }
 
   h3 {
@@ -229,6 +316,10 @@ export default {
     font-size: 1.2em;
   }
 
+  .link-remove {
+    font-weight: bold;
+  }
+
 }
 
 .form-check-right {
@@ -243,6 +334,22 @@ export default {
   input {
     margin-top: .3rem;
     margin-left: .3rem;
+    cursor: pointer;
   }
 }
+
+.detail {
+  color: $blue-dark;
+
+  &:before {
+    content: '( ';
+    color: #212529;
+  }
+
+  &:after {
+    content: ' )';
+    color: #212529;
+  }
+}
+
 </style>
