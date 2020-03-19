@@ -15,6 +15,9 @@
     -->
 
     <!-- usage -->
+    <div style="position: relative">
+      <a id="usage" style="position: absolute; top: -15px"></a>
+    </div>
     <h2 class="d-flex justify-content-between">
       <span>Usage<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
@@ -35,6 +38,7 @@
       />
       <a href="#" class="ml-3 small" @click.prevent="addPerson">Add another person</a>
     </article>
+
 
     <!-- paper -->
     <h2>Toilet paper</h2>
@@ -149,13 +153,6 @@ function getData () {
     people: [
       person,
     ],
-
-    form: {
-      mode: 'paper',
-      sheetsRoll: 200,
-      daysQuarantined: 14,
-      numRolls: 16,
-    },
   }
 }
 
@@ -174,8 +171,14 @@ export default {
 
   data () {
     return {
-      periods,
       ...getData(),
+      periods,
+      form: {
+        mode: this.$route.query.mode || 'paper',
+        sheetsRoll: 200,
+        daysQuarantined: 14,
+        numRolls: 16,
+      },
     }
   },
 
@@ -262,8 +265,8 @@ export default {
       this.$refs.usage.setData(this.getPerson().data)
       if (scroll) {
         setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 400)
+          document.querySelector('#usage').scrollIntoView({ behavior: 'smooth' });
+        }, 250)
       }
     },
 
@@ -334,10 +337,13 @@ export default {
       line-height: 1em;
     }
 
-    span {
-      display: block;
+    &[data-mode=time] {
+      span {
+        display: block;
+      }
     }
   }
+
 
   @media only screen and (min-width: 600px) {
     .result {

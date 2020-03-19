@@ -1,6 +1,6 @@
 <template>
-  <button class="uiIconButton btn btn-light" v-on="$listeners">
-    <UiIcon :icon="icon" size="16"></UiIcon>
+  <button class="uiIconButton btn btn-light" v-on="$listeners" :disabled="disabled">
+    <UiIcon :icon="icon" size="16" :fill="disabled ? '#AAA' : 'black'"></UiIcon>
   </button>
 </template>
 
@@ -11,6 +11,10 @@ export default {
       type: String,
       required: true,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    }
   },
 }
 </script>
