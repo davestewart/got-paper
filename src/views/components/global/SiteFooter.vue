@@ -84,7 +84,7 @@ export default {
     padding: 0 1rem;
     font-family: $display-font;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #666;
   }
 
