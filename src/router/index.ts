@@ -21,10 +21,11 @@ const router = new Router({
     }
   },
   routes: [
-    route('/', 'Home', 'Peace of mind in scary times'),
-    route('/app', 'App', 'Calculate your <em>actual</em> toilet paper needs'),
-    route('/tips', 'Tips', 'A few handy tips to keep you sane'),
-    route('/media', 'Media', 'Some fun stuff to perk you up'),
+    route('/home', 'Home', 'Peace of mind in scary times'),
+    route('/', 'App', 'Calculate your <em>actual</em> toilet paper needs'),
+    // route('/tips', 'Tips', 'A few handy tips to keep you sane'),
+    // route('/media', 'Media', 'Some fun stuff to perk you up'),
+    route('/about', 'About', 'Why does this site exist?'),
     route('/contact', 'Contact', 'Send us a message'),
     route('/translations', 'Translations', 'Got Paper where you are?'),
     route('/privacy', 'Privacy', 'We only care about your poop and pee'),
