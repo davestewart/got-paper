@@ -5,8 +5,8 @@
       <p>This is not the page you're looking for...</p>
       <p>Try these instead:</p>
       <ul>
-        <li><router-link to="/app">The "Got Paper" App</router-link></li>
-        <li><router-link to="/">Home page</router-link></li>
+        <li><router-link to="/">The "Got Paper" App</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
       </ul>
     </section>
 
