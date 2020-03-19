@@ -9,7 +9,6 @@
         <p class="mb-2">"A bit like Coronavirus"</p>
       </div>
     </section>
-
     <section>
       <p><strong>Got Paper</strong> exists for several reasons:</p>
       <ul>
@@ -18,6 +17,10 @@
         <li>To raise a laugh or two</li>
       </ul>
       <p>If you find it useful, or funny, please share.</p>
+    </section>
+
+    <section>
+      <router-link to="/app" tag="button" class="btn btn-primary w-100 py-4">Click here for the Got Paper? app</router-link>
     </section>
 
     <section>
