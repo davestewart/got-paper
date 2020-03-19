@@ -1,5 +1,5 @@
 <template>
-  <div class="privacy">
+  <div class="page page__privacy">
     <h1>Privacy Policy for Got-Paper.com</h1>
 
     <p>At Got-Paper.com, accessible from <a href="https://got-paper.com">got-paper.com</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Got-Paper.com and how we use it.</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="page page__contact">
     <h1>Contact</h1>
 
     <ValidationObserver ref="observer" v-slot="{ invalid, handleSubmit }">

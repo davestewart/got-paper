@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="page page__about">
     <h1>Hello</h1>
     <section>
       <p>When I told friend I was going to make this tool and call it "Got Paper" he said:</p>
@@ -33,7 +33,7 @@
 </template>
 
 <style>
-.about section {
+.page__about section {
   margin: 1.5rem 0;
 }
 </style>

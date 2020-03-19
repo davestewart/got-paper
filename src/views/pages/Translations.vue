@@ -1,5 +1,5 @@
 <template>
-  <div class="translations">
+  <div class="page page__translations">
     <h1>Translations</h1>
     <section>
       <p>Currently looking for translations. Can you help!?</p>
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style>
-.translations section {
+.page__translations section {
   margin: 0 0 2.5rem;
 }
 </style>

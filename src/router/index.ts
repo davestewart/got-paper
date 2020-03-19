@@ -5,7 +5,7 @@ import Media from '../views/pages/Media.vue'
 
 Vue.use(Router)
 
-function route (path: string, page: string, title: string) {
+function route (path: string, page: string, title: string = '') {
   const component = require(`../views/pages/${page}.vue`).default
   return { path, component, meta: { title } }
 }
@@ -21,13 +21,14 @@ const router = new Router({
     }
   },
   routes: [
-    route('/', 'Home', 'Calculate your <em>actual</em> toilet paper needs'),
+    route('/', 'Home', 'Peace of mind in scary times'),
+    route('/app', 'App', 'Calculate your <em>actual</em> toilet paper needs'),
     route('/tips', 'Tips', 'A few handy tips to keep you sane'),
-    route('/about', 'About', 'Why does this site exist?'),
     route('/media', 'Media', 'Some fun stuff to perk you up'),
     route('/contact', 'Contact', 'Send us a message'),
     route('/translations', 'Translations', 'Got Paper where you are?'),
     route('/privacy', 'Privacy', 'We only care about your poop and pee'),
+    route('*', '404', 'This page is lost!'),
   ],
 })
 
