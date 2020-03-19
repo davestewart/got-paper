@@ -5,9 +5,16 @@
       <div v-if="hint" class="small text-muted font-italic">{{ hint }}</div>
     </div>
     <span class="uiNumber__value col-6">
-      <UiIconButton icon="minus" @click="subtract" v-on="touch('subtract')" />
-      <input class="form-control" type="number" :min="min" :max="max" v-model.number="input">
-      <UiIconButton icon="plus" @click="add" v-on="touch('add')" />
+      <UiIconButton icon="minus" @click="subtract" v-on="makeTouch('subtract')" />
+      <input class="form-control"
+             type="number"
+             :min="min"
+             :max="max"
+             v-model.number="input"
+             @blur="onInputBlur"
+             @focus="onInputFocus"
+      >
+      <UiIconButton icon="plus" @click="add" v-on="makeTouch('add')" />
     </span>
   </div>
 </template>
@@ -52,7 +59,7 @@ export default {
   watch: {
     input (value, oldValue) {
       if (value === undefined || value === '' || value === null) {
-        value = 0
+        return
       }
       if (value < this.min) {
         this.input = this.min
@@ -79,7 +86,7 @@ export default {
       this.input -= this.step
     },
 
-    touch (action) {
+    makeTouch (action) {
       const start = () => {
         stop()
         this.intervalId = setInterval(() => {
@@ -103,6 +110,17 @@ export default {
         mouseleave: stop,
       }
     },
+
+    onInputFocus (event) {
+      event.currentTarget.select()
+    },
+
+    onInputBlur () {
+      const value = this.input
+      if (value === undefined || value === '' || value === null) {
+        this.value = this.min
+      }
+    }
   },
 }
 </script>

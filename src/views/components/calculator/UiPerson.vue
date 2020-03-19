@@ -66,6 +66,7 @@ export default {
         input.addEventListener('blur', this.onBlur)
         input.focus()
         input.select()
+        setTimeout(() => input.setSelectionRange(0, 9999)) // iOS
       })
     },
 
@@ -134,14 +135,23 @@ $light-grey: #e2e6ea;
     }
   }
 
-  button.uiPerson__button {
-    background-color: transparent;
+  @media (hover: hover) {
+    &:not(.active) button.uiPerson__button {
+      background-color: transparent;
+    }
   }
+
 
   button:hover {
     background-color: $light-blue !important;
   }
 
+  &.active button {
+    font-weight: bold;
+    border-color: transparent !important;
+    background-color: $light-blue !important;
+  }
+/*
   &.active {
     font-weight: bold;
     border-color: transparent;
@@ -155,6 +165,7 @@ $light-grey: #e2e6ea;
       box-shadow: none;
     }
   }
+*/
 
 }
 </style>

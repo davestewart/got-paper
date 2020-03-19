@@ -74,5 +74,6 @@ select option {
 }
 
 button.btn {
-  border-color: transparent !important;
+  background-color: $grey-button;
+  border-color: transparent;
 }

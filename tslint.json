@@ -18,6 +18,7 @@
     "quotemark": [true, "single"],
     "semicolon": [true, "never"],
     "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+    "brace-style": ["error", "stroustrup"],
     "arrow-parens": [false]
   }
 }

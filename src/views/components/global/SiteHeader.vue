@@ -4,7 +4,7 @@
       <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
     </router-link>
     <SiteLinks/>
-    <div class="strapline">
+    <div class="strapline" v-if="$route.meta.title">
       <h5 v-html="$route.meta.title"></h5>
     </div>
   </header>

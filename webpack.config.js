@@ -10,6 +10,7 @@ module.exports = {
       // resources
       'assets'      : resolve('../res/assets/'),
       'plugins'     : resolve('plugins/'),
+      'utils'       : resolve('utils/'),
 
       // views
       'components'  : resolve('views/components/'),
