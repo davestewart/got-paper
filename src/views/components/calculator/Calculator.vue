@@ -16,12 +16,12 @@
 
     <!-- usage -->
     <h2 class="d-flex justify-content-between">
-      <span>Usage <template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
+      <span>Usage<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
     <CalculatorUsage ref="usage" :showTotals="options.totals" @change="onUsageChange"/>
 
     <!-- people -->
-    <h2>People <span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
+    <h2>People<span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
     <article>
       <UiPerson v-for="(person, index) in people"
                 v-model="person.name"
@@ -30,7 +30,7 @@
                 :active="person.id === personId"
                 :total="person.total"
                 :removable="index > 0"
-                @click="selectPerson(index)"
+                @click="showPerson(index)"
                 @remove="removePerson(index)"
       />
       <a href="#" class="ml-3 small" @click.prevent="addPerson">Add another person</a>
@@ -48,7 +48,7 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="other.sheetsRoll" :step="10" :min="100"/>
+        <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="form.sheetsRoll" :step="10" :min="100"/>
         <!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
         <UiOutput v-if="options.totals" label="Days per roll" v-model="daysRoll" :precision="1"/>
       </section>
@@ -58,17 +58,41 @@
     <h2>Quarantine</h2>
     <article>
       <section>
+        <UiOutput label="Calculate">
+          <select v-model="form.mode" name="requirement" id="requirement">
+            <option value="paper">Paper</option>
+            <option value="time">Time</option>
+          </select>
+        </UiOutput>
+      </section>
+
+      <section v-if="form.mode === 'paper'">
         <UiOutput label="Time in quarantine">
-          <select v-model="other.daysQuarantined" name="quarantine" id="quarantine">
+          <select v-model="form.daysQuarantined" name="quarantine" id="quarantine">
             <option v-for="period in periods" :value="period.days">{{ period.label }}</option>
           </select>
         </UiOutput>
       </section>
+
+      <section v-else>
+        <UiNumber label="Number of rolls hoarded" v-model="form.numRolls" :min="0"/>
+      </section>
+
+
     </article>
 
     <!-- result -->
-    <div class="result">
-      Buy <span>{{ rollsRequired }}</span> {{ plural(rollsRequired, 'roll') }}
+    <div class="result" :data-mode="form.mode">
+      <template v-if="form.mode === 'paper'">
+        <span class="text">Buy</span>
+        <span class="value">{{ rollsRequired }}</span>
+        <span class="text">{{ plural(rollsRequired, 'roll') }}</span>
+      </template>
+      <template v-else>
+        <span class="text">You'll last</span>
+        <span class="value">{{ timeRequired.value }}</span>
+        <span class="text">{{ timeRequired.unit }}</span>
+      </template>
     </div>
 
     <div>
@@ -81,8 +105,8 @@
 </template>
 
 <script>
-import UiPerson from './UiPerson'
 import CalculatorUsage from './CalculatorUsage'
+import UiPerson from './UiPerson'
 import { clone, getPaperData } from './utils'
 
 function time (days, label) {
@@ -108,7 +132,7 @@ function makePerson (name) {
     id: String(++id),
     name,
     data: getPaperData(),
-    total: 18
+    total: 18,
   }
 }
 
@@ -126,11 +150,20 @@ function getData () {
       person,
     ],
 
-    other: {
+    form: {
+      mode: 'paper',
       sheetsRoll: 200,
       daysQuarantined: 14,
+      numRolls: 16,
     },
   }
+}
+
+const units = {
+  days: 'days',
+  weeks: 'weeks',
+  months: 'months',
+  years: 'years',
 }
 
 export default {
@@ -151,21 +184,40 @@ export default {
       return this.getPerson(this.personId) || {}
     },
 
-    totalSheetsDay() {
+    totalSheetsDay () {
       return this.people.reduce((total, person) => {
-        total+= person.total || 0
+        total += person.total || 0
         return total
       }, 0)
     },
 
     daysRoll () {
-      const value = this.other.sheetsRoll / this.totalSheetsDay
+      const value = this.form.sheetsRoll / this.totalSheetsDay
       return value === Number.POSITIVE_INFINITY ? 0 : value
     },
 
     rollsRequired () {
-      const value = Math.ceil(this.other.daysQuarantined / this.daysRoll)
+      const value = Math.ceil(this.form.daysQuarantined / this.daysRoll)
       return value === Number.POSITIVE_INFINITY ? 0 : value
+    },
+
+    timeRequired () {
+      let value = Math.ceil(this.form.numRolls * this.daysRoll)
+      if (value === Number.POSITIVE_INFINITY) {
+        value = 0
+      }
+      let unit = units.days
+      if (value > 365 * 1.5) {
+        value = (value / 365).toFixed(2)
+        unit = units.years
+      } else if (value > 7 * 12) {
+        value = (value / (365 / 12)).toFixed(1)
+        unit = units.months
+      } else if (value > 28) {
+        value = Math.ceil(value / 7)
+        unit = units.weeks
+      }
+      return { value, unit }
     },
   },
 
@@ -205,12 +257,12 @@ export default {
       })
     },
 
-    selectPerson (index, scroll = true) {
+    showPerson (index, scroll = true) {
       this.personId = this.people[index].id
       this.$refs.usage.setData(this.getPerson().data)
       if (scroll) {
         setTimeout(() => {
-          window.scrollTo(0, 0)
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 400)
       }
     },
@@ -218,7 +270,7 @@ export default {
     removePerson (index) {
       const person = this.people.splice(index, 1).shift()
       if (person.id === this.personId) {
-        this.selectPerson(index - 1, false)
+        this.showPerson(index - 1, false)
       }
     },
 
@@ -274,16 +326,32 @@ export default {
     font-weight: 900;
     font-size: 3.2rem;
 
-    span {
+    span.value {
       vertical-align: middle;
       font-size: 2em;
       color: #df0f1b;
+      padding: 0 .1em;
+      line-height: 1em;
+    }
+
+    span {
+      display: block;
     }
   }
 
   @media only screen and (min-width: 600px) {
     .result {
-      font-size: 5rem;
+      &[data-mode=paper] {
+        font-size: 5rem;
+      }
+
+      &[data-mode=time] {
+        font-size: 4rem;
+      }
+
+      span {
+        display: inline;
+      }
     }
   }
 
@@ -321,12 +389,7 @@ export default {
   color: $blue-dark;
 
   &:before {
-    content: '( ';
-    color: #212529;
-  }
-
-  &:after {
-    content: ' )';
+    content: ': ';
     color: #212529;
   }
 }
