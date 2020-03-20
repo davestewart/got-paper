@@ -1,6 +1,10 @@
 <template>
   <footer class="footer">
+    <!-- footer logos -->
+    <img src="/images/social/splash-og.png" width="1" height="1" style="visibility: hidden; font-size: 1px;" alt="Got Paper logo">
+    <img src="/images/social/splash-og.png" width="1" height="1" style="visibility: hidden; font-size: 1px;" alt="Got Paper icon">
 
+    <!-- amazon -->
     <div class="footer__amazon">
 
       <div class="text-center only-lg my-2">
