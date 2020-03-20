@@ -36,7 +36,4 @@
 </template>
 
 <style>
-.page__home section {
-  margin: 1.5rem 0;
-}
 </style>

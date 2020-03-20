@@ -76,7 +76,7 @@ export default {
 
   &__nav {
     background: $grey-light;
-    padding: 15px;
+    padding: 15px 0;
   }
 
   &__twitter {

@@ -33,7 +33,4 @@
 </template>
 
 <style>
-.page__about section {
-  margin: 1.5rem 0;
-}
 </style>

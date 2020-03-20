@@ -55,7 +55,4 @@ export default {
 </script>
 
 <style>
-.page__translations section {
-  margin: 0 0 2.5rem;
-}
 </style>
