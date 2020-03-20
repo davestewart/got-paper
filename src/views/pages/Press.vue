@@ -102,6 +102,10 @@ export default {
           '@priscilawebdev',
           'if you never imagined that sites like this could exist..you were wrong 😆',
           'https://twitter.com/priscilawebdev/status/1240180791382024198'),
+        twitter(
+          '@_JessicaSachs',
+          'Brilliant, hilarious, and actually correct. We need 6 rolls for a 2 week quarantine 💩😂🤣',
+          'https://twitter.com/_JessicaSachs/status/1239323198321278976'),
         mail(
           'Wobbly jelly tits, Birmingham, United Kingdom\n',
           'Who only uses 3 sheets to wipe your backside. I use more then that for sure.'),
@@ -133,10 +137,6 @@ export default {
         mail(
           'Jedi-NZ, Auckland, New Zealand',
           'What a load of sheet'),
-        twitter(
-          '@_JessicaSachs',
-          'Brilliant, hilarious, and actually correct. We need 6 rolls for a 2 week quarantine 💩😂🤣',
-          'https://twitter.com/_JessicaSachs/status/1239323198321278976'),
         twitter(
           '',
           '',
