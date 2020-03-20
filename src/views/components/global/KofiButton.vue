@@ -19,7 +19,7 @@ export default {
   },
 
   created () {
-    const text = 'Like the free app? You can buy me a coffee!'
+    const text = 'Or if you fancy, you can buy me a coffee!'
     const page = 'gotpaper'
     const color = colors.red
     kofiwidget2.init(text, color, page)
@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss">
 .kofi {
-  padding: 60px 0;
+  padding: 10px 0 60px;
   text-align: center;
 
 

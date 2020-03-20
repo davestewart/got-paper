@@ -18,13 +18,11 @@
 
     </div>
 
-    <!--
-        <div class="footer__kofi">
-          <div class="inner">
-            <SupportButton/>
-          </div>
-        </div>
-    -->
+    <div class="footer__kofi">
+      <div class="inner">
+        <SupportButton/>
+      </div>
+    </div>
 
     <SiteLinks/>
 
