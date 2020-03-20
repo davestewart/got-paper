@@ -31,10 +31,11 @@
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
   <meta property="og:title" content="Got Paper?">
   <meta property="og:description" content="A cheeky desktop, tablet and mobile app to calculate yours and your family's toilet paper needs during the Coronavirus pandemic">
-  <meta property="og:image" content="https://got-paper.com/images/social/splash-og.png">
   <meta property="og:url" content="https://got-paper.com">
   <meta property="og:site_name" content="Got Paper?">
   <meta property="og:type" content="website">
+  <meta property="og:image" itemprop="image" content="https://got-paper.com/images/social/splash-og.png">
+  <meta property="og:image:secure_url" content="https://got-paper.com/images/icons/favicon-512x512.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -54,7 +55,7 @@
   <meta itemprop="image" content="https://got-paper.com/images/social/splash.png">
 
   <!-- Add to home screen for Android and modern mobile browsers -->
-  <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#4DBA87">
 
   <!-- Add to home screen for Safari on iOS -->
@@ -63,25 +64,23 @@
   <meta name="apple-mobile-web-app-title" content="Got Paper?">
 
   <!-- iOS icons -->
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-60x60.png" sizes="60x60">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-76x76.png" sizes="76x76">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-120x120.png" sizes="120x120">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-152x152.png" sizes="152x152">
   <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-180x180.png" sizes="180x180">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-60x60.png" sizes="60x60">
 
   <!-- Generic -->
-  <link rel="icon" href="/images/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-256x256.png" sizes="512x512">
   <link rel="icon" href="/images/icons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" href="/images/icons/favicon-120x120.png" sizes="120x120">
-  <link rel="icon" href="/images/icons/favicon-512x512.png" sizes="512x512">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" sizes="16x16">
 
   <!-- Android -->
-  <link rel="shortcut icon" href="/images/icons/android-chrome-192x192.png" sizes="192x192" >
   <link rel="shortcut icon" href="/images/icons/android-chrome-512x512.png" sizes="512x512" >
+  <link rel="shortcut icon" href="/images/icons/android-chrome-192x192.png" sizes="192x192" >
 
   <!-- Add to home screen for Windows -->
-  <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>images/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="/images/icons/msapplication-icon-144x144.png">
   <meta name="msapplication-TileColor" content="#1660A6">
 
   <!-- assets -->
