@@ -1,18 +1,18 @@
 <template>
   <div class="page page__testimonials">
-    <section>
+    <section id="press">
       <h1>Press</h1>
       <p>A few things people have written about Got Paper?</p>
       <Press v-for="article in articles" v-if="article.name" v-bind="article"></Press>
     </section>
 
-    <section>
+    <section id="quotes">
       <h1>Quotes</h1>
       <p>A few things people have said about Got Paper?</p>
       <Quote v-for="quote in quotes" v-if="quote.name" v-bind="quote"></Quote>
     </section>
 
-    <section>
+    <section id="social">
       <h1>Social</h1>
       <p>A few places to search for Got Paper?</p>
       <Press v-for="article in social" v-if="article.name" v-bind="article"></Press>
@@ -101,28 +101,25 @@ export default {
           'if you never imagined that sites like this could exist..you were wrong 😆',
           'https://twitter.com/priscilawebdev/status/1240180791382024198'),
         mail(
-          'Jedi-NZ, Auckland, New Zealand',
-          'What a load of sheet'),
+          'Wobbly jelly tits , Birmingham, United Kingdom\n',
+          'Who only uses 3 sheets to wipe your backside. I use more then that for sure.'),
+        mail(
+          'Jhphoto1, Cheshire, United Kingdom',
+          'Does it have a diarrhea mode?'),
         twitter(
           '@signedness',
           'The most valuable startup now, https://got-paper.com growth potential insane. Invest now. #Corona',
           'https://twitter.com/signedness/status/1239527340356534273'),
-        mail(
-          'Jhphoto1, Cheshire, United Kingdom',
-          'Does it have a diarrhea mode?'),
-        mail(
-          'Wobbly jelly tits , Birmingham, United Kingdom\n',
-          'Who only uses 3 sheets to wipe your backside. I use more then that for sure.'),
         twitter(
           '@daniel_kraft',
           'Finally... a useful #Covid19 pandemic related calculator... 😅',
           'https://twitter.com/daniel_kraft/status/1240135698797256705'),
         mail(
-          'Harry Barry, London , United Kingdom',
-          'This app should be banned. Simple as that.'),
-        mail(
           'SilverIce, Hillarys Made-Up Bot Farm, Germany',
           'Who are they planning to sell that data to?'),
+        mail(
+          'Harry Barry, London , United Kingdom',
+          'This app should be banned. Simple as that.'),
         twitter(
           '@SpaceStoryLC',
           'To anyone who helped clear out the shelves of toilet paper ... here’s a useful website to help quantify just how much of an ass you are',
@@ -131,6 +128,9 @@ export default {
           '@Assam_in_china',
           'Awesome bog roll calculator! 🚽🧻 My 9-pack should last us 2+ weeks... 🙌🏻',
           'https://twitter.com/Assam_in_china/status/1239807986341761024'),
+        mail(
+          'Jedi-NZ, Auckland, New Zealand',
+          'What a load of sheet'),
         twitter(
           '',
           '',
