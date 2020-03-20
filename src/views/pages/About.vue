@@ -21,10 +21,6 @@
     </section>
 
     <section>
-      <p><strong>If you're a journalist, here's a <a href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press Kit</a>.</strong></p>
-    </section>
-
-    <section>
       <p>Thank you</p>
       <p><a href="http://twitter.com/dave_stewart">@dave_stewart</a></p>
     </section>

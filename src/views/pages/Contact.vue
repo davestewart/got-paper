@@ -2,6 +2,10 @@
   <div class="page page__contact">
     <h1>Contact</h1>
 
+    <section>
+      <p>If you're a journalist, here's a <a href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press Kit</a>. Otherwise, feel free to get in contact.</p>
+    </section>
+
     <ValidationObserver ref="observer" v-slot="{ invalid, handleSubmit }">
       <form name="contact"
             method="post"
