@@ -27,6 +27,7 @@ const router = new Router({
     // route('/media', 'Media', 'Some fun stuff to perk you up'),
     route('/about', 'About', 'Why does this site exist?'),
     route('/contact', 'Contact', 'Send us a message'),
+    route('/press', 'Press', 'News, comments and social coverage'),
     route('/translations', 'Translations', 'Got Paper where you are?'),
     route('/privacy', 'Privacy', 'We only care about your poop and pee'),
     route('*', '404', 'This page is lost!'),
