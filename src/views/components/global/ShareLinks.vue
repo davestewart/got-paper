@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       url: encodeURIComponent('https://got-paper.com'),
-      title: encodeURIComponent('A cheeky online calculator to buy the right amount of toilet paper'),
+      title: encodeURIComponent('A cheeky web and mobile app to calculate your toilet paper needs'),
       source: encodeURIComponent(location.hostname),
       summary: '',
       hashtags: 'gotpaper,coronavirus',
