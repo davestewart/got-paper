@@ -4,6 +4,8 @@
       <h1>Press</h1>
       <p>A few things people have written about Got Paper?</p>
       <Press v-for="article in articles" v-if="article.name" v-bind="article"></Press>
+      <hr>
+      <p class="font-italic small">If you're a journalist, here's a <a href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press Kit</a>.</p>
     </section>
 
     <section id="quotes">
