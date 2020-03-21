@@ -1,3 +1,6 @@
+const BASE_URL = 'https://got-paper.com'
+const description = 'A cheeky desktop, tablet and mobile app to calculate yours and your family\'s toilet paper needs during the Coronavirus pandemic'
+
 export default {
   mode: 'universal',
   /*
@@ -8,6 +11,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  meta: {
+    description
   },
   /*
   ** Customize the progress-bar color
@@ -46,7 +52,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: BASE_URL
+  },
   styleResources: {
     scss: [
       '@/assets/styles/_variables.scss'
