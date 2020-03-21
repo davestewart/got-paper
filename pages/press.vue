@@ -50,7 +50,9 @@ export default {
     Press,
     Quote
   },
+
   extends: page('press'),
+
   computed: {
     articles () {
       return this.$options.articles.filter(a => a.name)
@@ -62,6 +64,7 @@ export default {
       return this.$options.quotes.filter(q => q.name)
     }
   },
+
   articles: [
     press(
       'Evening Standard',
@@ -72,34 +75,17 @@ export default {
       'Business Insider',
       'This online calculator tells you exactly how much toilet roll you actually need to buy',
       'https://www.insider.com/online-calculator-how-much-toilet-roll-you-need-2020-3',
-      'https://cdn.taboola.com/static/13/13097125-8f3c-4fbb-a8da-d592286f5909.png'),
+      'https://www.insider.com/public/assets/INSIDER/US/favicons/android-chrome-192x192.png'),
     press(
       'Mail Online',
       'Got Paper? Web developer creates an online calculator to help people work out the right amount of toilet roll to last them through any length of quarantine during coronavirus crisis',
       'https://www.dailymail.co.uk/sciencetech/article-8131533/Got-Paper-aims-help-people-buy-right-bog-roll.html',
-      'https://presspad.co.uk/wp-content/uploads/2019/02/ZcDwwG-p_400x400.jpg'),
+      'https://i.dailymail.co.uk/i/social/img_mol-logo_50x50.png'),
     press(
       'TNW',
       'This coronavirus toilet paper calculator knows if you’ll survive the quarantine',
       'https://thenextweb.com/shareables/2020/03/19/coronavirus-toilet-calculator/',
-      'https://www.pastbook.com/txt/assets/the-next-web-square.jpg')
-  ],
-  social: [
-    press(
-      'Twitter',
-      'Twitter',
-      'https://twitter.com/search?q=https%3A%2F%2Fgot-paper.com&src=typed_query',
-      'https://pbs.twimg.com/profile_images/875168599299637248/84CkAq6s_200x200.jpg'),
-    press(
-      'Facebook',
-      'Facebook',
-      'https://www.facebook.com/search/top/?q=got-paper.com',
-      'https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_square-512.png'),
-    press(
-      'Google',
-      'Google',
-      'https://www.facebook.com/search/top/?q=got-paper.com',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png')
+      'https://cdn3.tnwcdn.com/wp-content/themes/cyberdelia/assets/icons/favicon-96x96.png')
   ],
 
   quotes: [
@@ -152,6 +138,24 @@ export default {
       '',
       '',
       '')
+  ],
+
+  social: [
+    press(
+      'Twitter',
+      'Twitter',
+      'https://twitter.com/search?q=https%3A%2F%2Fgot-paper.com&src=typed_query',
+      'https://pbs.twimg.com/profile_images/875168599299637248/84CkAq6s_200x200.jpg'),
+    press(
+      'Facebook',
+      'Facebook',
+      'https://www.facebook.com/search/top/?q=got-paper.com',
+      'https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/O2aKM2iSbOw.png'),
+    press(
+      'Google',
+      'Google',
+      'https://www.facebook.com/search/top/?q=got-paper.com',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/50px-Google_%22G%22_Logo.svg.png')
   ]
 }
 </script>
