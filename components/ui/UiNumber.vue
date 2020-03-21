@@ -145,19 +145,6 @@ export default {
     }
   }
 }
-/*
-@media only screen and (max-width: 600px) {
-  select {
-    font-size: 1.1em;
-  }
-
-  .uiNumber {
-    input, button {
-      font-size: 1.2em;
-    }
-  }
-}
-*/
 
 @media only screen and (max-width: 600px) {
   .uiNumber {

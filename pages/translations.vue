@@ -14,7 +14,7 @@
       <h4>Needed</h4>
       <p>If you can help with these, click the link to email:</p>
       <ul>
-        <li v-for="language in wanted"><a
+        <li v-for="language in wanted" :key="language"><a
           :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`">{{ language }}</a>
         </li>
       </ul>
@@ -25,7 +25,7 @@
       <h4>Complete</h4>
       <p>These translations are done or being done:</p>
       <ul>
-        <li v-for="language in done">{{ language }}</li>
+        <li v-for="language in done" :key="language">{{ language }}</li>
       </ul>
     </section>
 

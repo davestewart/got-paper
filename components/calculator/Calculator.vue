@@ -36,7 +36,7 @@
                 @click="showPerson(index)"
                 @remove="removePerson(index)"
       />
-      <a href="#" class="ml-3 small" @click.prevent="addPerson">Add another person</a>
+      <button class="ml-3 small" @click="addPerson">Add another person</button>
     </article>
 
 
@@ -100,10 +100,8 @@
     </div>
 
     <div class="button-container">
-      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a><img src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
+      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a><img src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0 !important;" />
       <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">Start again</button>
-      <!--      <button type="reset" class="btn btn-secondary reset" @click="reset">Buy now</button>-->
     </div>
 
   </div>
@@ -227,7 +225,7 @@ export default {
   },
 
   watch: {
-    personId (value, oldValue) {
+    personId (value) {
       if (!value) {
         this.addPerson()
       }
@@ -249,7 +247,7 @@ export default {
     addPerson () {
       // add person
       const index = this.people.length + 1
-      const person = makePerson('Person ' + index)
+      const person = makePerson(`Person ${index}`)
       this.people.push(person)
       this.personId = person.id
 

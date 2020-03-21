@@ -3,7 +3,7 @@
     <section id="press">
       <h1>Press</h1>
       <p>A few things people have written about Got Paper?</p>
-      <Press v-for="article in articles" v-if="article.name" v-bind="article"></Press>
+      <Press v-for="article in articles" v-if="article.name" v-bind="article" :key="article.link" />
       <hr>
       <p class="font-italic small">If you're a journalist, here's a <a href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press Kit</a>.</p>
     </section>
@@ -11,13 +11,13 @@
     <section id="quotes">
       <h1>Quotes</h1>
       <p>A few things people have said about Got Paper?</p>
-      <Quote v-for="quote in quotes" v-if="quote.name" v-bind="quote"></Quote>
+      <Quote v-for="quote in quotes" v-if="quote.name" v-bind="quote" :key="quote.name" />
     </section>
 
     <section id="social">
       <h1>Social</h1>
       <p>A few places to search for Got Paper?</p>
-      <Press v-for="article in social" v-if="article.name" v-bind="article"></Press>
+      <Press v-for="article in social" v-if="article.name" v-bind="article" :key="article.title" />
     </section>
 
   </div>

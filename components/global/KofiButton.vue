@@ -1,5 +1,5 @@
 <template>
-  <div class="kofi" v-html="html"></div>
+  <div class="kofi" v-html="html" />
 </template>
 
 <script>
