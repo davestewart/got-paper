@@ -35,9 +35,9 @@
         @click="showPerson(index)"
         @remove="removePerson(index)"
       />
-      <button class="ml-3 small" @click="addPerson">
+      <a href="#" class="ml-3 small" @click="addPerson">
         Add another person
-      </button>
+      </a>
     </article>
 
     <!-- paper -->
