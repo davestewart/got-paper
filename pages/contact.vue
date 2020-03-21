@@ -7,8 +7,7 @@
         If you're a journalist, here's a <a
           href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing"
           target="_blank"
-        >Press
-          Kit</a>. Otherwise, feel free to get in contact.
+        >Press Kit</a>. Otherwise, feel free to get in contact.
       </p>
     </section>
 
@@ -113,6 +112,7 @@
 
 <script>
 import { ValidationObserver, ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm'
+import page from '@/plugins/page-plugin'
 
 function reset () {
   return {
@@ -135,6 +135,8 @@ const rules = {
 }
 
 export default {
+  extends: page('contact'),
+
   components: {
     ValidationObserver,
     ValidationProvider
@@ -183,10 +185,5 @@ export default {
       this.result.state = state
     }
   },
-  head () {
-    return {
-      title: 'Send us a message'
-    }
-  }
 }
 </script>

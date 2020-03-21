@@ -99,11 +99,9 @@
 </template>
 
 <script>
+import page from '@/plugins/page-plugin'
+
 export default {
-  head () {
-    return {
-      title: 'We only care about your poop and pee'
-    }
-  }
+  extends: page('privacy')
 }
 </script>

@@ -4,9 +4,8 @@
       <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
     </NuxtLink>
     <SiteLinks />
-    <div v-if="$route.meta.title" class="strapline">
-      <!-- TODO reimplement -->
-      <h5 v-html="$route.meta.title" />
+    <div v-if="title" class="strapline">
+      <h5 v-html="title" />
     </div>
     <div class="mt-4 text-center only-lg">
       <iframe
@@ -20,10 +19,18 @@
 
 <script>
 import SiteLinks from './SiteLinks'
+import { getTitle } from '@/plugins/page-plugin'
+
 export default {
   components: {
     SiteLinks
-  }
+  },
+
+  computed: {
+    title () {
+      return getTitle(this.$route.name, false)
+    }
+  },
 }
 </script>
 

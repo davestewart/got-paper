@@ -36,7 +36,10 @@
 </template>
 
 <script>
+import page from '@/plugins/page-plugin'
+
 export default {
+  extends: page('translations'),
   data () {
     return {
       done: [
@@ -54,11 +57,6 @@ export default {
         'Polish',
         'Dutch'
       ]
-    }
-  },
-  head () {
-    return {
-      title: 'Got Paper where you are?'
     }
   }
 }

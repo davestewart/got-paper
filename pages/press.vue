@@ -27,6 +27,7 @@
 <script>
 import Press from '../components/press/Press'
 import Quote from '../components/press/Quote'
+import page from '@/plugins/page-plugin'
 
 function press (name, title, link, image) {
   return { name, title, image, link }
@@ -49,6 +50,7 @@ export default {
     Press,
     Quote
   },
+  extends: page('press'),
   computed: {
     articles () {
       return this.$options.articles.filter(a => a.name)
@@ -58,11 +60,6 @@ export default {
     },
     quotes () {
       return this.$options.quotes.filter(q => q.name)
-    }
-  },
-  head () {
-    return {
-      title: 'News, comments and social coverage'
     }
   },
   articles: [

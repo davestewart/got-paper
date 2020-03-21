@@ -34,12 +34,9 @@
 </template>
 
 <script>
+import page from '@/plugins/page-plugin'
 
 export default {
-  head () {
-    return {
-      title: 'Why does this site exist?'
-    }
-  }
+  extends: page('about')
 }
 </script>

@@ -43,7 +43,10 @@
 </template>
 
 <script>
+import page from '@/plugins/page-plugin'
+
 export default {
+  extends: page('about')
   head () {
     return {
       title: 'Peace of mind in scary times'
