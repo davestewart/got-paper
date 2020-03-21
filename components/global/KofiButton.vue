@@ -12,11 +12,11 @@ const colors = {
 }
 
 export default {
-data () {
-  return {
-    html: ''
-  }
-},
+  data () {
+    return {
+      html: ''
+    }
+  },
   beforeMount () {
     const text = 'Or if you fancy, you can buy me a coffee!'
     const page = 'gotpaper'
