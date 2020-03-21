@@ -76,13 +76,12 @@
 
 <script>
 import SiteLinks from './SiteLinks'
-import ShareLinks from './ShareLinks'
 
 export default {
   components: {
     SiteLinks,
-    ShareLinks,
     KofiButton: () => import('@/components/global/KofiButton'),
+    ShareLinks: () => import('@/components/global/ShareLinks')
   }
 }
 </script>

@@ -42,7 +42,8 @@ export default {
     twitterCard: 'summary_large_image',
     twitterSite: '@haveyougotpaper',
     theme_color: '#1660A6',
-    background_color: '#1660A6'
+    background_color: '#1660A6',
+    mobileAppIOS: true
   },
   /*
   ** Customize the progress-bar color

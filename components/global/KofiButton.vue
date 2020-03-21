@@ -12,17 +12,17 @@ const colors = {
 }
 
 export default {
-  computed: {
-    html () {
-      return process.client ? window.kofiwidget2.getHTML() : ''
+  data () {
+    return {
+      html: ''
     }
   },
-
   beforeMount () {
     const text = 'Or if you fancy, you can buy me a coffee!'
     const page = 'gotpaper'
     const color = colors.red
-    window.kofiwidget2.init(text, color, page)
+    kofiwidget2.init(text, color, page)
+    this.html = kofiwidget2.getHTML()
   }
 }
 </script>
