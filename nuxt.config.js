@@ -90,6 +90,6 @@ export default {
     ]
   },
   netlifyFiles: {
-    existingFilesDirectory: './netlify', // The directory where your _headers and _redirects file is located
+    existingFilesDirectory: './netlify' // The directory where your _headers and _redirects file is located
   }
 }

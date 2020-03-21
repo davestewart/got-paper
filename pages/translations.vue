@@ -14,8 +14,10 @@
       <h4>Needed</h4>
       <p>If you can help with these, click the link to email:</p>
       <ul>
-        <li v-for="language in wanted" :key="language"><a
-          :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`">{{ language }}</a>
+        <li v-for="language in wanted" :key="language">
+          <a
+            :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`"
+          >{{ language }}</a>
         </li>
       </ul>
       <p>I'll then mail you a sharing link to the document and we can go from there.</p>
@@ -25,10 +27,11 @@
       <h4>Complete</h4>
       <p>These translations are done or being done:</p>
       <ul>
-        <li v-for="language in done" :key="language">{{ language }}</li>
+        <li v-for="language in done" :key="language">
+          {{ language }}
+        </li>
       </ul>
     </section>
-
   </div>
 </template>
 
@@ -42,15 +45,15 @@ export default {
         'Swedish',
         'Spanish',
         'Czech',
-        'Chinese (Traditional)',
+        'Chinese (Traditional)'
       ],
       wanted: [
         'Chinese (Mandarin)',
         'Romanian',
         'Russian',
         'Polish',
-        'Dutch',
-      ],
+        'Dutch'
+      ]
     }
   },
   head () {

@@ -4,9 +4,15 @@
     <section>
       <p>When I told friend I was going to make this tool and call it "Got Paper" he said:</p>
       <div class="ml-4">
-        <p class="mb-2">"It's very catchy"</p>
-        <p class="mb-2">"Sure" I replied...</p>
-        <p class="mb-2">"A bit like Coronavirus"</p>
+        <p class="mb-2">
+          "It's very catchy"
+        </p>
+        <p class="mb-2">
+          "Sure" I replied...
+        </p>
+        <p class="mb-2">
+          "A bit like Coronavirus"
+        </p>
       </div>
     </section>
 
@@ -24,14 +30,13 @@
       <p>Thank you</p>
       <p><a href="https://twitter.com/dave_stewart">@dave_stewart</a></p>
     </section>
-
   </div>
 </template>
 
 <script>
 
 export default {
-  head() {
+  head () {
     return {
       title: 'Why does this site exist?'
     }

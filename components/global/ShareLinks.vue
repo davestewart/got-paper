@@ -1,23 +1,35 @@
 <template>
   <div class="share-buttons">
-    <a :href="`https://www.facebook.com/sharer/sharer.php?u=${url}`"
-       title="Share on Facebook"
-       target="_blank"><img alt="Share on Facebook" src="/images/sharing/Facebook.svg"/></a>
-    <a :href="`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}&via=dave_stewart`"
-       target="_blank"
-       title="Tweet"><img alt="Tweet" src="/images/sharing/Twitter.svg"/></a>
-    <a :href="`https://pinterest.com/pin/create/button/?url=${url}&description=${title}`"
-       target="_blank"
-       title="Pin it"><img alt="Pin it" src="/images/sharing/Pinterest.svg"/></a>
-    <a :href="`https://getpocket.com/save?url=${url}&title=${title}`"
-       target="_blank"
-       title="Add to Pocket"><img alt="Add to Pocket" src="/images/sharing/Pocket.svg"/></a>
-    <a :href="`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`"
-       target="_blank"
-       title="Share on LinkedIn"><img alt="Share on LinkedIn" src="/images/sharing/LinkedIn.svg"/></a>
-    <a :href="`mailto:?subject=${title}&body=${url}`"
-       target="_blank"
-       title="Send email"><img alt="Send email" src="/images/sharing/Email.svg"/></a>
+    <a
+      :href="`https://www.facebook.com/sharer/sharer.php?u=${url}`"
+      title="Share on Facebook"
+      target="_blank"
+    ><img alt="Share on Facebook" src="/images/sharing/Facebook.svg"></a>
+    <a
+      :href="`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}&via=dave_stewart`"
+      target="_blank"
+      title="Tweet"
+    ><img alt="Tweet" src="/images/sharing/Twitter.svg"></a>
+    <a
+      :href="`https://pinterest.com/pin/create/button/?url=${url}&description=${title}`"
+      target="_blank"
+      title="Pin it"
+    ><img alt="Pin it" src="/images/sharing/Pinterest.svg"></a>
+    <a
+      :href="`https://getpocket.com/save?url=${url}&title=${title}`"
+      target="_blank"
+      title="Add to Pocket"
+    ><img alt="Add to Pocket" src="/images/sharing/Pocket.svg"></a>
+    <a
+      :href="`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`"
+      target="_blank"
+      title="Share on LinkedIn"
+    ><img alt="Share on LinkedIn" src="/images/sharing/LinkedIn.svg"></a>
+    <a
+      :href="`mailto:?subject=${title}&body=${url}`"
+      target="_blank"
+      title="Send email"
+    ><img alt="Send email" src="/images/sharing/Email.svg"></a>
   </div>
 </template>
 
@@ -29,9 +41,9 @@ export default {
       title: encodeURIComponent('A cheeky desktop, tablet and mobile app to calculate yours and your family\'s toilet paper needs during the Coronavirus pandemic'),
       source: encodeURIComponent(location.hostname),
       summary: '',
-      hashtags: 'gotpaper,coronavirus',
+      hashtags: 'gotpaper,coronavirus'
     }
-  },
+  }
 }
 </script>
 

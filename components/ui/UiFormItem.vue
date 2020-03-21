@@ -2,7 +2,7 @@
   <div class="uiFormItem form-group row" :class="classes">
     <label class="uiFormItem__label col-6 col-md-9 col-form-label">{{ label }}</label>
     <span class="uiFormItem__slot col-6 col-md-3">
-      <slot></slot>
+      <slot />
     </span>
   </div>
 </template>
@@ -10,14 +10,14 @@
 <script>
 export default {
   props: {
-    label: String,
+    label: String
   },
 
   computed: {
     classes () {
       return this.$slots.default ? '' : 'hasSlot'
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -16,8 +16,8 @@ export default {
     value: Number,
     precision: {
       type: Number,
-      default: 0,
-    },
+      default: 0
+    }
   },
 
   computed: {
@@ -31,13 +31,13 @@ export default {
       },
       set (value) {
         this.$emit('input', value)
-      },
+      }
     },
 
     classes () {
       return this.$slots.default ? '' : 'hasSlot'
-    },
-  },
+    }
+  }
 }
 </script>
 

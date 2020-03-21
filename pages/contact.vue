@@ -3,26 +3,36 @@
     <h1>Contact</h1>
 
     <section>
-      <p>If you're a journalist, here's a <a
-        href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press
-        Kit</a>. Otherwise, feel free to get in contact.</p>
+      <p>
+        If you're a journalist, here's a <a
+          href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing"
+          target="_blank"
+        >Press
+          Kit</a>. Otherwise, feel free to get in contact.
+      </p>
     </section>
 
     <ValidationObserver ref="observer" v-slot="{ invalid, handleSubmit }">
-      <form name="contact"
-            method="post"
-            data-netlify="true"
-            data-x-netlify-recaptcha="true"
-            data-netlify-honeypot="bot-field"
-            @submit.prevent="handleSubmit(submit)">
+      <form
+        name="contact"
+        method="post"
+        data-netlify="true"
+        data-x-netlify-recaptcha="true"
+        data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit(submit)"
+      >
         <!-- name -->
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact">
 
         <!-- alert -->
         <div class="form-group row mb-0">
           <div class="offset-md-3 col-md-9 mb-0">
-            <div v-if="result.message" class="alert alert-dismissible fade show" role="alert"
-                 :class="`alert-${result.state}`">
+            <div
+              v-if="result.message"
+              class="alert alert-dismissible fade show"
+              role="alert"
+              :class="`alert-${result.state}`"
+            >
               {{ result.message }}
               <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="() => showResult()">
                 <span aria-hidden="true">&times;</span>
@@ -35,8 +45,15 @@
         <div class="form-group row">
           <label class="col-md-3 control-label" for="name">Name</label>
           <div class="col-md-9">
-            <ValidationProvider :rules="rules.name" v-slot="v">
-              <input id="name" v-model="form.name" name="name" type="text" placeholder="Your name" class="form-control">
+            <ValidationProvider v-slot="v" :rules="rules.name">
+              <input
+                id="name"
+                v-model="form.name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                class="form-control"
+              >
               <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
             </ValidationProvider>
           </div>
@@ -46,9 +63,15 @@
         <div class="form-group row">
           <label class="col-md-3 control-label" for="email">E-mail</label>
           <div class="col-md-9">
-            <ValidationProvider :rules="rules.email" v-slot="v">
-              <input id="email" v-model="form.email" name="email" type="text" placeholder="Your email"
-                     class="form-control">
+            <ValidationProvider v-slot="v" :rules="rules.email">
+              <input
+                id="email"
+                v-model="form.email"
+                name="email"
+                type="text"
+                placeholder="Your email"
+                class="form-control"
+              >
               <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
             </ValidationProvider>
           </div>
@@ -58,9 +81,15 @@
         <div class="form-group row">
           <label class="col-md-3 control-label" for="message">Message</label>
           <div class="col-md-9">
-            <ValidationProvider :rules="rules.message" v-slot="v">
-              <textarea class="form-control" id="message" v-model="form.message" name="message"
-                        placeholder="Please enter your message here..." rows="5"></textarea>
+            <ValidationProvider v-slot="v" :rules="rules.message">
+              <textarea
+                id="message"
+                v-model="form.message"
+                class="form-control"
+                name="message"
+                placeholder="Please enter your message here..."
+                rows="5"
+              />
               <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
             </ValidationProvider>
           </div>
@@ -69,8 +98,12 @@
         <!-- form actions -->
         <div class="form-group row">
           <div class="offset-md-3 col-9">
-            <button type="submit" class="btn btn-primary" :disabled="invalid">Submit</button>
-            <button class="btn ml-2" @click.prevent="reset">Reset</button>
+            <button type="submit" class="btn btn-primary" :disabled="invalid">
+              Submit
+            </button>
+            <button class="btn ml-2" @click.prevent="reset">
+              Reset
+            </button>
           </div>
         </div>
       </form>
@@ -85,26 +118,26 @@ function reset () {
   return {
     name: '',
     email: '',
-    message: '',
+    message: ''
   }
 }
 
 function encode (data) {
   return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
 
 const rules = {
   name: 'required|min:2',
   email: 'required|email',
-  message: 'required|min:10',
+  message: 'required|min:10'
 }
 
 export default {
   components: {
     ValidationObserver,
-    ValidationProvider,
+    ValidationProvider
   },
 
   data () {
@@ -113,8 +146,8 @@ export default {
       form: reset(),
       result: {
         message: '',
-        state: '',
-      },
+        state: ''
+      }
     }
   },
 
@@ -122,12 +155,12 @@ export default {
     submit () {
       const config = {
         header: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
       }
       const payload = {
         'form-name': 'contact',
-        ...this.form,
+        ...this.form
       }
       return this.$axios
         .$post('/', encode(payload), config)
@@ -148,7 +181,7 @@ export default {
     showResult (message = '', state = '') {
       this.result.message = message
       this.result.state = state
-    },
+    }
   },
   head () {
     return {

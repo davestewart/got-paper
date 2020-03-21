@@ -1,6 +1,6 @@
 <template>
-  <button class="uiIconButton btn btn-light" v-on="$listeners" :disabled="disabled">
-    <UiIcon :icon="icon" size="16" :fill="disabled ? '#AAA' : 'black'"></UiIcon>
+  <button class="uiIconButton btn btn-light" :disabled="disabled" v-on="$listeners">
+    <UiIcon :icon="icon" size="16" :fill="disabled ? '#AAA' : 'black'" />
   </button>
 </template>
 
@@ -9,13 +9,13 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true,
+      required: true
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     }
-  },
+  }
 }
 </script>
 

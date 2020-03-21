@@ -8,22 +8,22 @@ const colors = {
   grey: '#4b798d',
   red: '#ff5f5f',
   green: '#46b798',
-  black: '#323b43',
+  black: '#323b43'
 }
 
 export default {
   computed: {
     html () {
-      return kofiwidget2.getHTML()
-    },
+      return process.client ? window.kofiwidget2.getHTML() : ''
+    }
   },
 
   beforeMount () {
     const text = 'Or if you fancy, you can buy me a coffee!'
     const page = 'gotpaper'
     const color = colors.red
-    kofiwidget2.init(text, color, page)
-  },
+    window.kofiwidget2.init(text, color, page)
+  }
 }
 </script>
 
@@ -31,7 +31,6 @@ export default {
 .kofi {
   padding: 10px 0 60px;
   text-align: center;
-
 
   @media only screen and (min-width: 600px) {
     .btn-container {

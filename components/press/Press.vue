@@ -13,14 +13,13 @@ export default {
     name: String,
     title: String,
     image: String,
-    link: String,
+    link: String
   }
 }
 </script>
 
 <style lang="scss">
 .press {
-
 
   &__link {
     color: black;

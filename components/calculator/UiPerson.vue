@@ -2,21 +2,22 @@
   <div class="uiPerson" :class="{ active }">
     <div class="d-flex my-2">
       <div style="flex-grow: 1" class="mr-1">
-        <input v-if="editing"
-               v-model="input"
-               @change="done"
-               @keydown.enter="done"
-               ref="input"
-               type="text"
-               class="form-control"
+        <input
+          v-if="editing"
+          ref="input"
+          v-model="input"
+          type="text"
+          class="form-control"
+          @change="done"
+          @keydown.enter="done"
         >
-        <button class="uiPerson__button btn btn-default w-100 text-left" @click="click" v-else>
+        <button v-else class="uiPerson__button btn btn-default w-100 text-left" @click="click">
           <span class="uiPerson__name">{{ value }}</span>
           <span class="uiPerson__stats">{{ total | round }} sheets / day</span>
         </button>
       </div>
       <UiIconButton icon="pen" class="ml-1" @click="edit" />
-      <UiIconButton icon="times" class="ml-1" @click="remove" :disabled="!removable" />
+      <UiIconButton icon="times" class="ml-1" :disabled="!removable" @click="remove" />
     </div>
   </div>
 </template>
@@ -35,13 +36,13 @@ export default {
     active: Boolean,
     removable: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
 
   data () {
     return {
-      editing: false,
+      editing: false
     }
   },
 
@@ -50,8 +51,8 @@ export default {
       get () { return this.value },
       set (value) {
         this.$emit('input', value)
-      },
-    },
+      }
+    }
   },
 
   methods: {
@@ -87,8 +88,8 @@ export default {
     onBlur () {
       this.$refs.input.removeEventListener('blur', this.onBlur)
       this.editing = false
-    },
-  },
+    }
+  }
 
 }
 </script>
@@ -140,7 +141,6 @@ $light-grey: #e2e6ea;
       background-color: transparent;
     }
   }
-
 
   button:hover {
     background-color: $light-blue !important;

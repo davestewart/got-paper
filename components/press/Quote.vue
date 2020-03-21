@@ -1,6 +1,8 @@
 <template>
   <blockquote class="quote ml-2 mb-4">
-    <p class="quote__text">{{ text }}</p>
+    <p class="quote__text">
+      {{ text }}
+    </p>
     <div class="quote__cite small text-muted">
       <span class="quote__name">{{ name }}</span> via <cite><a :href="link" target="_blank">{{ source }}</a></cite>
     </div>
@@ -13,7 +15,7 @@ export default {
     text: String,
     name: String,
     source: String,
-    link: String,
+    link: String
   }
 }
 </script>

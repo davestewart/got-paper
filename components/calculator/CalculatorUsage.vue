@@ -1,35 +1,29 @@
 <template>
-
   <div class="calculator__usage">
-
     <article>
-
       <section>
         <h3>Poops</h3>
-        <UiNumber label="Poops per day" v-model="poops.poopsDay" :min="1"/>
-        <UiNumber label="Wipes per poop" v-model="poops.wipesPoop" :min="1"/>
-        <UiNumber label="Sheets per wipe" v-model="poops.sheetsWipe" :min="1"/>
-        <UiOutput v-if="showTotals" label="Total poop sheets per day" v-model="poopSheetsDay"/>
+        <UiNumber v-model="poops.poopsDay" label="Poops per day" :min="1" />
+        <UiNumber v-model="poops.wipesPoop" label="Wipes per poop" :min="1" />
+        <UiNumber v-model="poops.sheetsWipe" label="Sheets per wipe" :min="1" />
+        <UiOutput v-if="showTotals" v-model="poopSheetsDay" label="Total poop sheets per day" />
       </section>
 
       <section>
         <h3>Pees</h3>
-        <UiNumber label="Pees per day" v-model="pees.peesDay"/>
-        <UiNumber label="Sheets per pee" v-model="pees.sheetsPee"/>
-        <UiOutput v-if="showTotals" label="Total pee sheets per day" v-model="peeSheetsDay"/>
+        <UiNumber v-model="pees.peesDay" label="Pees per day" />
+        <UiNumber v-model="pees.sheetsPee" label="Sheets per pee" />
+        <UiOutput v-if="showTotals" v-model="peeSheetsDay" label="Total pee sheets per day" />
       </section>
 
       <section>
         <h3>Extras</h3>
-        <UiNumber label="Sheets per day" hint="For daily cleanup" v-model="extras.sheetsDay"/>
-        <UiNumber label="Sheets per month" hint="For monthly cleanup" v-model="extras.sheetsMonth"/>
-        <UiOutput v-if="showTotals" label="Total extra sheets per day" v-model="extraSheetsDay" :precision="1"/>
+        <UiNumber v-model="extras.sheetsDay" label="Sheets per day" hint="For daily cleanup" />
+        <UiNumber v-model="extras.sheetsMonth" label="Sheets per month" hint="For monthly cleanup" />
+        <UiOutput v-if="showTotals" v-model="extraSheetsDay" label="Total extra sheets per day" :precision="1" />
       </section>
-
     </article>
-
   </div>
-
 </template>
 
 <script>
@@ -39,7 +33,7 @@ export default {
   props: {
     showTotals: {
       type: Boolean,
-      default: false,
+      default: false
     }
   },
 
@@ -65,7 +59,7 @@ export default {
 
     totalSheetsDay () {
       return (this.poopSheetsDay + this.peeSheetsDay + this.extraSheetsDay)
-    },
+    }
   },
 
   watch: {
@@ -89,7 +83,7 @@ export default {
     onChange () {
       this.$emit('change', this.totalSheetsDay, this.$data)
     }
-  },
+  }
 }
 
 </script>

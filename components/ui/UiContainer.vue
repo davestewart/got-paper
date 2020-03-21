@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="inner">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'UiContainer',
+  name: 'UiContainer'
 }
 </script>

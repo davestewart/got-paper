@@ -1,9 +1,7 @@
 <template>
-
   <div class="calculator">
-
     <!-- alert -->
-    <UiAlert v-if="options.welcome" @close="options.welcome = false" class="mb-4">
+    <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
       Press and hold -/+ buttons to add/subtract quickly!
     </UiAlert>
 
@@ -16,29 +14,31 @@
 
     <!-- usage -->
     <div style="position: relative">
-      <a id="usage" style="position: absolute; top: -15px"></a>
+      <a id="usage" style="position: absolute; top: -15px" />
     </div>
     <h2 class="d-flex justify-content-between">
       <span>Usage<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
-    <CalculatorUsage ref="usage" :showTotals="options.totals" @change="onUsageChange"/>
+    <CalculatorUsage ref="usage" :show-totals="options.totals" @change="onUsageChange" />
 
     <!-- people -->
     <h2>People<span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
     <article>
-      <UiPerson v-for="(person, index) in people"
-                v-model="person.name"
-                ref="people"
-                :key="person.id"
-                :active="person.id === personId"
-                :total="person.total"
-                :removable="index > 0"
-                @click="showPerson(index)"
-                @remove="removePerson(index)"
+      <UiPerson
+        v-for="(person, index) in people"
+        ref="people"
+        :key="person.id"
+        v-model="person.name"
+        :active="person.id === personId"
+        :total="person.total"
+        :removable="index > 0"
+        @click="showPerson(index)"
+        @remove="removePerson(index)"
       />
-      <button class="ml-3 small" @click="addPerson">Add another person</button>
+      <button class="ml-3 small" @click="addPerson">
+        Add another person
+      </button>
     </article>
-
 
     <!-- paper -->
     <h2>Toilet paper</h2>
@@ -52,9 +52,9 @@
           <option value="dulux">Dulux Extra padded</option>
         </select>
         -->
-        <UiNumber label="Sheets per roll" hint="Find this information on the side of the pack" v-model="form.sheetsRoll" :step="10" :min="100"/>
+        <UiNumber v-model="form.sheetsRoll" label="Sheets per roll" hint="Find this information on the side of the pack" :step="10" :min="100" />
         <!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
-        <UiOutput v-if="options.totals" label="Days per roll" v-model="daysRoll" :precision="1"/>
+        <UiOutput v-if="options.totals" v-model="daysRoll" label="Days per roll" :precision="1" />
       </section>
     </article>
 
@@ -63,26 +63,30 @@
     <article>
       <section>
         <UiOutput label="Calculate">
-          <select v-model="form.mode" name="requirement" id="requirement">
-            <option value="paper">Paper</option>
-            <option value="time">Time</option>
+          <select id="requirement" v-model="form.mode" name="requirement">
+            <option value="paper">
+              Paper
+            </option>
+            <option value="time">
+              Time
+            </option>
           </select>
         </UiOutput>
       </section>
 
       <section v-if="form.mode === 'paper'">
         <UiOutput label="Time in quarantine">
-          <select v-model="form.daysQuarantined" name="quarantine" id="quarantine">
-            <option v-for="period in periods" :value="period.days">{{ period.label }}</option>
+          <select id="quarantine" v-model="form.daysQuarantined" name="quarantine">
+            <option v-for="period in periods" :key="period.label" :value="period.days">
+              {{ period.label }}
+            </option>
           </select>
         </UiOutput>
       </section>
 
       <section v-else>
-        <UiNumber label="Number of rolls hoarded" v-model="form.numRolls" :min="0"/>
+        <UiNumber v-model="form.numRolls" label="Number of rolls hoarded" :min="0" />
       </section>
-
-
     </article>
 
     <!-- result -->
@@ -100,12 +104,19 @@
     </div>
 
     <div class="button-container">
-      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a><img src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0 !important;" />
-      <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">Start again</button>
+      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a><img
+        src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2"
+        width="1"
+        height="1"
+        border="0"
+        alt=""
+        style="border:none !important; margin:0 !important;"
+      >
+      <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">
+        Start again
+      </button>
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -125,8 +136,8 @@ const periods = [
   time(365 / 6, 'Two months'),
   time(365 / 4, 'Three months'),
   time(365 / 2, 'Six months'),
-  time(365 * .75, 'Nine months'),
-  time(365, 'One year'),
+  time(365 * 0.75, 'Nine months'),
+  time(365, 'One year')
 ]
 
 let id = 0
@@ -136,7 +147,7 @@ function makePerson (name) {
     id: String(++id),
     name,
     data: getPaperData(),
-    total: 18,
+    total: 18
   }
 }
 
@@ -145,14 +156,14 @@ function getData () {
   return {
     options: {
       welcome: true,
-      totals: false,
+      totals: false
     },
 
     personId: person.id,
 
     people: [
-      person,
-    ],
+      person
+    ]
   }
 }
 
@@ -160,13 +171,13 @@ const units = {
   days: 'days',
   weeks: 'weeks',
   months: 'months',
-  years: 'years',
+  years: 'years'
 }
 
 export default {
   components: {
     CalculatorUsage,
-    UiPerson,
+    UiPerson
   },
 
   data () {
@@ -177,8 +188,8 @@ export default {
         mode: this.$route.query.mode || 'paper',
         sheetsRoll: 200,
         daysQuarantined: 14,
-        numRolls: 16,
-      },
+        numRolls: 16
+      }
     }
   },
 
@@ -221,7 +232,7 @@ export default {
         unit = units.weeks
       }
       return { value, unit }
-    },
+    }
   },
 
   watch: {
@@ -229,7 +240,7 @@ export default {
       if (!value) {
         this.addPerson()
       }
-    },
+    }
   },
 
   methods: {
@@ -265,7 +276,7 @@ export default {
       this.$refs.usage.setData(this.getPerson().data)
       if (scroll) {
         setTimeout(() => {
-          document.querySelector('#usage').scrollIntoView({ behavior: 'smooth' });
+          document.querySelector('#usage').scrollIntoView({ behavior: 'smooth' })
         }, 250)
       }
     },
@@ -288,8 +299,8 @@ export default {
         single += 's'
       }
       return `${single}`
-    },
-  },
+    }
+  }
 }
 
 </script>
@@ -343,7 +354,6 @@ export default {
       }
     }
   }
-
 
   @media only screen and (min-width: 600px) {
     .result {

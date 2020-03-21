@@ -2,17 +2,20 @@
   <div class="uiNumber form-group row">
     <div class="col-6 col-form-label">
       <label class="uiNumber__label">{{ label }}</label>
-      <div v-if="hint" class="small text-muted font-italic">{{ hint }}</div>
+      <div v-if="hint" class="small text-muted font-italic">
+        {{ hint }}
+      </div>
     </div>
     <span class="uiNumber__value col-6">
       <UiIconButton icon="minus" @click="subtract" v-on="makeTouch('subtract')" />
-      <input class="form-control"
-             type="number"
-             :min="min"
-             :max="max"
-             v-model.number="input"
-             @blur="onInputBlur"
-             @focus="onInputFocus"
+      <input
+        v-model.number="input"
+        class="form-control"
+        type="number"
+        :min="min"
+        :max="max"
+        @blur="onInputBlur"
+        @focus="onInputFocus"
       >
       <UiIconButton icon="plus" @click="add" v-on="makeTouch('add')" />
     </span>
@@ -27,21 +30,21 @@ export default {
     value: Number,
     step: {
       type: Number,
-      default: 1,
+      default: 1
     },
     min: {
       type: Number,
-      default: 0,
+      default: 0
     },
     max: {
       type: Number,
-      default: 999,
-    },
+      default: 999
+    }
   },
 
   data () {
     return {
-      input: this.value,
+      input: this.value
     }
   },
 
@@ -52,20 +55,19 @@ export default {
       },
       set (value) {
         this.$emit('input', value)
-      },
-    },
+      }
+    }
   },
 
   watch: {
-    input (value, oldValue) {
+    input (value) {
       if (value === undefined || value === '' || value === null) {
         return
       }
       if (value < this.min) {
         this.input = this.min
         value = this.min
-      }
-      else if (value > this.max) {
+      } else if (value > this.max) {
         this.input = this.max
         value = this.max
       }
@@ -74,7 +76,7 @@ export default {
 
     value (value) {
       this.input = value
-    },
+    }
   },
 
   methods: {
@@ -107,7 +109,7 @@ export default {
         touchend: stop,
         mouseup: stop,
         mouseout: stop,
-        mouseleave: stop,
+        mouseleave: stop
       }
     },
 
@@ -121,7 +123,7 @@ export default {
         this.value = this.min
       }
     }
-  },
+  }
 }
 </script>
 

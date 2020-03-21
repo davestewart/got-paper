@@ -9,7 +9,6 @@
     </main>
 
     <SiteFooter />
-
   </div>
 </template>
 
@@ -20,7 +19,7 @@ import SiteFooter from '@/components/global/SiteFooter'
 export default {
   components: {
     SiteHeader,
-    SiteFooter,
-  },
+    SiteFooter
+  }
 }
 </script>

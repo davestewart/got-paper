@@ -40,7 +40,7 @@
 
     <p>Like any other website, Got-Paper.com uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
 
-<!--
+    <!--
     <h2>Google DoubleClick DART Cookie</h2>
 
     <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
@@ -52,7 +52,7 @@
 
     <ul>
       <li>
-<!--        <a href="https://policies.google.com/technologies/ads">Google</a>-->
+        <!--        <a href="https://policies.google.com/technologies/ads">Google</a>-->
         <a href="https://www.amazon.co.uk/gp/help/customer/display.html/ads">Amazon Fresh</a>
       </li>
     </ul>
@@ -95,7 +95,6 @@
     <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
 
     <p>Got-Paper.com does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-
   </div>
 </template>
 

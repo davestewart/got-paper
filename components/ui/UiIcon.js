@@ -2,18 +2,18 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true,
+      required: true
     },
 
     size: {
       type: [Number, String],
-      default: 24,
+      default: 24
     },
 
     fill: {
       type: String,
-      default: '#000',
-    },
+      default: '#000'
+    }
   },
 
   render (h) {
@@ -29,13 +29,13 @@ export default {
       xmlns: 'http://www.w3.org/2000/svg',
       width: this.size,
       height: this.size,
-      viewBox: '0 0 24 24',
+      viewBox: '0 0 24 24'
     }
     const domProps = {
-      innerHTML: html,
+      innerHTML: html
     }
 
     // shape
     return h('svg', { attrs, domProps })
-  },
+  }
 }
