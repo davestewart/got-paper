@@ -22,7 +22,7 @@
 
     <section>
       <p>Thank you</p>
-      <p><a href="http://twitter.com/dave_stewart">@dave_stewart</a></p>
+      <p><a href="https://twitter.com/dave_stewart">@dave_stewart</a></p>
     </section>
 
   </div>

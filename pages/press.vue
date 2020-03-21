@@ -71,7 +71,7 @@ export default {
           'TNW',
           'This coronavirus toilet paper calculator knows if you’ll survive the quarantine',
           'https://thenextweb.com/shareables/2020/03/19/coronavirus-toilet-calculator/',
-          'http://www.pastbook.com/txt/assets/the-next-web-square.jpg'),
+          'https://www.pastbook.com/txt/assets/the-next-web-square.jpg'),
       ],
       social: [
         press(

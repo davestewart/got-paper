@@ -6,13 +6,13 @@
     <a :href="`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}&via=dave_stewart`"
        target="_blank"
        title="Tweet"><img alt="Tweet" src="/images/sharing/Twitter.svg"/></a>
-    <a :href="`http://pinterest.com/pin/create/button/?url=${url}&description=${title}`"
+    <a :href="`https://pinterest.com/pin/create/button/?url=${url}&description=${title}`"
        target="_blank"
        title="Pin it"><img alt="Pin it" src="/images/sharing/Pinterest.svg"/></a>
     <a :href="`https://getpocket.com/save?url=${url}&title=${title}`"
        target="_blank"
        title="Add to Pocket"><img alt="Add to Pocket" src="/images/sharing/Pocket.svg"/></a>
-    <a :href="`http://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`"
+    <a :href="`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`"
        target="_blank"
        title="Share on LinkedIn"><img alt="Share on LinkedIn" src="/images/sharing/LinkedIn.svg"/></a>
     <a :href="`mailto:?subject=${title}&body=${url}`"
