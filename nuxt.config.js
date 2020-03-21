@@ -37,7 +37,7 @@ export default {
     ogTitle: 'Calculate your actual toilet paper needs',
     description,
     ogHost: BASE_URL,
-    ogImage: '/images/social/splash-og',
+    ogImage: '/images/social/splash-og.png',
     author: 'Dave Stewart',
     twitterCard: 'summary_large_image',
     twitterSite: '@haveyougotpaper',
