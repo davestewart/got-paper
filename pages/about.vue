@@ -27,7 +27,7 @@
     </section>
 
     <section>
-      <p>Thank you</p>
+      <p>Be kind to each other, stay safe, and don't take any risks.</p>
       <p><a href="https://twitter.com/dave_stewart">@dave_stewart</a></p>
     </section>
   </div>

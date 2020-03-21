@@ -1,5 +1,32 @@
-const BASE_URL = 'https://got-paper.com'
-const description = 'A cheeky desktop, tablet and mobile app to calculate yours and your family\'s toilet paper needs during the Coronavirus pandemic'
+export const site = {
+  url: 'https://got-paper.com',
+  name: 'Got Paper?',
+  title: 'Calculate your actual toilet paper needs',
+  shortDescription: 'A cheeky online app to calculate your toilet paper needs during the Coronavirus pandemic',
+  description: 'A cheeky desktop, tablet and mobile app to calculate you and your family\'s toilet paper needs during the Coronavirus pandemic',
+  hashtags: 'gotpaper,coronavirus'
+}
+
+function image (path) {
+  return `${site.url}/images/${path.replace(/^\//, '')}`
+}
+
+function meta (property, content, hid = true) {
+  const data = { property, content }
+  if (hid) {
+    data.hid = property
+    data.name = property
+  }
+  return data
+}
+
+function link (rel, href, data = {}) {
+  return { rel, href, ...data}
+}
+
+function script (src) {
+  return { src }
+}
 
 export default {
   mode: 'universal',
@@ -9,37 +36,33 @@ export default {
   head: {
     titleTemplate: c => c ? `${c} - Got Paper?` : 'Got Paper? - Calculate your actual toilet paper needs',
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', href: `${BASE_URL}/images/social/icon-whatsapp-small.png`, sizes: '192x192' },
-      { rel: 'stylesheet', href: 'https://use.typekit.net/lvl2shj.css' },
-      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' }
+      link('icon', '/favicon.ico', { type: 'image/x-icon' }),
+      link('icon', image('/social/icon-whatsapp-small.png'), { sizes: '192x192' }),
+      link('stylesheet', 'https://use.typekit.net/lvl2shj.css'),
+      link('stylesheet', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
     ],
     meta: [
-      {
-        hid: 'twitter:image:src',
-        name: 'twitter:image:src',
-        property: 'twitter:image:src',
-        content: `${BASE_URL}/images/social/splash-twitter.png`
-      },
-      {
-        hid: 'sailthru.image.full',
-        name: 'sailthru.image.full',
-        property: 'sailthru.image.full',
-        content: `${BASE_URL}/images/social/icon-whatsapp.png`
-      },
-      {
-        hid: 'sailthru.image.thumb',
-        name: 'sailthru.image.thumb',
-        property: 'sailthru.image.thumb',
-        content: `${BASE_URL}/images/social/icon-whatsapp-small.png`
-      }
+      // google
+      meta('name', site.name),
+      meta('description', site.description),
+      meta('image', image('/social/splash.png')),
+
+      // twitter
+      meta('twitter:image:src', image('/social/splash-twitter.png')),
+
+      // linked in
+      meta('sailthru.image.full', image('/social/icon-whatsapp.png')),
+      meta('sailthru.image.thumb', image('/social/icon-whatsapp-small.png'))
+    ],
+    script: [
+      script('https://ko-fi.com/widgets/widget_2.js')
     ]
   },
   meta: {
-    ogSiteName: 'Got Paper?',
-    ogTitle: 'Calculate your actual toilet paper needs',
-    description,
-    ogHost: BASE_URL,
+    ogSiteName: site.name,
+    ogTitle: site.title,
+    description: site.description,
+    ogHost: site.url,
     ogImage: '/images/social/splash-og.png',
     author: 'Dave Stewart',
     twitterCard: 'summary_large_image',
@@ -86,7 +109,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: BASE_URL
+    baseURL: site.url
   },
   styleResources: {
     scss: [
