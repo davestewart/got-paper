@@ -1,8 +1,7 @@
 {
-  "name": "got-paper",
-  "version": "1.0.0",
-  "description": "My bee&#39;s knees Nuxt.js project",
-  "author": "Alexander Lichter",
+  "name": "got-paper.com",
+  "description": "The official 'got paper?' app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
