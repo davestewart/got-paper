@@ -7,7 +7,7 @@
       </div>
     </div>
     <span class="uiNumber__value col-6">
-      <UiIconButton icon="minus" @click="subtract" v-on="makeTouch('subtract')" />
+      <UiIconButton icon="minus" tabindex="-1" @click="subtract" v-on="makeTouch('subtract')" />
       <input
         v-model.number="input"
         class="form-control"
@@ -17,7 +17,7 @@
         @blur="onInputBlur"
         @focus="onInputFocus"
       >
-      <UiIconButton icon="plus" @click="add" v-on="makeTouch('add')" />
+      <UiIconButton icon="plus" tabindex="-1" @click="add" v-on="makeTouch('add')" />
     </span>
   </div>
 </template>
@@ -137,6 +137,7 @@ export default {
     white-space: nowrap;
     align-content: start;
     text-align: right;
+    font-size: 0;
 
     input {
       display: inline-block;

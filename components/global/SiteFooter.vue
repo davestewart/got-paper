@@ -37,8 +37,7 @@
       <div class="inner text-center">
         <div class="col-12">
           <p>
-            AmazonFresh offers same-day or next-day delivery for grocery orders to eligible
-            postcodes. If you make a purchase we may receive a small commission at no extra cost to you.
+            If you make a purchase we may receive a small commission at no extra cost to you.
           </p>
         </div>
       </div>
