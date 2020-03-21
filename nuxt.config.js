@@ -10,6 +10,7 @@ export default {
     titleTemplate: c => c ? `${c} - Got Paper?` : 'Got Paper? - Calculate your actual toilet paper needs',
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', href: `${BASE_URL}/images/social/icon-whatsapp-small.png`, sizes: '192x192' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/lvl2shj.css' },
       { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' }
     ],
@@ -24,13 +25,13 @@ export default {
         hid: 'sailthru.image.full',
         name: 'sailthru.image.full',
         property: 'sailthru.image.full',
-        content: `${BASE_URL}/images/social/splash-whatsapp.png`
+        content: `${BASE_URL}/images/social/icon-whatsapp.png`
       },
       {
         hid: 'sailthru.image.thumb',
         name: 'sailthru.image.thumb',
         property: 'sailthru.image.thumb',
-        content: `${BASE_URL}/images/social/splash-whatsapp-small.png`
+        content: `${BASE_URL}/images/social/icon-whatsapp-small.png`
       }
     ]
   },
