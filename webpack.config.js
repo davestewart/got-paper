@@ -1,20 +1,11 @@
-// webpack aliases are in this file purely for WebStorm support
-
-function resolve(path = '') {
-  return require('path').resolve(__dirname, 'src/' + path)
-}
+const path = require('path')
 
 module.exports = {
   resolve: {
+    // for WebStorm
     alias: {
-      // resources
-      'assets'      : resolve('../res/assets/'),
-      'plugins'     : resolve('plugins/'),
-      'utils'       : resolve('utils/'),
-
-      // views
-      'components'  : resolve('views/components/'),
-      'pages'       : resolve('views/pages/'),
+      '@': path.resolve(__dirname),
+      '~': path.resolve(__dirname)
     }
   }
 }
