@@ -86,8 +86,8 @@ import SiteLinks from './SiteLinks'
 export default {
   components: {
     SiteLinks,
-    SupportButton: () => '@/assets/components/global/KofiButton',
-    ShareLinks: () => '@/assets/components/global/ShareLinks'
+    SupportButton: () => import('@/components/global/KofiButton'),
+    ShareLinks: () => import('@/components/global/ShareLinks')
   }
 }
 </script>
