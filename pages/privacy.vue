@@ -98,3 +98,13 @@
 
   </div>
 </template>
+
+<script>
+export default {
+  head () {
+    return {
+      title: 'We only care about your poop and pee'
+    }
+  }
+}
+</script>

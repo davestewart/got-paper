@@ -3,7 +3,9 @@
     <h1>Contact</h1>
 
     <section>
-      <p>If you're a journalist, here's a <a href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press Kit</a>. Otherwise, feel free to get in contact.</p>
+      <p>If you're a journalist, here's a <a
+        href="https://drive.google.com/drive/folders/1lA8-GC8pBUxrrSKOcnp7OnJ-UPHx-952?usp=sharing" target="_blank">Press
+        Kit</a>. Otherwise, feel free to get in contact.</p>
     </section>
 
     <ValidationObserver ref="observer" v-slot="{ invalid, handleSubmit }">
@@ -14,12 +16,13 @@
             data-netlify-honeypot="bot-field"
             @submit.prevent="handleSubmit(submit)">
         <!-- name -->
-        <input type="hidden" name="form-name" value="contact"/>
+        <input type="hidden" name="form-name" value="contact" />
 
         <!-- alert -->
         <div class="form-group row mb-0">
           <div class="offset-md-3 col-md-9 mb-0">
-            <div v-if="result.message" class="alert alert-dismissible fade show" role="alert" :class="`alert-${result.state}`">
+            <div v-if="result.message" class="alert alert-dismissible fade show" role="alert"
+                 :class="`alert-${result.state}`">
               {{ result.message }}
               <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="() => showResult()">
                 <span aria-hidden="true">&times;</span>
@@ -44,7 +47,8 @@
           <label class="col-md-3 control-label" for="email">E-mail</label>
           <div class="col-md-9">
             <ValidationProvider :rules="rules.email" v-slot="v">
-              <input id="email" v-model="form.email" name="email" type="text" placeholder="Your email" class="form-control">
+              <input id="email" v-model="form.email" name="email" type="text" placeholder="Your email"
+                     class="form-control">
               <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
             </ValidationProvider>
           </div>
@@ -55,7 +59,8 @@
           <label class="col-md-3 control-label" for="message">Message</label>
           <div class="col-md-9">
             <ValidationProvider :rules="rules.message" v-slot="v">
-              <textarea class="form-control" id="message" v-model="form.message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+              <textarea class="form-control" id="message" v-model="form.message" name="message"
+                        placeholder="Please enter your message here..." rows="5"></textarea>
               <small class="form-text text-danger ml-2">{{ v.errors[0] }}</small>
             </ValidationProvider>
           </div>
@@ -74,7 +79,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { ValidationObserver, ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm'
 
 function reset () {
@@ -125,8 +129,8 @@ export default {
         'form-name': 'contact',
         ...this.form,
       }
-      return axios
-        .post('/', encode(payload), config)
+      return this.$axios
+        .$post('/', encode(payload), config)
         .then(() => {
           this.showResult('Thanks! We received your message', 'success')
           this.reset()
@@ -146,5 +150,10 @@ export default {
       this.result.state = state
     },
   },
+  head () {
+    return {
+      title: 'Send us a message'
+    }
+  }
 }
 </script>

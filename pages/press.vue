@@ -144,8 +144,10 @@ export default {
       ],
     }
   },
+  head () {
+    return {
+      title: 'News, comments and social coverage'
+    }
+  }
 }
 </script>
-
-<style>
-</style>

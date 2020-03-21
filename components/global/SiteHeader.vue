@@ -1,8 +1,8 @@
 <template>
   <header class="header">
-    <router-link class="banner" to="/">
+    <NuxtLink class="banner" to="/">
       <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
-    </router-link>
+    </NuxtLink>
     <SiteLinks/>
     <div class="strapline" v-if="$route.meta.title">
       <h5 v-html="$route.meta.title"></h5>

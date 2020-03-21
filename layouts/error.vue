@@ -5,13 +5,20 @@
       <p>This is not the page you're looking for...</p>
       <p>Try these instead:</p>
       <ul>
-        <li><router-link to="/">The "Got Paper" App</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
+        <li><NuxtLink to="/">The "Got Paper" App</NuxtLink></li>
+        <li><NuxtLink to="/about">About</NuxtLink></li>
       </ul>
     </section>
 
   </div>
 </template>
 
-<style>
-</style>
+<script>
+export default {
+  head() {
+    return {
+      title: 'This page is lost!'
+    }
+  }
+}
+</script>

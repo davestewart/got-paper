@@ -20,7 +20,7 @@
     </section>
 
     <section>
-      <router-link to="/app" tag="button" class="btn btn-primary w-100 py-4">Click here for the Got Paper? app</router-link>
+      <NuxtLink to="/app" tag="button" class="btn btn-primary w-100 py-4">Click here for the Got Paper? app</NuxtLink>
     </section>
 
     <section>
@@ -35,5 +35,12 @@
   </div>
 </template>
 
-<style>
-</style>
+<script>
+export default {
+  head () {
+    return {
+      title: 'Peace of mind in scary times'
+    }
+  }
+}
+</script>

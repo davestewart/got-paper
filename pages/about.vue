@@ -28,5 +28,13 @@
   </div>
 </template>
 
-<style>
-</style>
+<script>
+
+export default {
+  head() {
+    return {
+      title: 'Why does this site exist?'
+    }
+  }
+}
+</script>

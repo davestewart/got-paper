@@ -14,7 +14,9 @@
       <h4>Needed</h4>
       <p>If you can help with these, click the link to email:</p>
       <ul>
-        <li v-for="language in wanted"><a :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`">{{ language }}</a></li>
+        <li v-for="language in wanted"><a
+          :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`">{{ language }}</a>
+        </li>
       </ul>
       <p>I'll then mail you a sharing link to the document and we can go from there.</p>
     </section>
@@ -51,8 +53,10 @@ export default {
       ],
     }
   },
+  head () {
+    return {
+      title: 'Got Paper where you are?'
+    }
+  }
 }
 </script>
-
-<style>
-</style>

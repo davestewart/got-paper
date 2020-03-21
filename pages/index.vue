@@ -1,6 +1,6 @@
 <template>
   <div class="page page__app">
-    <Calculator/>
+    <Calculator />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Calculator from '@/components/calculator/Calculator.vue'
 
 export default {
   components: {
-    Calculator,
-  },
+    Calculator
+  }
 }
 </script>
