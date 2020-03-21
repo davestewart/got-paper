@@ -23,11 +23,6 @@
           src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=fresh&banner=05B48ACMDHCPHF9MP2G2&f=ifr&linkID=c6a1d2a12b600d7b559014d7b8411ad9&t=gotpaper-21&tracking_id=gotpaper-21"
           width="728"
           height="90"
-          scrolling="no"
-          border="0"
-          marginwidth="0"
-          style="border:none;"
-          frameborder="0"
         />
       </div>
 
@@ -36,11 +31,6 @@
           src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=fresh&banner=116TFTVB94RNREVHRQ02&f=ifr&linkID=ee20e33974032b5f4c7e1d807b2f9ab7&t=gotpaper-21&tracking_id=gotpaper-21"
           width="300"
           height="250"
-          scrolling="no"
-          border="0"
-          marginwidth="0"
-          style="border:none;"
-          frameborder="0"
         />
       </div>
 
@@ -55,17 +45,21 @@
     </div>
 
     <div class="footer__kofi">
-      <ClientOnly class="inner">
-        <SupportButton />
-      </ClientOnly>
+      <div class="inner">
+        <ClientOnly>
+          <KofiButton />
+        </ClientOnly>
+      </div>
     </div>
 
     <SiteLinks />
 
     <div class="footer__sharing">
-      <ClientOnly class="inner">
-        <ShareLinks />
-      </ClientOnly>
+        <div class="inner">
+          <ClientOnly>
+            <ShareLinks />
+          </ClientOnly>
+        </div>
     </div>
 
     <div class="footer__twitter h-links">
@@ -82,12 +76,13 @@
 
 <script>
 import SiteLinks from './SiteLinks'
+import ShareLinks from './ShareLinks'
 
 export default {
   components: {
     SiteLinks,
-    SupportButton: () => '@/assets/components/global/KofiButton',
-    ShareLinks: () => '@/assets/components/global/ShareLinks'
+    ShareLinks,
+    KofiButton: () => import('@/components/global/KofiButton'),
   }
 }
 </script>
