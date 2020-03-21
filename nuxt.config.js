@@ -9,7 +9,9 @@ export default {
   head: {
     titleTemplate: c => c ? `${c} - Got Paper?` : 'Got Paper? - Calculate your actual toilet paper needs',
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/lvl2shj.css' },
+      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' }
     ],
     meta: [
       {
