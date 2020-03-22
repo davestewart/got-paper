@@ -2,7 +2,7 @@
   <div class="footer__nav h-links">
     <ul>
       <li>
-        <NuxtLink to="/">
+        <NuxtLink :to="localePath('/')">
           Home
         </NuxtLink>
       </li>

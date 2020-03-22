@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <NuxtLink class="banner" to="/">
+    <NuxtLink class="banner" :to="localePath('/')">
       <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
     </NuxtLink>
     <SiteLinks />

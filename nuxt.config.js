@@ -1,3 +1,5 @@
+import i18n from './i18n'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 export const site = {
@@ -81,6 +83,10 @@ export default {
   },
 
   pwa,
+
+  env: {
+    baseUrl: site.url
+  },
 
   // ---------------------------------------------------------------------------------------------------------------------
   // app
@@ -172,7 +178,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-i18n', i18n]
   ],
 
   loading: {

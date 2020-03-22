@@ -20,6 +20,20 @@ export default {
   components: {
     SiteHeader,
     SiteFooter
-  }
+  },
+  head () {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const baseUrl = process.env.baseUrl
+    const { path } = this.$route
+    const pathWithSlash = path.endsWith('/') ? path : `${path}/`
+    return {
+      htmlAttrs: i18nSeo.htmlAttrs,
+      meta: i18nSeo.meta,
+      link: [
+        { rel: 'canonical', href: `${baseUrl}${pathWithSlash}` },
+        ...i18nSeo.link
+      ]
+    }
+  },
 }
 </script>

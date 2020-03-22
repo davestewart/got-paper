@@ -6,7 +6,7 @@
       <p>Try these instead:</p>
       <ul>
         <li>
-          <NuxtLink to="/">
+          <NuxtLink :to="localePath('/')">
             The "Got Paper" App
           </NuxtLink>
         </li>

@@ -2,7 +2,7 @@
   <div class="calculator">
     <!-- alert -->
     <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
-      Press and hold -/+ buttons to add/subtract quickly!
+      {{ $t('calculator.welcomeAlert') }}
     </UiAlert>
 
     <!--
