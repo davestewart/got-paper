@@ -18,21 +18,9 @@
 
     <!-- amazon -->
     <div class="footer__amazon">
-      <div class="text-center only-lg my-2">
-        <iframe
-          src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=fresh&banner=05B48ACMDHCPHF9MP2G2&f=ifr&linkID=c6a1d2a12b600d7b559014d7b8411ad9&t=gotpaper-21&tracking_id=gotpaper-21"
-          width="728"
-          height="90"
-        />
-      </div>
+      <AdDesktop class="my-2"/>
 
-      <div class="text-center only-sm">
-        <iframe
-          src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=fresh&banner=116TFTVB94RNREVHRQ02&f=ifr&linkID=ee20e33974032b5f4c7e1d807b2f9ab7&t=gotpaper-21&tracking_id=gotpaper-21"
-          width="300"
-          height="250"
-        />
-      </div>
+      <AdMobile/>
 
       <div class="inner text-center">
         <div class="col-12">
@@ -75,10 +63,14 @@
 
 <script>
 import SiteLinks from './SiteLinks'
+import AdDesktop from '../ads/AdDesktop'
+import AdMobile from '../ads/AdMobile'
 
 export default {
   components: {
     SiteLinks,
+    AdDesktop,
+    AdMobile,
     KofiButton: () => import('@/components/global/KofiButton'),
     ShareLinks: () => import('@/components/global/ShareLinks')
   }
