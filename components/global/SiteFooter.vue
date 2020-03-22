@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="footer__twitter h-links">
+    <div class="footer__twitter h-links hide-lg">
       <div class="inner">
         <ul>
           <li>
@@ -111,18 +111,6 @@ export default {
     font-weight: bold;
     font-size: 1em;
     color: #666;
-  }
-
-  @media only screen and (min-width: 600px) {
-    &__twitter {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    &__navTwitter {
-      display: none !important;
-    }
   }
 }
 

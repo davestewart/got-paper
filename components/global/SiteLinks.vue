@@ -33,7 +33,7 @@
       </li>
       <!--<li><NuxtLink to="/translations">Translations</NuxtLink></li>-->
 
-      <li class="footer__navTwitter">
+      <li class="hide-sm">
         <a href="https://twitter.com/haveyougotpaper" target="_blank">@haveyougotpaper</a>
       </li>
     </ul>
