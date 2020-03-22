@@ -66,11 +66,6 @@ export default {
     totalSheetsDay: 'onChange'
   },
 
-  mounted () {
-    this.reset()
-    this.onChange()
-  },
-
   methods: {
     setData (data) {
       Object.assign(this, data)
