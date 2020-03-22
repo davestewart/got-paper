@@ -122,7 +122,9 @@
 <script>
 import CalculatorUsage from './CalculatorUsage'
 import UiPerson from './UiPerson'
-import { clone, getPaperData } from './utils'
+import { getPaperData } from './utils'
+import { clone } from '@/utils/object'
+import storage from '@/utils/storage'
 
 function time (days, label) {
   return { days, label }
@@ -140,11 +142,21 @@ const periods = [
   time(365, 'One year')
 ]
 
-let id = 0
+const options = {
+  welcome: true,
+  totals: false
+}
+
+const units = {
+  days: 'days',
+  weeks: 'weeks',
+  months: 'months',
+  years: 'years'
+}
 
 function makePerson (name) {
   return {
-    id: String(++id),
+    id: Date.now(),
     name,
     data: getPaperData(),
     total: 18
@@ -154,24 +166,11 @@ function makePerson (name) {
 function getData () {
   const person = makePerson('You')
   return {
-    options: {
-      welcome: true,
-      totals: false
-    },
-
     personId: person.id,
-
     people: [
       person
     ]
   }
-}
-
-const units = {
-  days: 'days',
-  weeks: 'weeks',
-  months: 'months',
-  years: 'years'
 }
 
 export default {
@@ -182,8 +181,9 @@ export default {
 
   data () {
     return {
-      ...getData(),
+      options,
       periods,
+      ...getData(),
       form: {
         mode: this.$route.query.mode || 'paper',
         sheetsRoll: 200,
@@ -240,7 +240,32 @@ export default {
       if (!value) {
         this.addPerson()
       }
+    },
+
+    options: {
+      deep: true,
+      handler (value) {
+        storage.set('options-data', value)
+      }
+    },
+
+    $data: {
+      deep: true,
+      handler: 'save'
     }
+  },
+
+  created () {
+    if (process.client) {
+      const options = storage.get('options-data')
+      if (options) {
+        this.options = options
+      }
+    }
+  },
+
+  mounted () {
+    this.load()
   },
 
   methods: {
@@ -286,6 +311,21 @@ export default {
       if (person.id === this.personId) {
         this.showPerson(index - 1, false)
       }
+    },
+
+    load () {
+      if (process.client) {
+        const data = storage.get('paper-data')
+        if (data) {
+          Object.assign(this, data)
+          this.$refs.usage.setData(this.getPerson().data)
+        }
+      }
+    },
+
+    save () {
+      const { personId, people, form } = this
+      storage.set('paper-data', { personId, people, form })
     },
 
     reset () {
