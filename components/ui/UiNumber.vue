@@ -108,8 +108,8 @@ export default {
         mousedown: start,
         touchend: stop,
         mouseup: stop,
-        mouseout: stop,
-        mouseleave: stop
+        // mouseout: stop,
+        // mouseleave: stop
       }
     },
 

@@ -7,7 +7,7 @@
     <div v-if="title" class="strapline">
       <h5 v-html="title" />
     </div>
-    <AdDesktop class="mt-4"/>
+    <AdDesktop class="mt-4" />
   </header>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     title () {
       return getTitle(this.$route.name, false)
     }
-  },
+  }
 }
 </script>
 

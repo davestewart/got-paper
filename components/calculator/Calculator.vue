@@ -303,7 +303,7 @@ export default {
       this.$refs.usage.setData(this.getPerson().data)
       if (scroll) {
         setTimeout(() => {
-          document.querySelector('#usage').scrollIntoView({ behavior: 'smooth' })
+          document.querySelector('main').scrollIntoView({ behavior: 'smooth' })
         }, 250)
       }
     },

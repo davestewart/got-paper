@@ -18,9 +18,9 @@
 
     <!-- amazon -->
     <div class="footer__amazon">
-      <AdDesktop class="my-2"/>
+      <AdDesktop class="my-2" />
 
-      <AdMobile/>
+      <AdMobile />
 
       <div class="inner text-center">
         <div class="col-12">
@@ -42,11 +42,11 @@
     <SiteLinks />
 
     <div class="footer__sharing">
-        <div class="inner">
-          <ClientOnly>
-            <ShareLinks />
-          </ClientOnly>
-        </div>
+      <div class="inner">
+        <ClientOnly>
+          <ShareLinks />
+        </ClientOnly>
+      </div>
     </div>
 
     <div class="footer__twitter h-links hide-lg">
@@ -62,9 +62,9 @@
 </template>
 
 <script>
-import SiteLinks from './SiteLinks'
 import AdDesktop from '../ads/AdDesktop'
 import AdMobile from '../ads/AdMobile'
+import SiteLinks from './SiteLinks'
 
 export default {
   components: {

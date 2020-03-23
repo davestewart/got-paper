@@ -109,7 +109,9 @@ $light-grey: #e2e6ea;
   }
 
   &__name {
-
+    max-width: calc(100vw - 270px);
+    overflow-x: hidden;
+    text-overflow: ellipsis;
   }
 
   &__stats {
