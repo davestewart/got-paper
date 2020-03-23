@@ -59,7 +59,7 @@ const pwa = {
       icon('android-chrome-192x192.png'),
       icon('android-chrome-512x512.png'),
       icon('android-chrome-192x192-masked.png'),
-      icon('android-chrome-512x512-masked.png'),
+      icon('android-chrome-512x512-masked.png')
     ]
   },
   icon: {
@@ -135,7 +135,7 @@ export default {
 
       // windows
       meta('msapplication-TileImage', image('/icons/msapplication-icon-144x144.png')),
-      meta('msapplication-TileColor', '#000000'),
+      meta('msapplication-TileColor', '#000000')
     ],
 
     script: [
@@ -175,7 +175,8 @@ export default {
 
   plugins: [
     '@/plugins/polyfills.client.js',
-    '@/plugins/global-components.js'
+    '@/plugins/global-components.js',
+    '@/plugins/portal-vue.js'
   ],
 
   buildModules: [
@@ -189,7 +190,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['nuxt-i18n', i18n]
+    ['nuxt-i18n', i18n],
+    'portal-vue/nuxt'
   ],
 
   loading: {

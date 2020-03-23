@@ -9,6 +9,7 @@
     </main>
 
     <SiteFooter />
+    <portal-target name="modals" />
   </div>
 </template>
 

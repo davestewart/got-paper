@@ -7,6 +7,8 @@
       </UiAlert>
     </client-only>
 
+    <LanguageSwitcher />
+
     <!--
         <div class="form-check form-check-right">
           <label for="showTotals">Show totals</label>
@@ -122,6 +124,7 @@
 </template>
 
 <script>
+import LanguageSwitcher from '../global/LanguageSwitcher'
 import CalculatorUsage from './CalculatorUsage'
 import UiPerson from './UiPerson'
 import { getPaperData } from './utils'
@@ -177,6 +180,7 @@ function getData () {
 
 export default {
   components: {
+    LanguageSwitcher,
     CalculatorUsage,
     UiPerson
   },
@@ -350,6 +354,12 @@ export default {
 <style lang="scss">
 .calculator {
   position: relative;
+
+  .locale {
+    position: absolute;
+    right: -7px;
+    top: -1.3rem;
+  }
 
   article {
     border-left: 2px dashed #CCC;
