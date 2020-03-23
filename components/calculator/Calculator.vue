@@ -2,28 +2,21 @@
   <div class="calculator">
     <!-- alert -->
     <client-only>
-      <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false" no-ssr>
-        {{ $t('calculator.welcomeAlert') }}
+      <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
+        {{ $t('calculator.prompts.buttonTip') }}
       </UiAlert>
     </client-only>
 
-    <LanguageSwitcher />
-
-    <!--
-        <div class="form-check form-check-right">
-          <label for="showTotals">Show totals</label>
-          <input type="checkbox" v-model="options.totals" id="showTotals">
-        </div>
-    -->
+    <LanguageSwitcher/>
 
     <!-- usage -->
     <div style="position: relative">
-      <a id="usage" style="position: absolute; top: -15px" />
+      <a id="usage" style="position: absolute; top: -15px"/>
     </div>
     <h2 class="d-flex justify-content-between">
       <span>Usage<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
-    <CalculatorUsage ref="usage" :show-totals="options.totals" @change="onUsageChange" />
+    <CalculatorUsage ref="usage" :show-totals="options.totals" @change="onUsageChange"/>
 
     <!-- people -->
     <h2>People<span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
@@ -48,59 +41,64 @@
     <h2>Toilet paper</h2>
     <article>
       <section>
-        <!--
-        <select name="roll" id="roll">
-          <option value="dulux">Dulux Extra padded</option>
-          <option value="dulux">Dulux Extra padded</option>
-          <option value="dulux">Dulux Extra padded</option>
-          <option value="dulux">Dulux Extra padded</option>
-        </select>
-        -->
-        <UiNumber v-model="form.sheetsRoll" label="Sheets per roll" hint="Find this information on the side of the pack" :step="10" :min="100" />
-        <!--        <UiOutput label="Sheets per day" v-model="totalSheetsDay" :precision="1"/>-->
-        <UiOutput v-if="options.totals" v-model="daysRoll" label="Days per roll" :precision="1" />
+        <UiNumber v-model="form.sheetsRoll" label="Sheets per roll" hint="Find this information on the side of the pack" :step="10" :min="100"/>
+
+        <UiOutput v-if="options.totals" v-model="daysRoll" label="Days per roll" :precision="1"/>
+
       </section>
+
     </article>
 
     <!-- quarantine -->
     <h2>Quarantine</h2>
     <article>
+
       <section>
-        <UiOutput label="Calculate">
+        <UiOutput label="Calculation">
           <select id="requirement" v-model="form.mode" name="requirement">
-            <option value="paper">
-              Paper
-            </option>
-            <option value="time">
-              Time
+            <option v-for="(label, key) in labels.modes" :key="key" :value="key">
+              {{ label }}
             </option>
           </select>
         </UiOutput>
       </section>
 
-      <section v-if="form.mode === 'paper'">
+      <section v-if="form.mode !== 'hoarding'">
         <UiOutput label="Time in quarantine">
           <select id="quarantine" v-model="form.daysQuarantined" name="quarantine">
-            <option v-for="period in periods" :key="period.label" :value="period.days">
+            <option v-for="period in labels.periods" :key="period.label" :value="period.days">
               {{ period.label }}
             </option>
           </select>
         </UiOutput>
       </section>
 
-      <section v-else>
-        <UiNumber v-model="form.numRolls" label="Number of rolls hoarded" :min="0" />
+      <section v-if="form.mode !== 'buying'">
+        <UiNumber v-model="form.rollsBought" label="Rolls bought" :min="0"/>
       </section>
+
     </article>
 
     <!-- result -->
     <div class="result" :data-mode="form.mode">
-      <template v-if="form.mode === 'paper'">
+      <template v-if="form.mode === 'buying'">
         <span class="text">Buy</span>
         <span class="value">{{ rollsRequired }}</span>
         <span class="text">{{ plural(rollsRequired, 'roll') }}</span>
       </template>
-      <template v-else>
+
+      <template v-if="form.mode === 'sharing'">
+        <div>
+          <span class="text">{{ rollsOverall > 0 ? 'Share' : 'Buy' }}</span>
+          <span class="value">{{ Math.abs(rollsOverall) }}</span>
+          <span class="text">{{ plural(rollsOverall, 'roll') }}</span>
+        </div>
+        <div>
+          <span class="info">You need {{ rollsRequired }} {{ plural(rollsRequired, 'roll') }}</span>
+        </div>
+      </template>
+
+      <template v-if="form.mode === 'hoarding'">
         <span class="text">You'll last</span>
         <span class="value">{{ timeRequired.value }}</span>
         <span class="text">{{ timeRequired.unit }}</span>
@@ -108,7 +106,8 @@
     </div>
 
     <div class="button-container">
-      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a><img
+      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a>
+      <img
         src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2"
         width="1"
         height="1"
@@ -124,15 +123,20 @@
 </template>
 
 <script>
+/* eslint-disable import/order */
+import assignDeep from 'assign-deep'
+import storage from '@/utils/storage'
+import { clone } from '@/utils/object'
 import LanguageSwitcher from '../global/LanguageSwitcher'
 import CalculatorUsage from './CalculatorUsage'
 import UiPerson from './UiPerson'
 import { getPaperData } from './utils'
-import { clone } from '@/utils/object'
-import storage from '@/utils/storage'
 
 function time (days, label) {
-  return { days, label }
+  return {
+    days,
+    label
+  }
 }
 
 const periods = [
@@ -187,14 +191,21 @@ export default {
 
   data () {
     return {
+      labels: {
+        periods,
+        modes: {
+          buying: 'Buying',
+          sharing: 'Sharing',
+          hoarding: 'Hoarding',
+        }
+      },
       options,
-      periods,
       ...getData(),
       form: {
-        mode: this.$route.query.mode || 'paper',
+        mode: this.$route.query.mode || 'buying',
         sheetsRoll: 200,
-        daysQuarantined: 14,
-        numRolls: 16
+        rollsBought: 0,
+        daysQuarantined: 14
       }
     }
   },
@@ -221,8 +232,16 @@ export default {
       return value === Number.POSITIVE_INFINITY ? 0 : value
     },
 
+    rollsToShare () {
+      return Math.max(0, this.form.rollsBought - this.rollsRequired)
+    },
+
+    rollsOverall () {
+      return this.form.rollsBought - this.rollsRequired
+    },
+
     timeRequired () {
-      let value = Math.ceil(this.form.numRolls * this.daysRoll)
+      let value = Math.ceil(this.form.rollsBought * this.daysRoll)
       if (value === Number.POSITIVE_INFINITY) {
         value = 0
       }
@@ -237,7 +256,10 @@ export default {
         value = Math.ceil(value / 7)
         unit = units.weeks
       }
-      return { value, unit }
+      return {
+        value,
+        unit
+      }
     }
   },
 
@@ -323,7 +345,7 @@ export default {
       if (process.client) {
         const data = storage.get('paper-data')
         if (data) {
-          Object.assign(this, data)
+          assignDeep(this, data)
           this.$refs.usage.setData(this.getPerson().data)
         }
       }
@@ -331,7 +353,11 @@ export default {
 
     save () {
       const { personId, people, form } = this
-      storage.set('paper-data', { personId, people, form })
+      storage.set('paper-data', {
+        personId,
+        people,
+        form
+      })
     },
 
     reset () {
@@ -379,6 +405,10 @@ export default {
     margin: 0;
   }
 
+  select {
+    max-width: 150px;
+  }
+
   .rollsRequired {
     .uiOutput__value {
       font-size: 3rem;
@@ -400,7 +430,15 @@ export default {
       line-height: 1em;
     }
 
-    &[data-mode=time] {
+    span.info {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      line-height: 1em;
+      color: #AAA;
+    }
+
+    &[data-mode=hoarding] {
       span {
         display: block;
       }
@@ -409,11 +447,12 @@ export default {
 
   @media only screen and (min-width: 600px) {
     .result {
-      &[data-mode=paper] {
+      &[data-mode=buying],
+      &[data-mode=sharing] {
         font-size: 5rem;
       }
 
-      &[data-mode=time] {
+      &[data-mode=hoarding] {
         font-size: 4rem;
       }
 
@@ -425,6 +464,7 @@ export default {
 
   .button-container {
     margin-top: 70px;
+
     .btn {
       width: 100%;
       font-family: brandon-grotesque, sans-serif;
