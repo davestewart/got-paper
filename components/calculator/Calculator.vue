@@ -1,9 +1,11 @@
 <template>
   <div class="calculator">
     <!-- alert -->
-    <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
-      Press and hold -/+ buttons to add/subtract quickly!
-    </UiAlert>
+    <client-only>
+      <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
+        Press and hold -/+ buttons to add/subtract quickly!
+      </UiAlert>
+    </client-only>
 
     <!--
         <div class="form-check form-check-right">
