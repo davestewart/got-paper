@@ -1,9 +1,11 @@
 <template>
   <div class="calculator">
     <!-- alert -->
-    <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
-      {{ $t('calculator.welcomeAlert') }}
-    </UiAlert>
+    <client-only>
+      <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false" no-ssr>
+        {{ $t('calculator.welcomeAlert') }}
+      </UiAlert>
+    </client-only>
 
     <!--
         <div class="form-check form-check-right">

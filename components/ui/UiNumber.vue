@@ -137,7 +137,6 @@ export default {
     white-space: nowrap;
     align-content: start;
     text-align: right;
-    font-size: 0;
 
     input {
       display: inline-block;

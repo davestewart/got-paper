@@ -88,6 +88,16 @@ export default {
     baseUrl: site.url
   },
 
+  build: {
+    loaders: {
+      vue: {
+        compilerOptions: {
+          whitespace: 'condense'
+        }
+      }
+    }
+  },
+
   // ---------------------------------------------------------------------------------------------------------------------
   // app
 
