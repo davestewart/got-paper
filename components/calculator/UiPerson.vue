@@ -8,11 +8,12 @@
           v-model="input"
           type="text"
           class="form-control"
+          :placeholder="fallbackName"
           @change="done"
           @keydown.enter="done"
         >
         <button v-else class="uiPerson__button btn btn-default w-100 text-left" @click="click">
-          <span class="uiPerson__name">{{ value }}</span>
+          <span class="uiPerson__name" :class="{ 'uiPerson__name--fallback': !personName }">{{ value || displayName }}</span>
           <span class="uiPerson__stats">{{ $tc('labels.numSheetsDay', round(total)) }}</span>
         </button>
       </div>
@@ -28,10 +29,7 @@ export default {
     value: String,
     total: Number,
     active: Boolean,
-    removable: {
-      type: Boolean,
-      default: true
-    }
+    index: Number,
   },
 
   data () {
@@ -46,7 +44,23 @@ export default {
       set (value) {
         this.$emit('input', value)
       }
-    }
+    },
+
+    removable () {
+      return this.index > 0
+    },
+
+    personName () {
+      return String(this.value || '').trim()
+    },
+
+    displayName () {
+      return this.personName || this.fallbackName
+    },
+
+    fallbackName () {
+      return this.$tc(this.index === 0 ? 'labels.personYou' : 'labels.personNum', this.index + 1)
+    },
   },
 
   methods: {
@@ -84,7 +98,9 @@ export default {
     },
 
     onBlur () {
-      this.$refs.input.removeEventListener('blur', this.onBlur)
+      if (this.$refs.input) {
+        this.$refs.input.removeEventListener('blur', this.onBlur)
+      }
       this.editing = false
     }
   }

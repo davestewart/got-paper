@@ -14,7 +14,11 @@
       <a id="usage" style="position: absolute; top: -15px"/>
     </div>
     <h2 class="d-flex justify-content-between">
-      <span>{{ $t('headings.usage') }}<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
+      <span>{{ $t('headings.usage') }}
+        <template v-if="people.length > 1">
+          <span class="detail">{{ displayName }}</span>
+        </template>
+      </span>
     </h2>
     <CalculatorUsage ref="usage" :show-totals="options.totals" @change="onUsageChange"/>
 
@@ -28,7 +32,7 @@
         v-model="person.name"
         :active="person.id === personId"
         :total="person.total"
-        :removable="index > 0"
+        :index="index"
         @click="showPerson(index)"
         @remove="removePerson(index)"
       />
@@ -173,7 +177,7 @@ function makePerson (name) {
   }
 }
 
-function getData (name) {
+function getData (name = '') {
   const person = makePerson(name)
   return {
     personId: person.id,
@@ -201,7 +205,7 @@ export default {
         }
       },
       options,
-      ...getData(this.$t('labels.personYou')),
+      ...getData(),
       form: {
         mode: this.$route.query.mode || 'buying',
         sheetsRoll: 200,
@@ -214,6 +218,12 @@ export default {
   computed: {
     person () {
       return this.getPerson(this.personId) || {}
+    },
+
+    displayName () {
+      const person = this.getPerson()
+      const index = this.people.indexOf(person)
+      return person.name || this.$tc(index === 0 ? 'labels.personYou' : 'labels.personNum')
     },
 
     totalSheetsDay () {
@@ -348,8 +358,8 @@ export default {
 
     addPerson () {
       // add person
-      const index = this.people.length + 1
-      const person = makePerson(this.$tc('labels.personNum', index))
+      // const index = this.people.length + 1
+      const person = makePerson('')
       this.people.push(person)
       this.personId = person.id
 
@@ -481,6 +491,7 @@ function getResultHtml (text = '') {
       color: #AAA;
     }
 
+    &[data-mode=sharing],
     &[data-mode=hoarding] {
       span {
         display: block;
