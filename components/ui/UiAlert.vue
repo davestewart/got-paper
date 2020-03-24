@@ -28,3 +28,9 @@ export default {
 }
 
 </script>
+
+<style>
+.uiAlert {
+  z-index: 100;
+}
+</style>

@@ -13,23 +13,17 @@
         >
         <button v-else class="uiPerson__button btn btn-default w-100 text-left" @click="click">
           <span class="uiPerson__name">{{ value }}</span>
-          <span class="uiPerson__stats">{{ total | round }} sheets / day</span>
+          <span class="uiPerson__stats">{{ $tc('labels.numSheetsDay', round(total)) }}</span>
         </button>
       </div>
-      <UiIconButton icon="pen" class="ml-1" @click="edit" />
-      <UiIconButton icon="times" class="ml-1" :disabled="!removable" @click="remove" />
+      <UiIconButton icon="pen" class="ml-1" :title="$t('actions.edit')" @click="edit" />
+      <UiIconButton icon="times" class="ml-1" :title="$t('actions.remove')" :disabled="!removable" @click="remove" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  filters: {
-    round (value = 0) {
-      return Math.floor(value)
-    }
-  },
-
   props: {
     value: String,
     total: Number,
@@ -56,6 +50,10 @@ export default {
   },
 
   methods: {
+    round (value = 0) {
+      return Math.floor(value)
+    },
+
     focus () {
       this.$el.querySelector('button').focus()
     },

@@ -3,7 +3,7 @@
     <!-- alert -->
     <client-only>
       <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
-        {{ $t('calculator.prompts.buttonTip') }}
+        {{ $t('prompts.buttonTip') }}
       </UiAlert>
     </client-only>
 
@@ -14,12 +14,12 @@
       <a id="usage" style="position: absolute; top: -15px"/>
     </div>
     <h2 class="d-flex justify-content-between">
-      <span>Usage<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
+      <span>{{ $t('headings.usage') }}<template v-if="person.name && people.length > 1"><span class="detail">{{ person.name }}</span></template></span>
     </h2>
     <CalculatorUsage ref="usage" :show-totals="options.totals" @change="onUsageChange"/>
 
     <!-- people -->
-    <h2>People<span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
+    <h2>{{ $t('headings.people') }}<span v-if="people.length > 1" class="detail">{{ people.length }}</span></h2>
     <article>
       <UiPerson
         v-for="(person, index) in people"
@@ -33,15 +33,15 @@
         @remove="removePerson(index)"
       />
       <button class="btn btn-link" @click="addPerson">
-        Add another person
+        {{ $t('actions.addPerson') }}
       </button>
     </article>
 
     <!-- paper -->
-    <h2>Toilet paper</h2>
+    <h2>{{ $t('headings.paper') }}</h2>
     <article>
       <section>
-        <UiNumber v-model="form.sheetsRoll" label="Sheets per roll" hint="Find this information on the side of the pack" :step="10" :min="100"/>
+        <UiNumber v-model="form.sheetsRoll" :label="$t('labels.sheetsPerRoll')" :hint="$t('labels.packInformation')" :step="10" :min="100"/>
 
         <UiOutput v-if="options.totals" v-model="daysRoll" label="Days per roll" :precision="1"/>
 
@@ -50,13 +50,13 @@
     </article>
 
     <!-- quarantine -->
-    <h2>Quarantine</h2>
+    <h2>{{ $t('headings.quarantine') }}</h2>
     <article>
 
       <section>
-        <UiOutput label="Calculation">
-          <select id="requirement" v-model="form.mode" name="requirement">
-            <option v-for="(label, key) in labels.modes" :key="key" :value="key">
+        <UiOutput :label="$t('labels.calculation')">
+          <select v-model="form.mode">
+            <option v-for="(label, key) in optionsModes" :key="key" :value="key">
               {{ label }}
             </option>
           </select>
@@ -64,49 +64,57 @@
       </section>
 
       <section v-if="form.mode !== 'hoarding'">
-        <UiOutput label="Time in quarantine">
-          <select id="quarantine" v-model="form.daysQuarantined" name="quarantine">
-            <option v-for="period in labels.periods" :key="period.label" :value="period.days">
-              {{ period.label }}
+        <UiOutput :label="$t('labels.timeInQuarantine')">
+          <select v-model="form.daysQuarantined">
+            <option v-for="duration in optionsDurations" :key="duration.label" :value="duration.days">
+              {{ duration.label }}
             </option>
           </select>
         </UiOutput>
       </section>
 
       <section v-if="form.mode !== 'buying'">
-        <UiNumber v-model="form.rollsBought" label="Rolls bought" :min="0"/>
+        <UiNumber v-model="form.rollsBought" :label="$t('labels.rollsBought')" :min="0"/>
       </section>
 
     </article>
 
     <!-- result -->
     <div class="result" :data-mode="form.mode">
-      <template v-if="form.mode === 'buying'">
+      <div v-if="form.mode === 'buying'" v-html="htmlBuy">
+<!--
         <span class="text">Buy</span>
         <span class="value">{{ rollsRequired }}</span>
         <span class="text">{{ plural(rollsRequired, 'roll') }}</span>
-      </template>
+-->
+      </div>
 
       <template v-if="form.mode === 'sharing'">
-        <div>
+        <div v-html="htmlShare">
+<!--
           <span class="text">{{ rollsOverall > 0 ? 'Share' : 'Buy' }}</span>
           <span class="value">{{ Math.abs(rollsOverall) }}</span>
           <span class="text">{{ plural(rollsOverall, 'roll') }}</span>
+-->
         </div>
-        <div>
+        <span class="info" v-html="htmlNeed">
+<!--
           <span class="info">You need {{ rollsRequired }} {{ plural(rollsRequired, 'roll') }}</span>
-        </div>
+-->
+        </span>
       </template>
 
-      <template v-if="form.mode === 'hoarding'">
+      <div v-if="form.mode === 'hoarding'" v-html="htmlTime">
+<!--
         <span class="text">You'll last</span>
         <span class="value">{{ timeRequired.value }}</span>
         <span class="text">{{ timeRequired.unit }}</span>
-      </template>
+-->
+      </div>
     </div>
 
     <div class="button-container">
-      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">Buy Now</a>
+      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">{{ $t('cta.buy') }}</a>
       <img
         src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2"
         width="1"
@@ -116,51 +124,44 @@
         style="border:none !important; margin:0 !important;"
       >
       <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">
-        Start again
+        {{ $t('cta.restart') }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
-/* eslint-disable import/order */
-import assignDeep from 'assign-deep'
-import storage from '@/utils/storage'
 import { clone } from '@/utils/object'
+import storage from '@/utils/storage'
+import assignDeep from 'assign-deep'
 import LanguageSwitcher from '../global/LanguageSwitcher'
 import CalculatorUsage from './CalculatorUsage'
 import UiPerson from './UiPerson'
 import { getPaperData } from './utils'
 
-function time (days, label) {
+function time (key, label, days) {
   return {
     days,
+    key,
     label
   }
 }
 
-const periods = [
-  time(14, 'Two weeks'),
-  time(21, 'Three weeks'),
-  time(365 / 12, 'One month'),
-  time(6 * 7, 'Six weeks'),
-  time(365 / 6, 'Two months'),
-  time(365 / 4, 'Three months'),
-  time(365 / 2, 'Six months'),
-  time(365 * 0.75, 'Nine months'),
-  time(365, 'One year')
+const durations = [
+  time('twoWeeks', 'Two weeks', 14),
+  time('threeWeeks', 'Three weeks', 21),
+  time('oneMonth', 'One month', 365 / 12),
+  time('sixWeeks', 'Six weeks', 6 * 7),
+  time('twoMonths', 'Two months', 365 / 6),
+  time('threeMonths', 'Three months', 365 / 4),
+  time('sixMonths', 'Six months', 365 / 2),
+  time('nineMonths', 'Nine months', 365 * 0.75),
+  time('oneYear', 'One year', 365)
 ]
 
 const options = {
   welcome: true,
   totals: false
-}
-
-const units = {
-  days: 'days',
-  weeks: 'weeks',
-  months: 'months',
-  years: 'years'
 }
 
 function makePerson (name) {
@@ -172,8 +173,8 @@ function makePerson (name) {
   }
 }
 
-function getData () {
-  const person = makePerson('You')
+function getData (name) {
+  const person = makePerson(name)
   return {
     personId: person.id,
     people: [
@@ -192,7 +193,7 @@ export default {
   data () {
     return {
       labels: {
-        periods,
+        durations,
         modes: {
           buying: 'Buying',
           sharing: 'Sharing',
@@ -200,7 +201,7 @@ export default {
         }
       },
       options,
-      ...getData(),
+      ...getData(this.$t('labels.personYou')),
       form: {
         mode: this.$route.query.mode || 'buying',
         sheetsRoll: 200,
@@ -245,22 +246,59 @@ export default {
       if (value === Number.POSITIVE_INFINITY) {
         value = 0
       }
-      let unit = units.days
+      let unit
       if (value > 365 * 1.5) {
         value = (value / 365).toFixed(2)
-        unit = units.years
+        unit = 'years'
       } else if (value > 7 * 12) {
         value = (value / (365 / 12)).toFixed(1)
-        unit = units.months
+        unit = 'months'
       } else if (value > 28) {
         value = Math.ceil(value / 7)
-        unit = units.weeks
+        unit = 'weeks'
+      } else {
+        unit = 'days'
       }
       return {
+        html: this.$tc(`results.${unit}`, value),
         value,
-        unit
+        unit,
       }
-    }
+    },
+
+    optionsModes () {
+      return Object.keys(this.labels.modes).reduce((output, key) => {
+        output[key] = this.$t(`modes.${key}`)
+        return output
+      }, {})
+    },
+
+    optionsDurations () {
+      return clone(durations).map((duration) => {
+        duration.label = this.$t(`durations.${duration.key}`)
+        return duration
+      })
+    },
+
+    htmlBuy () {
+      return getResultHtml(this.$tc('results.buy', this.rollsRequired))
+    },
+
+    htmlShare () {
+      const absValue = Math.abs(this.rollsOverall)
+      const text = this.rollsOverall > 0
+        ? this.$tc('results.share', absValue)
+        : this.$tc('results.buy', absValue)
+      return getResultHtml(text)
+    },
+
+    htmlNeed () {
+      return this.$tc('results.need', this.rollsRequired)
+    },
+
+    htmlTime () {
+      return getResultHtml(this.timeRequired.html)
+    },
   },
 
   watch: {
@@ -311,7 +349,7 @@ export default {
     addPerson () {
       // add person
       const index = this.people.length + 1
-      const person = makePerson(`Person ${index}`)
+      const person = makePerson(this.$tc('labels.personNum', index))
       this.people.push(person)
       this.personId = person.id
 
@@ -362,7 +400,7 @@ export default {
 
     reset () {
       this.$refs.usage.reset()
-      Object.assign(this, getData())
+      Object.assign(this, getData(this.$t('labels.personYou')))
       window.scrollTo(0, 0)
     },
 
@@ -373,6 +411,11 @@ export default {
       return `${single}`
     }
   }
+}
+
+function getResultHtml (text = '') {
+  const [a, b, c] = text.replace(/(\d+(?:\.\d+)?)/, '|$1|').split('|')
+  return `<span class="text">${a || '?'}</span><span class="value">${b || '?'}</span><span class="text">${c || '?'}</span>`
 }
 
 </script>

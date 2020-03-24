@@ -24,9 +24,7 @@
 
       <div class="inner text-center">
         <div class="col-12">
-          <p>
-            If you make a purchase we may receive a small commission at no extra cost to you.
-          </p>
+          <p>{{ $t('prompts.commission') }}</p>
         </div>
       </div>
     </div>

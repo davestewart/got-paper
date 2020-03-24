@@ -15,7 +15,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <label class="modal-title">Language</label>
+                <label class="modal-title">{{ $t('prompts.chooseLanguage') }}</label>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showModal(false)">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -32,7 +32,7 @@
                 </ul>
               </div>
               <div class="modal-footer">
-                <p class="mb-0"><NuxtLink :to="localePath('/translations')">Can you translate another language?</NuxtLink></p>
+                <p class="mb-0"><NuxtLink :to="localePath('/translations')">{{ $t('prompts.offerTranslation') }}</NuxtLink></p>
               </div>
             </div>
           </div>

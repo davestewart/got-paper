@@ -3,7 +3,7 @@
     <ul>
       <li>
         <NuxtLink :to="localePath('/')">
-          Home
+          {{ $t('nav.home') }}
         </NuxtLink>
       </li>
       <!--<li><NuxtLink to="/app">App</NuxtLink></li>-->
@@ -12,23 +12,23 @@
                 <li><NuxtLink to="/media">Media</NuxtLink></li>
       -->
       <li>
-        <NuxtLink to="/about">
-          About
+        <NuxtLink :to="localePath('/about')">
+          {{ $t('nav.about') }}
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/press">
-          Press
+        <NuxtLink :to="localePath('/press')">
+          {{ $t('nav.press') }}
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/contact">
-          Contact
+        <NuxtLink :to="localePath('/contact')">
+          {{ $t('nav.contact') }}
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/privacy">
-          Privacy
+        <NuxtLink :to="localePath('/privacy')">
+          {{ $t('nav.privacy') }}
         </NuxtLink>
       </li>
       <!--<li><NuxtLink to="/translations">Translations</NuxtLink></li>-->

@@ -2,25 +2,25 @@
   <div class="calculator__usage">
     <article>
       <section>
-        <h3>Poops</h3>
-        <UiNumber v-model="poops.poopsDay" label="Poops per day" :min="1" />
-        <UiNumber v-model="poops.wipesPoop" label="Wipes per poop" :min="1" />
-        <UiNumber v-model="poops.sheetsWipe" label="Sheets per wipe" :min="1" />
-        <UiOutput v-if="showTotals" v-model="poopSheetsDay" label="Total poop sheets per day" />
+        <h3>{{ $t('subHeadings.poops') }}</h3>
+        <UiNumber v-model="poops.poopsDay" :label="$t('labels.poopsPerDay')" :min="1" />
+        <UiNumber v-model="poops.wipesPoop" :label="$t('labels.wipesPerPoop')" :min="1" />
+        <UiNumber v-model="poops.sheetsWipe" :label="$t('labels.sheetsPerWipe')" :min="1" />
+        <UiOutput v-if="showTotals" v-model="poopSheetsDay" :label="$t('labels.poopSheetsPerDay')" />
       </section>
 
       <section>
-        <h3>Pees</h3>
-        <UiNumber v-model="pees.peesDay" label="Pees per day" />
-        <UiNumber v-model="pees.sheetsPee" label="Sheets per pee" />
-        <UiOutput v-if="showTotals" v-model="peeSheetsDay" label="Total pee sheets per day" />
+        <h3>{{ $t('subHeadings.pees') }}</h3>
+        <UiNumber v-model="pees.peesDay" :label="$t('labels.peesPerDay')" />
+        <UiNumber v-model="pees.sheetsPee" :label="$t('labels.sheetsPerPee')" />
+        <UiOutput v-if="showTotals" v-model="peeSheetsDay" :label="$t('labels.peeSheetsPerDay')" />
       </section>
 
       <section>
-        <h3>Extras</h3>
-        <UiNumber v-model="extras.sheetsDay" label="Sheets per day" hint="For daily cleanup" />
-        <UiNumber v-model="extras.sheetsMonth" label="Sheets per month" hint="For monthly cleanup" />
-        <UiOutput v-if="showTotals" v-model="extraSheetsDay" label="Total extra sheets per day" :precision="1" />
+        <h3>{{ $t('subHeadings.extras') }}</h3>
+        <UiNumber v-model="extras.sheetsDay" :label="$t('labels.sheetsPerDay')" :hint="$t('labels.forDailyCleanup')" />
+        <UiNumber v-model="extras.sheetsMonth" :label="$t('labels.sheetsPerMonth')" :hint="$t('labels.forMonthlyCleanup')" />
+        <UiOutput v-if="showTotals" v-model="extraSheetsDay" :label="$t('labels.extraSheetsPerDay')" :precision="1" />
       </section>
     </article>
   </div>

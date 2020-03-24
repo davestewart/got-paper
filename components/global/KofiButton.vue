@@ -17,12 +17,24 @@ export default {
       html: ''
     }
   },
+
+  watch: {
+    '$i18n.locale': 'update'
+  },
+
   beforeMount () {
-    const text = 'Or if you fancy, you can buy me a coffee!'
-    const page = 'gotpaper'
-    const color = colors.red
-    kofiwidget2.init(text, color, page)
-    this.html = kofiwidget2.getHTML()
+    this.update()
+  },
+
+  methods: {
+    update () {
+      const widget = window.kofiwidget2
+      const text = this.$t('prompts.donate')
+      const page = 'gotpaper'
+      const color = colors.red
+      widget.init(text, color, page)
+      this.html = widget.getHTML()
+    }
   }
 }
 </script>
