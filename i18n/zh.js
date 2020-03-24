@@ -1,15 +1,15 @@
 export default {
   site: {
-    title: '有沒有紙用？ (i think only use the english title is better, got paper is easy enough)',
+    title: '有沒有紙用?',
     subtitle: '計算你廁紙所需用量',
-    description: null
+    description: '一個在武漢肺炎疫情下，助你及家人計算廁紙用量的電腦、電話應用程式。'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: '首頁',
+    about: '關於我們',
+    press: '傳媒報導',
+    contact: '聯絡',
+    privacy: '私隱'
   },
   headings: {
     people: '人數',
@@ -29,39 +29,39 @@ export default {
     peesPerDay: '每天小便次數',
     sheetsPerPee: '每次小便所需厠紙格數',
     sheetsPerDay: '每日所需格數',
-    numSheetsDay: null,
+    numSheetsDay: '{n} 格 / 日',
     forDailyCleanup: '每日清理用',
     sheetsPerMonth: '每月所需格數',
     forMonthlyCleanup: '每月清理用',
     sheetsPerRoll: '每卷格數',
     packInformation: '可在包裝上找到相關資訊',
     daysPerRoll: '每卷可用日數',
-    calculation: null,
+    calculation: '計算',
     timeInQuarantine: '隔離時間',
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    rollsBought: '購買卷數',
+    personYou: '你',
+    personNum: '人數 {n}'
   },
   results: {
-    buy: null,
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: '買 {n} 卷',
+    share: '分享 {n} 卷',
+    need: '你需要 {n} 卷',
+    days: '你可維持 {n} 日',
+    weeks: '你可維持 {n} 星期',
+    months: '你可維持 {n} 月',
+    years: '你可維持 {n} 年'
   },
   cta: {
     restart: '重新計算',
-    buy: null,
+    buy: '現在購買',
     share: '分享'
   },
   prompts: {
     buttonTip: '按住 -/+ 鍵可快速加/減',
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    chooseLanguage: '語言',
+    offerTranslation: '你可否幫忙翻譯其他語言？',
+    commission: '如果你購買，我們可能可獲得少許佣金，而你不需付出任何額外支出',
+    donate: '或者你可考慮請我喝杯咖啡'
   },
   durations: {
     twoWeeks: '兩個星期',
@@ -81,8 +81,8 @@ export default {
     cancel: null
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: '購買',
+    sharing: '分享',
+    hoarding: '大手購買'
   }
 }

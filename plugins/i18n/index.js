@@ -1,6 +1,8 @@
-import VueI18n from 'nuxt-i18n'
+import VueI18n from 'vue-i18n'
 
 function ruChoiceIndex (choice, choicesLength) {
+  console.log('choosing:', choice)
+  // '0 машин | {n} машина | {n} машины | {n} машин'
   if (choice === 0) {
     return 0
   }
@@ -22,7 +24,7 @@ function ruChoiceIndex (choice, choicesLength) {
 const getChoiceIndex = VueI18n.prototype.getChoiceIndex
 const choices = {
   ru: ruChoiceIndex,
-  sr: ruChoiceIndex,
+  sr: ruChoiceIndex
 }
 
 /**

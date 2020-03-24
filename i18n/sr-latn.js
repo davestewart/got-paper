@@ -29,7 +29,7 @@ export default {
     peesPerDay: 'Koliko puta dnevno piškiš',
     sheetsPerPee: 'Koliko listića upotrebiš kad piškiš',
     sheetsPerDay: 'Broj listića dnevno',
-    numSheetsDay: '0 listića dnevno | 1 listić dnevno | [2-4] listića dnevno | [*11-*20] listića dnevno | [*1] listić dnevno | [*2-*4] listića dnevno | {n} listića dnevno',
+    numSheetsDay: '{n} listića dnevno | {n} listić dnevno | {n} listića dnevno',
     forDailyCleanup: 'Za svakodnevno čišćenje',
     sheetsPerMonth: 'Broj listića mesečno',
     forMonthlyCleanup: 'Za mesečno čišćenje',
@@ -43,13 +43,13 @@ export default {
     personNum: 'Osoba {n}'
   },
   results: {
-    buy: 'Kupi 0 rolni | Kupi 1 rolnu | Kupi {n} rolne',
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: 'Kupi {n} rolni | Kupi {n} rolnu | Kupi {n} rolne',
+    share: 'Deli {n} rolni | Deli {n} rolnu | Deli {n} rolne',
+    need: 'Treba ti {n} rolni | Treba ti {n} rolna | Trebaju ti {n} rolne',
+    days: 'Imaš {n} dana | Imaš {n} dan | Imaš {n} dana',
+    weeks: 'Imaš {n} nedelja | Imaš {n} nedelju | Imaš {n} nedelje',
+    months: 'Imaš {n} meseci | Imaš {n} mesec | Imaš {n} meseca',
+    years: 'Imaš {n} godina | Imaš {n} godinu | Imaš {n} godine'
   },
   cta: {
     restart: 'Počni ponovo',

@@ -1,8 +1,15 @@
 export default {
   site: {
-    title: 'Genug  Klopapier?',
+    title: 'Genug Klopapier?',
     subtitle: 'Berechnung des täglichen Toilettenpapierbedarfs',
-    description: null
+    description: 'Eine nicht allzu erstnehmende App um den tatsächlichen Klopapierbedarf während der Corona Krise für die Familie zu berechnen'
+  },
+  nav: {
+    home: 'Startseite',
+    about: 'Impressum',
+    press: 'Presse',
+    contact: 'Kontakt',
+    privacy: 'Datenschutz'
   },
   headings: {
     people: 'Menschen',
@@ -19,31 +26,42 @@ export default {
     poopsPerDay: 'Große Geschäfte am Tag',
     wipesPerPoop: 'Abwische pro Geschäft',
     sheetsPerWipe: 'Nummer der Blätter pro Abwisch',
-    totalPoopSheetsPerDay: 'Gesamtpapierbedarf für große Geschäfte',
     peesPerDay: 'Kleines Geschäft',
     sheetsPerPee: 'Abwische pro Geschäft',
-    totalPeeSheetsPerDay: 'Gesamtpapierbedarf für kleine Geschäfte',
     sheetsPerDay: 'Gesamtpapierbedarf pro Tag',
-    sheetsPerDayShort: null,
+    numSheetsDay: '1 Blatt / Tag | {n} Blätter / Tag',
     forDailyCleanup: 'Für tägliche Reinigung',
     sheetsPerMonth: 'Papierbedarf pro Monat',
     forMonthlyCleanup: 'Für monatlicher Reinigung',
-    totalExtraSheetsPerDay: 'Zusätzlicher Bedarf',
     sheetsPerRoll: 'Nummer der Blätter pro Rolle',
     packInformation: 'Diese Information finden Sie seitlich der Verpackung',
     daysPerRoll: 'Toilettenpapierrollenreichweite (in Tagen)',
-    timeInQuarantine: 'Quarantänen Zeitraum (in Tagen)'
+    calculation: 'Berechnung',
+    timeInQuarantine: 'Quarantänen Zeitraum (in Tagen)',
+    rollsBought: 'Gekaufte Rollen',
+    personYou: 'Für Sie',
+    personNum: 'Personen'
+  },
+  results: {
+    buy: '1 Rolle kaufen | {n} Rollen kaufen',
+    share: '1 Rolle teilen | {n} Rollen teilen',
+    need: 'Sie brauchen 1 Rolle | Sie brauchen {n} Rollen',
+    days: 'Sie haben Vorrat für 1 Tag | Sie haben Vorrat für {n} Tage',
+    weeks: 'Sie haben Vorrat für 1 Woche | Sie haben Vorrat für {n} Wochen',
+    months: 'Sie haben Vorrat für 1 Monat | Sie haben Vorrat für {n} Monate',
+    years: 'Sie haben Vorrat für 1 Jahr | Sie haben Vorrat für {n} Jahre'
   },
   cta: {
-    resultRolls: 'Kaufen Sie [number] Rollen',
-    resultTime: null,
-    startAgain: 'Nochmals berechnen',
+    restart: 'Neu errechnen',
+    buy: 'Kaufen Sie jetzt',
     share: 'Teilen'
   },
   prompts: {
     buttonTip: 'Drücken und halten sie +/- Tasten um schnell zu addieren/subtraktieren',
-    chooseLanguage: null,
-    offerTranslation: null
+    chooseLanguage: 'Sprache',
+    offerTranslation: 'Können Sie helfen ineiner anderen Sprache dies zu übersetzten ',
+    commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
+    donate: 'Oder laden Sie mich zum Kaffee ein!'
   },
   durations: {
     twoWeeks: '2 Wochen',
@@ -57,15 +75,14 @@ export default {
     oneYear: '1 Jahr'
   },
   actions: {
-    addPerson: null,
-    rename: null,
-    remove: null,
-    cancel: null
+    addPerson: 'Für eine weitere Person berechnen',
+    rename: 'Umnennen',
+    remove: 'Entfernen',
+    cancel: 'abbrechen'
   },
-  units: {
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+  modes: {
+    buying: 'Kaufen',
+    sharing: 'Teilen',
+    hoarding: 'Hamstern'
   }
 }

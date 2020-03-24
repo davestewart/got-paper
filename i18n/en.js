@@ -29,7 +29,7 @@ export default {
     peesPerDay: 'Pees per day',
     sheetsPerPee: 'Sheets per pee',
     sheetsPerDay: 'Sheets per day',
-    numSheetsDay: '0 sheets / day | 1 sheet / day | {n} sheets / day',
+    numSheetsDay: '1 sheet / day | {n} sheets / day',
     forDailyCleanup: 'For daily cleanup',
     sheetsPerMonth: 'Sheets per month',
     forMonthlyCleanup: 'For monthly cleanup',
@@ -43,13 +43,13 @@ export default {
     personNum: 'Person {n}'
   },
   results: {
-    buy: 'Buy 0 rolls | Buy 1 roll | Buy {n} rolls',
-    share: 'Share 0 rolls | Share 1 roll | Share {n} rolls',
-    need: 'You need 0 rolls | You need 1 roll | You need {n} rolls',
-    days: 'You\'ve got 0 days | You\'ve got 1 day | You\'ve got {n} days',
-    weeks: 'You\'ve got 0 weeks | You\'ve got 1 week | You\'ve got {n} weeks',
-    months: 'You\'ve got 0 months | You\'ve got 1 month | You\'ve got {n} months',
-    years: 'You\'ve got 0 years | You\'ve got 1 year | You\'ve got {n} years'
+    buy: 'Buy 1 roll | Buy {n} rolls',
+    share: 'Share 1 roll | Share {n} rolls',
+    need: 'You need 1 roll | You need {n} rolls',
+    days: 'You\'ve got 1 day | You\'ve got {n} days',
+    weeks: 'You\'ve got 1 week | You\'ve got {n} weeks',
+    months: 'You\'ve got 1 month | You\'ve got {n} months',
+    years: 'You\'ve got 1 year | You\'ve got {n} years'
   },
   cta: {
     restart: 'Start Again',

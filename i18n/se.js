@@ -6,7 +6,7 @@ export default {
   },
   nav: {
     home: 'Startsida',
-    about: 'Om',
+    about: 'Om Got Paper',
     press: 'Press',
     contact: 'Kontakt',
     privacy: 'Sekretessinställningar'
@@ -29,27 +29,27 @@ export default {
     peesPerDay: 'Antal kissningar per dag',
     sheetsPerPee: 'Antal toalettpappersark per gång',
     sheetsPerDay: 'Toalettpappersark per dag',
-    numSheetsDay: null,
+    numSheetsDay: 'Inga ark / dag | 1 ark / dag | {n} ark / dag',
     forDailyCleanup: 'För annan daglig rengöring ',
     sheetsPerMonth: 'Toalettpappersark per månad',
     forMonthlyCleanup: 'För månatlig rengöring',
     sheetsPerRoll: 'Antal toalettpappersark per rulle',
     packInformation: 'Denna information hittar du på sidan av toalettpapperspaketet',
-    daysPerRoll: 'Antal toalettpappersrullar per dag',
+    daysPerRoll: 'Antal dagar per toalettpappersrulle',
     calculation: 'Beräkning',
     timeInQuarantine: 'Tid i karantän',
     rollsBought: 'Inköpta antal rullar',
     personYou: 'Du',
-    personNum: 'Personer {n}'
+    personNum: 'Person {n} '
   },
   results: {
-    buy: 'Köp 0 rullar',
-    share: 'Dela ',
-    need: 'Du behöver 0 rllar',
-    days: 'Det räcker i 0 dagar',
-    weeks: 'Det räcker i = veckor',
-    months: 'Det räcker i = månader',
-    years: 'Det räcker i 0 år'
+    buy: 'Köp 1 rulle | Köp {n} rullar',
+    share: 'Dela 1 rulle |  Dela {n} rullar',
+    need: 'Du behöver 1 rulle | Du behöver {n} rullar',
+    days: 'Det räcker i 1 dag | det räcker i {n} dagar',
+    weeks: 'Det räcker i 1 vecka | Det räcker i {n} veckor',
+    months: 'Det räcker i 1 månad | Det räcker i {n} månader',
+    years: 'Det räcker i 1 år | Det räcker i {n} år'
   },
   cta: {
     restart: 'Börja om från början',
@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Språk',
     offerTranslation: 'Kan du översätta till andra språk?',
     commission: 'Vid köp så kan vi möjligen få liten provision, men inte på din bekostnad.',
-    donate: 'Om du vill så får du gärna bköpa mig en kaffe'
+    donate: 'Om du vill så får du gärna köpa mig en kaffe'
   },
   durations: {
     twoWeeks: 'Två veckor',

@@ -2,14 +2,14 @@ export default {
   site: {
     title: 'Tienes papel?',
     subtitle: 'Calcula cuanto papel de baño necesitas',
-    description: null
+    description: 'Descripción: Una aplicación algo picara para computadora, tableta o movil que calcula la cantidad de papel de baño que necesitan tu y tu familia durante la pandemia del Coronavirus.'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Hogar',
+    about: 'Acerca',
+    press: 'Presiona',
+    contact: 'Contacto',
+    privacy: 'Privacidad'
   },
   headings: {
     people: 'Persona',
@@ -29,39 +29,39 @@ export default {
     peesPerDay: 'Visitas al dia para hacer pipi',
     sheetsPerPee: 'Hojitas de papel por miada',
     sheetsPerDay: 'Hojitas por dia',
-    numSheetsDay: null,
+    numSheetsDay: '1 hoja / dia | {n} hojas / dia',
     forDailyCleanup: 'Para limpieza general',
     sheetsPerMonth: 'Hojas por mes',
     forMonthlyCleanup: 'Para limpieza mensual',
     sheetsPerRoll: 'Hojitas por rollo',
     packInformation: 'Encuentra esta informacion al reverso de este paquete',
     daysPerRoll: 'Dias por rollo',
-    calculation: null,
+    calculation: 'Calculacion',
     timeInQuarantine: 'Tiempo en cuarentena',
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    rollsBought: 'Rollos comprados',
+    personYou: 'Tu',
+    personNum: 'Persona/ personas '
   },
   results: {
-    buy: null,
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: 'Comprar 1 rollo | Ustedes necesitan comprar {n} rollos',
+    share: 'Compartir 1 rollo | Ustedes compartirtiran {n} rollos',
+    need: 'Tu necesitas 1 rollo | Ustedes necesitan {n} rollos',
+    days: 'Duraras 1 dia | Ustedes duraran {n} dias',
+    weeks: 'Duraras 1 semana | Ustedes duraran {n} semanas',
+    months: 'Duraras 1 mes | Ustedes duraran {n} meses',
+    years: 'Duraras 1 año | Ustedes duraran {n} años'
   },
   cta: {
-    restart: 'Empieza de nuevo',
-    buy: null,
+    restart: 'Empezar de nuevo',
+    buy: 'Compra ahora',
     share: 'Comparte'
   },
   prompts: {
-    buttonTip: 'Presiona y mantener presionado los signos de + y - rapido!',
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    buttonTip: 'Presionar y mantener presionado los signos de + y - rapido!',
+    chooseLanguage: 'Idioma',
+    offerTranslation: 'Puedes traducir en otro Idioma',
+    commission: 'Si compras algo, posiblemente nos llegue una pequeña comision sin cargo para ti',
+    donate: 'O si te sientes generoso, un cafe!!!'
   },
   durations: {
     twoWeeks: '2 Semanas',
@@ -81,8 +81,8 @@ export default {
     cancel: null
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Comprando',
+    sharing: 'compartiendo',
+    hoarding: 'Acumulando'
   }
 }
