@@ -1,12 +1,6 @@
 import VueI18n from 'nuxt-i18n'
 
 function ruChoiceIndex (choice, choicesLength) {
-  // this === VueI18n instance, so the locale property also exists here
-  if (this.locale !== 'ru') {
-    // proceed to the default implementation
-    return getChoiceIndex.apply(this, arguments)
-  }
-
   if (choice === 0) {
     return 0
   }
