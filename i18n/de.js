@@ -40,7 +40,7 @@ export default {
     timeInQuarantine: 'Quarantänen Zeitraum (in Tagen)',
     rollsBought: 'Gekaufte Rollen',
     personYou: 'Für Sie',
-    personNum: 'Personen'
+    personNum: 'Personen {n}'
   },
   results: {
     buy: '1 Rolle kaufen | {n} Rollen kaufen',

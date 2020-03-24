@@ -40,7 +40,7 @@ export default {
     timeInQuarantine: 'Tiempo en cuarentena',
     rollsBought: 'Rollos comprados',
     personYou: 'Tu',
-    personNum: 'Persona/ personas '
+    personNum: 'Persona {n}'
   },
   results: {
     buy: 'Comprar 1 rollo | Ustedes necesitan comprar {n} rollos',
@@ -82,7 +82,7 @@ export default {
   },
   modes: {
     buying: 'Comprando',
-    sharing: 'compartiendo',
+    sharing: 'Compartiendo',
     hoarding: 'Acumulando'
   }
 }
