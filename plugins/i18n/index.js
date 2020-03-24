@@ -1,31 +1,17 @@
 import VueI18n from 'vue-i18n'
 
-function ruChoiceIndex (choice, choicesLength) {
-  console.log('choosing:', choice)
-  // '0 машин | {n} машина | {n} машины | {n} машин'
-  if (choice === 0) {
-    return 0
-  }
+// custom functions
+import { ruChoiceIndex } from './ru'
+import { srChoiceIndex } from './sr'
 
-  const teen = choice > 10 && choice < 20
-  const endsWithOne = choice % 10 === 1
-
-  if (!teen && endsWithOne) {
-    return 1
-  }
-
-  if (!teen && choice % 10 >= 2 && choice % 10 <= 4) {
-    return 2
-  }
-
-  return (choicesLength < 4) ? 2 : 3
-}
-
-const getChoiceIndex = VueI18n.prototype.getChoiceIndex
+// config
 const choices = {
   ru: ruChoiceIndex,
-  sr: ruChoiceIndex
+  sr: srChoiceIndex,
 }
+
+// extend
+const getChoiceIndex = VueI18n.prototype.getChoiceIndex
 
 /**
  * @param choice          {number}  a choice index given by the input to $tc: `$tc('path.to.rule', choiceIndex)`
