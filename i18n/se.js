@@ -1,18 +1,18 @@
 export default {
   site: {
     title: 'Har du toalettpapper?',
-    subtitle: 'Beräkna åtgång av hur mycket papper du behöver.',
-    description: null
+    subtitle: 'Beräkna åtgång av hur mycket papper du behöver',
+    description: 'En frän app för dator, surfplatta och mobil för att beräkna din och din familjs behov av toalettpapper under Coronaviruspandemin.'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Startsida',
+    about: 'Om',
+    press: 'Press',
+    contact: 'Kontakt',
+    privacy: 'Sekretessinställningar'
   },
   headings: {
-    people: null,
+    people: 'Personer',
     usage: 'Förbrukning',
     paper: 'Toalettpapper',
     quarantine: 'Karatän'
@@ -36,53 +36,53 @@ export default {
     sheetsPerRoll: 'Antal toalettpappersark per rulle',
     packInformation: 'Denna information hittar du på sidan av toalettpapperspaketet',
     daysPerRoll: 'Antal toalettpappersrullar per dag',
-    calculation: null,
+    calculation: 'Beräkning',
     timeInQuarantine: 'Tid i karantän',
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    rollsBought: 'Inköpta antal rullar',
+    personYou: 'Du',
+    personNum: 'Personer {n}'
   },
   results: {
-    buy: null,
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: 'Köp 0 rullar',
+    share: 'Dela ',
+    need: 'Du behöver 0 rllar',
+    days: 'Det räcker i 0 dagar',
+    weeks: 'Det räcker i = veckor',
+    months: 'Det räcker i = månader',
+    years: 'Det räcker i 0 år'
   },
   cta: {
     restart: 'Börja om från början',
-    buy: null,
+    buy: 'Köp nu',
     share: 'Dela'
   },
   prompts: {
     buttonTip: 'Tryck på och håll nere -/+ knappen för snabb ändring av antal',
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    chooseLanguage: 'Språk',
+    offerTranslation: 'Kan du översätta till andra språk?',
+    commission: 'Vid köp så kan vi möjligen få liten provision, men inte på din bekostnad.',
+    donate: 'Om du vill så får du gärna bköpa mig en kaffe'
   },
   durations: {
-    twoWeeks: null,
-    threeWeeks: null,
-    oneMonth: null,
-    sixWeeks: null,
-    twoMonths: null,
-    threeMonths: null,
-    sixMonths: null,
-    nineMonths: null,
-    oneYear: null
+    twoWeeks: 'Två veckor',
+    threeWeeks: 'Tre veckor',
+    oneMonth: 'En månad',
+    sixWeeks: 'Sex veckor',
+    twoMonths: 'Två månader',
+    threeMonths: 'Tre månader',
+    sixMonths: 'Sex månader',
+    nineMonths: 'Nio månader',
+    oneYear: 'Ett år'
   },
   actions: {
-    addPerson: null,
-    rename: null,
-    remove: null,
-    cancel: null
+    addPerson: 'Lägg till en person',
+    rename: 'Ändra namn',
+    remove: 'Ta bort',
+    cancel: 'Ångra'
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Köp',
+    sharing: 'Dela',
+    hoarding: 'Bunkra'
   }
 }

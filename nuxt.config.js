@@ -176,7 +176,8 @@ export default {
   plugins: [
     '@/plugins/polyfills.client.js',
     '@/plugins/global-components.js',
-    '@/plugins/portal-vue.js'
+    '@/plugins/portal-vue.js',
+    '@/plugins/i18n.js',
   ],
 
   buildModules: [

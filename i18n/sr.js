@@ -1,88 +1,88 @@
 export default {
   site: {
-    title: null,
-    subtitle: null,
-    description: null
+    title: 'Imaš li papira?',
+    subtitle: 'Izračunaj koliko toalet papira ti stvarno treba',
+    description: 'Mangupska aplikacija za računare, tablete i mobilne uređaje koja izračunava koliko toalet papira je potrebno tebi i tvojoj porodici tokom pandemije korona virusa'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Početna',
+    about: 'O aplikaciji',
+    press: 'Štampa',
+    contact: 'Kontakt',
+    privacy: 'Privatnost'
   },
   headings: {
-    people: null,
-    usage: null,
-    paper: null,
-    quarantine: null
+    people: 'Ljudi',
+    usage: 'Upotreba',
+    paper: 'Toalet papir',
+    quarantine: 'Karantin'
   },
   subHeadings: {
-    poops: null,
-    pees: null,
-    extras: null
+    poops: 'Kakenje',
+    pees: 'Piškenje',
+    extras: 'Dodatno'
   },
   labels: {
-    poopsPerDay: null,
-    wipesPerPoop: null,
-    sheetsPerWipe: null,
-    peesPerDay: null,
-    sheetsPerPee: null,
-    sheetsPerDay: null,
-    numSheetsDay: null,
-    forDailyCleanup: null,
-    sheetsPerMonth: null,
-    forMonthlyCleanup: null,
-    sheetsPerRoll: null,
-    packInformation: null,
-    daysPerRoll: null,
-    calculation: null,
-    timeInQuarantine: null,
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    poopsPerDay: 'Koliko puta dnevno kakiš',
+    wipesPerPoop: 'Koliko puta se obrišeš kad kakiš',
+    sheetsPerWipe: 'Koliko listića po brisanju upotrebiš',
+    peesPerDay: 'Koliko puta dnevno piškiš',
+    sheetsPerPee: 'Koliko listića upotrebiš kad piškiš',
+    sheetsPerDay: 'Broj listića dnevno',
+    numSheetsDay: '0 listića dnevno | 1 listić dnevno | [2-4] listića dnevno | [*11-*20] listića dnevno | [*1] listić dnevno | [*2-*4] listića dnevno | {n} listića dnevno',
+    forDailyCleanup: 'Za svakodnevno čišćenje',
+    sheetsPerMonth: 'Broj listića mesečno',
+    forMonthlyCleanup: 'Za mesečno čišćenje',
+    sheetsPerRoll: 'Broj listića u rolni',
+    packInformation: 'Ovaj podatak se nalazi na pakovanju papira',
+    daysPerRoll: 'Broj dana po rolni',
+    calculation: 'Izračunavanje',
+    timeInQuarantine: 'Vreme u karantinu',
+    rollsBought: 'Kupljenih rolni',
+    personYou: 'Ti',
+    personNum: 'Osoba {n}'
   },
   results: {
-    buy: 'Buy 0 rolls | Buy 1 roll | Buy {n} rolls',
-    share: 'Share 0 rolls | Share 1 roll | Share {n} rolls',
-    need: 'You need 0 rolls | You need 1 roll | You need {n} rolls',
-    days: 'You\'ll last 0 days | You\'ll last 1 day | You\'ll last {n} days',
-    weeks: 'You\'ll last 0 weeks | You\'ll last 1 week | You\'ll last {n} weeks',
-    months: 'You\'ll last 0 months | You\'ll last 1 month | You\'ll last {n} months',
-    years: 'You\'ll last 0 years | You\'ll last 1 year | You\'ll last {n} years'
+    buy: 'Kupi 0 rolni | Kupi 1 rolnu | Kupi {n} rolne',
+    share: null,
+    need: null,
+    days: null,
+    weeks: null,
+    months: null,
+    years: null
   },
   cta: {
-    restart: null,
-    buy: null,
-    share: null
+    restart: 'Počni ponovo',
+    buy: 'Kupi odmah',
+    share: 'Deli'
   },
   prompts: {
-    buttonTip: null,
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    buttonTip: 'Pritisni i zadrži dugmad -/+ da bi sabiranje/oduzimanje išlo brže.',
+    chooseLanguage: 'Jezik',
+    offerTranslation: 'Možeš li da prevedeš na još neki jezik?',
+    commission: 'Ako kupiš nešto, dobijamo malu proviziju koja tebe ništa ne košta.',
+    donate: 'Ili, ako želiš, možeš da me častiš kafom!'
   },
   durations: {
-    twoWeeks: null,
-    threeWeeks: null,
-    oneMonth: null,
-    sixWeeks: null,
-    twoMonths: null,
-    threeMonths: null,
-    sixMonths: null,
-    nineMonths: null,
-    oneYear: null
+    twoWeeks: 'Dve nedelje',
+    threeWeeks: 'Tri nedelje',
+    oneMonth: 'Mesec dana',
+    sixWeeks: 'Šest nedelja',
+    twoMonths: 'Dva meseca',
+    threeMonths: 'Tri meseca',
+    sixMonths: 'Šest meseci',
+    nineMonths: 'Devet meseci',
+    oneYear: 'Godina dana'
   },
   actions: {
-    addPerson: null,
-    rename: null,
-    remove: null,
-    cancel: null
+    addPerson: 'Dodaj osobu',
+    rename: 'Promeni ime',
+    remove: 'Ukloni',
+    cancel: 'Otkaži'
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Kupovanje',
+    sharing: 'Deljenje',
+    hoarding: 'Gomilanje'
   }
 }
