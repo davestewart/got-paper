@@ -415,7 +415,7 @@ export default {
 
 function getResultHtml (text = '') {
   const [a, b, c] = text.replace(/(\d+(?:\.\d+)?)/, '|$1|').split('|')
-  return `<span class="text">${a || '?'}</span><span class="value">${b || '?'}</span><span class="text">${c || '?'}</span>`
+  return `<span class="text">${a}</span><span class="value">${b || '?'}</span><span class="text">${c}</span>`
 }
 
 </script>

@@ -16,7 +16,7 @@
           <span class="uiPerson__stats">{{ $tc('labels.numSheetsDay', round(total)) }}</span>
         </button>
       </div>
-      <UiIconButton icon="pen" class="ml-1" :title="$t('actions.edit')" @click="edit" />
+      <UiIconButton icon="pen" class="ml-1" :title="$t('actions.rename')" @click="edit" />
       <UiIconButton icon="times" class="ml-1" :title="$t('actions.remove')" :disabled="!removable" @click="remove" />
     </div>
   </div>
