@@ -12,13 +12,14 @@
     </section>
 
     <section>
-      <h4>Needed</h4>
+      <h4>Wanted</h4>
       <p>If you can help with these, click the link to email:</p>
       <ul>
         <li v-for="language in wanted" :key="language">
-          <a
-            :href="`mailto:haveyougotpaper@gmail.com?subject=I can do the ${language} translation`"
-          >{{ language }}</a>
+          <a :href="mailTo(`I can do the ${language} translation`)">{{ language }}</a>
+        </li>
+        <li>
+          <a :href="mailTo('I can translate...')">Any other language</a>
         </li>
       </ul>
       <p>I'll then mail you a sharing link to the document and we can go from there.</p>
@@ -45,19 +46,27 @@ export default {
     return {
       done: [
         'German',
+        'Italian',
         'French',
         'Swedish',
         'Spanish',
+        'Russian',
+        'Serbian',
+        'Indonesian',
         'Czech',
         'Chinese (Traditional)'
       ],
       wanted: [
         'Chinese (Mandarin)',
         'Romanian',
-        'Russian',
-        'Polish',
-        'Dutch'
+        'Polish'
       ]
+    }
+  },
+
+  methods: {
+    mailTo (subject) {
+      return `mailto:haveyougotpaper@gmail.com?subject=${subject}`
     }
   }
 }
