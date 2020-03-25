@@ -60,7 +60,7 @@ export default {
     buttonTip: 'Drücken und halten Sie die +/- Tasten zum schnellen hinzufügen/entfernen',
     chooseLanguage: 'Sprache',
     offerTranslation: 'Können Sie helfen die App in eine andere Sprache zu übersetzten',
-    commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
+    commission: 'Beim Kauf bekommt dem Entwicker der App möglicherweise eine Komission. Für Sie ändert sich dabei nichts am Kaufpreis',
     donate: 'Oder geben Sie mir einen Kaffee aus!'
   },
   durations: {
