@@ -59,7 +59,7 @@ export default {
   prompts: {
     buttonTip: 'Drücken und halten Sie die +/- Tasten zum schnellen hinzufügen/entfernen',
     chooseLanguage: 'Sprache',
-    offerTranslation: 'Können Sie helfen ineiner anderen Sprache dies zu übersetzten ',
+    offerTranslation: 'Können Sie helfen die App in eine andere Sprache zu übersetzten',
     commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
     donate: 'Oder laden Sie mich zum Kaffee ein!'
   },
