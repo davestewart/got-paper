@@ -78,7 +78,7 @@ export default {
     addPerson: 'Für eine weitere Person berechnen',
     rename: 'Umbenennen',
     remove: 'Entfernen',
-    cancel: 'abbrechen'
+    cancel: 'Abbrechen'
   },
   modes: {
     buying: 'Kaufen',
