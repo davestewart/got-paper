@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Sprache',
     offerTranslation: 'Können Sie helfen die App in eine andere Sprache zu übersetzten',
     commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
-    donate: 'Oder laden Sie mich zum Kaffee ein!'
+    donate: 'Oder geben Sie mir einen Kaffee aus!'
   },
   durations: {
     twoWeeks: '2 Wochen',
