@@ -57,7 +57,7 @@ export default {
     share: 'Teilen'
   },
   prompts: {
-    buttonTip: 'Drücken und halten sie +/- Tasten um schnell zu addieren/subtraktieren',
+    buttonTip: 'Drücken und halten Sie die +/- Tasten zum schnellen hinzufügen/entfernen',
     chooseLanguage: 'Sprache',
     offerTranslation: 'Können Sie helfen ineiner anderen Sprache dies zu übersetzten ',
     commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
