@@ -53,7 +53,7 @@ export default {
   },
   cta: {
     restart: 'Neu errechnen',
-    buy: 'Kaufen Sie jetzt',
+    buy: 'Jetzt kaufen',
     share: 'Teilen'
   },
   prompts: {
