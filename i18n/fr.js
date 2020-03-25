@@ -29,39 +29,39 @@ export default {
     peesPerDay: 'Pipis par jour',
     sheetsPerPee: 'Feuilles par pipi',
     sheetsPerDay: 'Feuilles par jour',
-    numSheetsDay: null,
+    numSheetsDay: '1 feuille / jour | {n} feuilles / jour',
     forDailyCleanup: 'Totale pour les nettoyages quotidiennes',
     sheetsPerMonth: 'Feuilles par mois',
     forMonthlyCleanup: 'Totale pour les nettoyages mensuelles',
     sheetsPerRoll: 'Feuilles par PQ individuelle',
     packInformation: 'Cette information ce trouve sur le packaging',
     daysPerRoll: 'Jours par QP',
-    calculation: null,
-    timeInQuarantine: 'Jours en quarantaine',
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    calculation: 'Calcul',
+    timeInQuarantine: 'Temps en quarantaine',
+    rollsBought: 'Rouleaux achetés',
+    personYou: 'Vous',
+    personNum: 'Personne {n}'
   },
   results: {
-    buy: null,
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: 'Acheter 1 rouleau | Acheter {n} rouleaux',
+    share: 'Partager 1 rouleau | Partager {n} rouleaux',
+    need: 'Vous avez besoin d\'un rouleau | Vous avez besoin de {n} rouleaux',
+    days: 'Vous durerez 1 jour | Vous durerez {n} jours',
+    weeks: 'Vous durerez 1 semaine | Vous durerez {n} semaines',
+    months: 'Vous durerez 1 mois | Vous durerez {n} mois',
+    years: 'Vous durerez 1 an | Vous durerez {n} ans'
   },
   cta: {
     restart: 'Recommencer',
-    buy: null,
+    buy: 'Acheter maintenant',
     share: 'Partager'
   },
   prompts: {
     buttonTip: 'Appuyez longtemps les boutons -/+ pour obtenir vite une substration ou addition',
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    chooseLanguage: 'Langue',
+    offerTranslation: 'Pouvez-vous traduire une autre langue?',
+    commission: 'Si vous effectuez un achat, nous pouvons recevoir une petite commission sans frais supplémentaires pour vous.',
+    donate: 'Achetez-moi un café!'
   },
   durations: {
     twoWeeks: 'Deux semaines',
@@ -78,11 +78,11 @@ export default {
     addPerson: 'Ajoutez une autre personne',
     rename: 'Changement de nom',
     remove: 'Effacer',
-    cancel: null
+    cancel: 'Annuler'
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Achat',
+    sharing: 'Partage',
+    hoarding: 'Palissade'
   }
 }
