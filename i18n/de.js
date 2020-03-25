@@ -76,7 +76,7 @@ export default {
   },
   actions: {
     addPerson: 'Für eine weitere Person berechnen',
-    rename: 'Umnennen',
+    rename: 'Umbenennen',
     remove: 'Entfernen',
     cancel: 'abbrechen'
   },
