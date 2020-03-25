@@ -193,9 +193,11 @@ export default {
     CalculatorUsage,
     UiPerson
   },
-
+  
   data () {
     return {
+      // IMPORTANT! Update this number each time there is a change in saved data
+      version: 2,
       labels: {
         durations,
         modes: {
@@ -392,7 +394,8 @@ export default {
     load () {
       if (process.client) {
         const data = storage.get('paper-data')
-        if (data) {
+        // only update when the schema matches
+        if (data && data.version === this.version) {
           assignDeep(this, data)
           this.$refs.usage.setData(this.getPerson().data)
         }
@@ -400,8 +403,9 @@ export default {
     },
 
     save () {
-      const { personId, people, form } = this
+      const { version, personId, people, form } = this
       storage.set('paper-data', {
+        version,
         personId,
         people,
         form
