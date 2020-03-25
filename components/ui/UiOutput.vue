@@ -1,7 +1,7 @@
 <template>
   <div class="uiOutput form-group row" :class="classes">
-    <label class="uiOutput__label col-6 col-md-9 col-form-label">{{ label }}</label>
-    <span class="uiOutput__slot col-6 col-md-3">
+    <label class="uiOutput__label col-6 col-md-8 col-form-label">{{ label }}</label>
+    <span class="uiOutput__slot col-6 col-md-4">
       <slot>
         <output class="uiOutput__value">{{ output }}</output>
       </slot>
@@ -49,7 +49,11 @@ export default {
     vertical-align: middle;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  &__slot {
+    align-items: flex-end;
   }
 
   &__label {

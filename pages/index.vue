@@ -10,9 +10,16 @@ import Calculator from '@/components/calculator/Calculator.vue'
 import page from '~/plugins/page-plugin'
 
 export default {
+  name: 'Index',
   components: {
     Calculator
   },
   extends: page('home')
 }
 </script>
+
+<style>
+.page__app {
+  position: relative;
+}
+</style>

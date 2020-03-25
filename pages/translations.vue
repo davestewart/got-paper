@@ -7,6 +7,7 @@
       <ul>
         <li>A <strong>Gmail account</strong> to access the document</li>
         <li>To be a <strong>native or expert speaker</strong> with a good level of English</li>
+        <li>To have a <strong>sense of humour</strong>!</li>
       </ul>
     </section>
 

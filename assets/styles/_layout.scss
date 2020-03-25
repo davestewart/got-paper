@@ -29,3 +29,21 @@ main {
 section {
   margin: 0 0 2rem;
 }
+
+html.modal-open {
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+body.modal-open {
+  max-height: 100vh;
+  height: 100vh;
+  iframe {
+    pointer-events: none;
+  }
+}
+
+html {
+  white-space-collapse: discard;
+}

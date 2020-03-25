@@ -108,8 +108,8 @@ export default {
         mousedown: start,
         touchend: stop,
         mouseup: stop,
-        mouseout: stop,
-        mouseleave: stop
+        // mouseout: stop,
+        // mouseleave: stop
       }
     },
 
@@ -137,7 +137,6 @@ export default {
     white-space: nowrap;
     align-content: start;
     text-align: right;
-    font-size: 0;
 
     input {
       display: inline-block;
