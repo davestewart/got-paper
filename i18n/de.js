@@ -6,7 +6,7 @@ export default {
   },
   nav: {
     home: 'Startseite',
-    about: 'Impressum',
+    about: 'Über die App',
     press: 'Presse',
     contact: 'Kontakt',
     privacy: 'Datenschutz'
