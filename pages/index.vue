@@ -14,7 +14,7 @@ export default {
   components: {
     Calculator
   },
-  extends: page('home')
+  extends: page('index')
 }
 </script>
 

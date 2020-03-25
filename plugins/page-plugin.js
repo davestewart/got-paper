@@ -16,8 +16,12 @@ export const titles = {
 export default function (key) {
   return {
     head () {
+      // index page uses translated site description
+      const title = key === 'index'
+        ? this.$t('site.subtitle')
+        : getTitle(key)
       return {
-        title: getTitle(key)
+        title
       }
     }
   }

@@ -29,7 +29,10 @@ export default {
     const pathWithSlash = path.endsWith('/') ? path : `${path}/`
     return {
       htmlAttrs: i18nSeo.htmlAttrs,
-      meta: i18nSeo.meta,
+      meta: [
+        ...i18nSeo.meta,
+        { hid: 'description', name: 'description', content: this.$t('site.description') }
+      ],
       link: [
         { rel: 'canonical', href: `${baseUrl}${pathWithSlash}` },
         ...i18nSeo.link

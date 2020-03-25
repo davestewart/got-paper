@@ -4,7 +4,7 @@ import locales from './locales'
 const config = {
   locales: isProd
     ? locales.prod
-    : locales.temp,
+    : locales.only('en sr de'),
   defaultLocale: 'en',
   seo: false,
   lazy: true,
