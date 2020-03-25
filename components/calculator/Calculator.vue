@@ -193,7 +193,7 @@ export default {
     CalculatorUsage,
     UiPerson
   },
-  
+
   data () {
     return {
       // IMPORTANT! Update this number each time there is a change in saved data
@@ -225,7 +225,7 @@ export default {
     displayName () {
       const person = this.getPerson()
       const index = this.people.indexOf(person)
-      return person.name || this.$tc(index === 0 ? 'labels.personYou' : 'labels.personNum')
+      return person.name || this.$tc(index === 0 ? 'labels.personYou' : 'labels.personNum', index + 1)
     },
 
     totalSheetsDay () {

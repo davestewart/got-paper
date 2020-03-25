@@ -39,7 +39,7 @@ export default {
     calculation: 'Berechnung',
     timeInQuarantine: 'Quarantänezeitraum (in Tagen)',
     rollsBought: 'Gekaufte Rollen',
-    personYou: 'Für Sie',
+    personYou: 'Sie',
     personNum: 'Personen {n}'
   },
   results: {
