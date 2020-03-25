@@ -2,7 +2,7 @@ export default {
   site: {
     title: 'Genug Klopapier?',
     subtitle: 'Berechnung des täglichen Toilettenpapierbedarfs',
-    description: 'Eine nicht allzu erstnehmende App um den tatsächlichen Klopapierbedarf während der Corona Krise für die Familie zu berechnen'
+    description: 'Eine nicht allzu erstnehmende App um den tatsächlichen Klopapierbedarf während der Coronakrise für die Familie zu berechnen'
   },
   nav: {
     home: 'Startseite',
