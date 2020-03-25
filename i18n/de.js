@@ -2,11 +2,11 @@ export default {
   site: {
     title: 'Genug Klopapier?',
     subtitle: 'Berechnung des täglichen Toilettenpapierbedarfs',
-    description: 'Eine nicht allzu erstnehmende App um den tatsächlichen Klopapierbedarf während der Corona Krise für die Familie zu berechnen'
+    description: 'Eine nicht allzu erstnehmende App um den tatsächlichen Klopapierbedarf während der Coronakrise für die Familie zu berechnen'
   },
   nav: {
     home: 'Startseite',
-    about: 'Impressum',
+    about: 'Über die App',
     press: 'Presse',
     contact: 'Kontakt',
     privacy: 'Datenschutz'
@@ -37,7 +37,7 @@ export default {
     packInformation: 'Diese Information finden Sie seitlich der Verpackung',
     daysPerRoll: 'Toilettenpapierrollenreichweite (in Tagen)',
     calculation: 'Berechnung',
-    timeInQuarantine: 'Quarantänen Zeitraum (in Tagen)',
+    timeInQuarantine: 'Quarantänezeitraum (in Tagen)',
     rollsBought: 'Gekaufte Rollen',
     personYou: 'Für Sie',
     personNum: 'Personen {n}'
@@ -53,15 +53,15 @@ export default {
   },
   cta: {
     restart: 'Neu errechnen',
-    buy: 'Kaufen Sie jetzt',
+    buy: 'Jetzt kaufen',
     share: 'Teilen'
   },
   prompts: {
-    buttonTip: 'Drücken und halten sie +/- Tasten um schnell zu addieren/subtraktieren',
+    buttonTip: 'Drücken und halten Sie die +/- Tasten zum schnellen hinzufügen/entfernen',
     chooseLanguage: 'Sprache',
-    offerTranslation: 'Können Sie helfen ineiner anderen Sprache dies zu übersetzten ',
-    commission: 'Der Besitzer dieser App wird beim Kauf eine Kommission zugeteilt, diese wird Ihnen nicht errechnet.',
-    donate: 'Oder laden Sie mich zum Kaffee ein!'
+    offerTranslation: 'Können Sie helfen die App in eine andere Sprache zu übersetzten',
+    commission: 'Beim Kauf bekommt dem Entwicker der App möglicherweise eine Komission. Für Sie ändert sich dabei nichts am Kaufpreis',
+    donate: 'Oder geben Sie mir einen Kaffee aus!'
   },
   durations: {
     twoWeeks: '2 Wochen',
@@ -76,9 +76,9 @@ export default {
   },
   actions: {
     addPerson: 'Für eine weitere Person berechnen',
-    rename: 'Umnennen',
+    rename: 'Umbenennen',
     remove: 'Entfernen',
-    cancel: 'abbrechen'
+    cancel: 'Abbrechen'
   },
   modes: {
     buying: 'Kaufen',
