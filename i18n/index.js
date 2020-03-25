@@ -98,7 +98,7 @@ export default {
       flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABr0lEQVRoQ+2bPUvDUBSG3yNUrV0FJyf1Pzi6qG3FQfFjUUQc3B2qo2Ps4O4igi5SVBBaFP9Ap/6BRhxcLOIoIqJHEkmtsWk5dZCGN1NJLk3u0+e8Tci5goYtm3fTUGwCGAcwBEAajzf7XJzcaTlk5sZp9xX/eVwB1ACUITgo5UavgovxJz6xe9c/kHw/ArBsvcouBxOe7mkq0bde2Bp+8cFk87fHUF2xQvHGxwwMIHJSyo2sSiZfnRKV606gxBIMABWdluyeewZgnmC+CajiwgPzCGCQYH4QePDAeMnc8Ra7jPki8UEwEUoQDMHY0oLG0BgaYyNAY2y8mDE0hsbYCNAYGy9mDI0xGqOVhT89XdtO1z2jhWCa/1gEE5UxNIbGmAKOpcRSMgkDGsMbPKMxfH0S8a9EMARjqiU+XTN8TcKAxtAYGmMjQGNsvJgxNIbG2Ai0MIY9eCE4CjxJxnHPRTDXKeY49uD5XZvs8/2thKim2Rke5hJ0hnv7F/fvk89vr95agiVrScWrlKSQSvSu1dcSBDAyTnVWemQDWl990pZTDMDUICiL6mFxe+wymPAnwmQnZu8TaGQAAAAASUVORK5CYII='
     },
     {
-      code: 'sr-latn',
+      code: 'sr',
       iso: 'sr-Latn-RS',
       name: 'Srpski',
       label: 'Serbian (Latin)',
