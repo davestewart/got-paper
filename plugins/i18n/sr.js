@@ -1,5 +1,5 @@
 export function srChoiceIndex (value, choicesLength) {
-  // '0 rolni | {n} rolnu | {n} rolne'
+  // '{n} rolni | {n} rolnu | {n} rolne'
 
   // values
   const v = Math.floor(value)

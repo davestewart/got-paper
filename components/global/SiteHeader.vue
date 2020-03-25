@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="siteHeader">
     <NuxtLink class="banner" :to="localePath('/')">
       <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
     </NuxtLink>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
+.siteHeader {
   .banner {
     background: $blue-dark;
     display: block;
@@ -40,6 +40,10 @@ export default {
 
   .h-links {
     background-color: darken($grey-light, 6%);
+  }
+
+  .link__privacy {
+    display: none;
   }
 
   .strapline {

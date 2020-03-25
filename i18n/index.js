@@ -1,126 +1,15 @@
-/**
- * Flags from: https://www.iconfinder.com/iconsets/195-flat-flag-psd-icons
- */
-export default {
-  locales: [
-/*
-    {
-      code: 'xx',
-      iso: 'xx-US',
-      name: 'Test',
-      label: 'Test',
-      file: 'xx.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEsElEQVRoge2bXyi8WRjHH+PPGJYRixoTbsjPyP8ykhoupqVsKS5ExA0SF0SKGKG0k0m5YCOlkda6sOVqCNm9IX8mc4EkucBidl2YaPJnnu2c5n13xgxLeN8dM986mTnnnWfO+cx5nvOc877giX4AgDkA+BMALACAX7xYrGOds47dQf4A8IsbgPivQhiIbOFoPVDYomWgKD0wHIrSGwB+AoBvzvzLjfWdFwAYAeB7dyfxROde1mnkkb0sHjDPyIevLw4PDweFQgFKpRLS09NBIpGAQCCAy8tL2NnZgeXlZdDpdHB6espXF7mN+N7e3tja2oqv1cjICPr7+/OxMnH3ZQKBAPf3918NhdHNzQ36+fl9XTDDw8NvhsJoenqaUzCcBV+RSAS3t7fvtmE2mz+sTy9JwMm3AEBsbOy7bchksg/py2vEGZjHx8d327i4uPiQvrxWnPhscHAwGy/MZjOWlJRgeno6VlRU4P39Pdv28PCA1dXVmJiYiEVFRXh9fU3r7+7u6Ir2JYPv+fk5HSSBYlvf39/PgqmqqrJrI5CIxsbGOA2+nLkSUUdHB/27t7dnV398fMy+Xltbs2tjXLC9vZ2TPtqKs1/By8sLDQYD6nQ6FAqFtE4sFuPBwQE7Y0ZHR1mXCQwMRKPRiAMDA5zOFs5diZTGxkYKgMSVubk5FkhycjImJSXR11dXV3ZtWVlZXx+MQqFwSN7IFoFpb2lpcWiXyWScgyEHVSou/ZbEk83NTTg8PIS0tDQQCoVgNBrpJlIul9MNZUpKChwdHYFKpYKenh7Q6/VcdpEVH9MUpVIpxsTE4MLCgsMMmZqawtjYWAwJCeGlb7zMGEYTExMglUqhrq4ODAYDmEwmulqp1Wro7e0FjUYDYrEYtra2+OgeFS+/CJkNRH19fRgQEIBBQUE0CSS7aJVKRdt8fHx4mzG8gSElOjqadR+LxUILo9DQUD6hcAPmpbMUX19fGlMYaTQamu88d31cXBxGRES4Ppiuri66FSgrK3vxuqioKIyMjHzxmry8PIpvcXHR9cHYan5+HuPj4+lJ3ltsiEQiVCqVrCVix6XBlJaWOjmLQzw5OcHKysoXXYIE44KCAlxZWXFqIz8/33XBdHd309R/fHwcU1NTsby8nO6TbDU7O4sZGRlsXCFZLtkv2WpoaAizs7MxMzMTJycn0WQyYVNTk+uCAeuy/LSOrDiFhYU4MzPDDl+v1+Pq6ir7fnBwkEJytmST5f2z+83rck1miVqtdnATksfw2S9ewcjlctze3qYgiLsVFxdjTU0NC2d9fZ26n1uAITMkISEBl5aWWADNzc3s2QxYg25nZyfbrtVqMSws7OuByc3NpfGCBF1ySMVoY2MDJRLJs58jeQ2JO4zIPan6+nq6GnGUFX+ecZLFOlNDQ8OrZ1hbW5tTGwSUy4LJycnBs7MzuwGRY4a32rG9i8CI5EguCwaseyGS7e7u7tJbIeQI8602SNZLPktKbW0ttfnZ/fY8H/OMOL194koiYP5ydwhO9DcB88f/rlv863cCZtTdKTjRz0yV58nwf4vWlhN5fn7GAwV+ffq/BIyKAOA38gCwG8EgYyVj/pGlAAD/ADStESSerY49AAAAAElFTkSuQmCC'
-    },
-*/
-    {
-      code: 'en',
-      iso: 'en-US',
-      name: 'English',
-      label: 'English',
-      file: 'en.js',
-      flag: 'data:image/png;base64,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'
-    },
-    {
-      code: 'zh',
-      iso: 'zh-TW',
-      name: '中文',
-      label: 'Chinese (Traditional)',
-      file: 'zh.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEw0lEQVRoQ+1b62scVRT/3Tuzs7t5NmlebdJW8IUFEUExiBa10MYnVrIRpNZKMf3sX+LnKkih/VJiLS0KLVIL8UEFi4IPUnykJU3z6qbm0d2d2Zk5cu7msWmzycxkszuEOZ+WnXtev3vuOeeenRUoonTqeI+Ae5xA3YBoByCKn2/BzwTQhIC4SpAntg+cuLjoo3J8+OjRRMM94yRA725B5324JM5kUPvhroFPsgqYO739p4Sgwz4kbNmlROJ0yxefvi/Svf0HIOjSlvU0iGMkDop0qv8sQO8E4Q/Co+3OgEwJdyIRhL1SPOdEOvXRFICWSmk09k2BAOQHWyulMoAeGmdg2M5Np9jzdyCbLcgdWVXr3MkEaFaHdaUdCqlwkVsxYERjHvG3RiGSjoKAMhrMC52g2Vi4IFmwJjAwxkuTsK/Xwx1LenbMeHkS2qNzar3zdx2sb7lVCicFA0YnJI8Mw7lR68u5+NujChCyJPQnZmGe7wwnKtzZBskxXFmMnjHAFsieegjIS08O8jGirFZYKwlwVzbWsiMHmoktr/EkdXMWBQIm9sIU9L2zyiLrShucv+rLYh3LpRkD9m+NZZG3ESGBgEm8dxOizlZ63dEkzK93BrdBAPreGZWU9SdnQC7gDDWATA32r9uCy90gp29gtMfmwIm3mDiJcu4IStrjczD2TS5fWW0J81KHAr1aVBIY7jnENqtgV4wgNIJsyxWqyip3bnbCTccBd9kVyuiwf/d2LOKvjUF2ZRSz/Ucj8j9UrOdcFfuSwCRSIxBNC8AE3DZnuBbWNx2euOO9IyAGVpI6VuZXGzienjSuvagkMKLGUZVHtpiB1DjX62F91/pA5SkljKPFvVWjHssmC+5dI5DecjGtnWN0F8b+SWh77vnSl7/WDPtaky8eBUizBXdeByxv5d+3Ah8M6ydfARivTEB7eN6T2PyPLZ7zyv0CY91pFSkcbdWm9YHhLjDhIHH4ZqEpW4O4Ocud2e3PJwHInVmIGhux59KALZH/pQkwpeqsq0WegGHjEn0jy1WqhLV+km2xiNiz09CfvltUzgBrsK2qkeMdmCM3VOSsRVyuzbNdgTY5/sZtFTlM9lBD1ec1noDhfoYjxgvlTu8B9y8lSSfAEQ/MYOKHbhW+lwDlJKyLO7yo27Q1noDhm3DsRR708bxAgKuOM1QPkFBJWX9meimarMFW1dKXIu6c+fLp/LuyU+a7l/1ngU/blYEzUijd1SJPwKiq9Mi8qhj5y+1wp1f2GHzEuKKw084/dbAul5izSEL81THVOXPL7/VWXg1wPAETf/12AZSfthfCvQTx2IAvl6vdm4yD49A6MwAfpQXiIZfqcMM32gw2jwm0g7oLHlRxE8fkpg2Y57vUsQojeYqYchlu7F9uFIOW9nLZsp6cygJzYBz2z82gvID+1H/Ifx/en1AqCsx6uxSm5xEwJXYjAiYCxt9BjSImipgoYvwhEEWMP7yiHBNFTBQx/hCIIsYfXhV/B8+fedVaTWkG5ksAh6plQkj1nove811tZwR6ojfD7wNm6c1w/n4k9XGyhuZPQqAvpKFdGbMEDWSo/oOl/xIsap3uO/YmSB4joBtAeF+pLC9MEwK46gCftw58dmFR9P9ofvOUWt3RCwAAAABJRU5ErkJggg=='
-    },
-/*
-    {
-      code: 'cs',
-      iso: 'cs-CZ',
-      name: 'Czechia',
-      label: 'Czech',
-      file: 'cs.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAADf0lEQVRoQ+3by0tUURwH8O+ZnHR8m480HzWiBkYpMqY5Qm4aW+SiRB1Is7KSyFear+j5D9i6ghRykVkJrWrV1pWaUlGBEEEoYmGZz+b84jc2YORjdK6Le26/1cDcO8z3M+fce89v7hVYVtNzi0cFUA2SuYDYCUAsf1/B1wTQOISpn4C7wQHmF56M7uCdna8CSsrsXUKgTMHwXkcioCcowHxGCDHrhnE4ex4WFljLq09lQAjVB8naTgLoDrRsrxBHyh45TEK85M0L7EmoOZsFk8nYOCREoSh0Pn4K0AmPo/1gPOrP2+DnZ/J6CCq3oRB9otDZMwEganm47MxYXLmUA7NhcWiMYWilXzxjXwza6nLhv32bcgPCi0ByVRjeOT0tElcb8hBo8fPis9TaZE0YjpqWHIFrjXYEB5nVSr5OmnVheH/r7nDcbMpDaIi/YXC8gmGNhF0huN2cj4jwAEPgeA3DGnExQbjVko/oyEDlcTYEwxqMwjiMpHJtGIYxeDrxtOLppWptCoYxwkL9caPJDmtSmJI2m4ZhDT6FX2+0IzU5Qjkcn2BYgy/++CKQLwZVKp9hGIOXDbx84GWEKqUJDGPwgrO5Jge2jFglbDSDYQ1uVTRcsCEvO173OJrCsAY3uWqrsnA4L0nXOJrDsAa3R7lN6iiw6hZnS2CWcIDTzv0ocqToEmfLYDwaJ4vTUXxsr+5wthSGW+pO+RFF9Ok/jEfABMI5+Q4F9EV3KO5DwWo9X1/SmCFRK0dgI+6z67M0h7HgF5rka6TTN32K/PnWmsKEYgGtcghW+q5rFE2nUhTm0O4aQBxmdI+iGUwC/USbHMAOzCuBoglMCk2hRQ4hGIvKoPgMc4AmcVkOwx8upVB8gjlE47go38APUjmUTcM46DMq5QcIrPi3txJQGz5dF9MoiuWoEuHXCuE1DI8OHiU8WoxQXsHwcaRavoWdxoxg4s64LgyfcerlMDJp0jAo68LwtUmzHEIqTRkKZU2YCMyjTQ4ikaYNh+KB+ecevFjMoN01iGjMGhIFoEnhcPY8E8Bxj8Ae+oFWOYgwLBgUxR2776/7fLmHwr0U7qkYugT40YGlO8NtNFFeJ0fA3TcjF5Hojnpyr8IN01HSYamg910mIUuNjAJBvTMUUpnYe2fpWQJPfS2tKgKZqgjIBcBPnxihxgXQ7wIeRPfef+4J/BteoynCxTxRoAAAAABJRU5ErkJggg=='
-    },
-*/
-    {
-      code: 'es',
-      iso: 'es-ES',
-      name: 'Español',
-      label: 'Spanish',
-      file: 'es.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAACpElEQVRoQ+2bu2/TUBTGv+OQhx31SaEsLDAxULEgFSEx8egAAygpC4hWFenCwgZ/AWJiYiggVAkWFKASA+IxMIBQJiQkJCZgYCFqk9KK2HnIPshBaQONY99QqYl77hTF59x7v5/PuffaOiY0tUJ6doLgzDJ4HKBRANR8PYS/GeA8gXIMbW5ndu5FQ2Nd+LepqUR/KTYP8PkQileQRI9MJKf3Zm9ZdTBLqcwDIr6g0ENoTZnp4cjjOxepkMqcBPHL0CrtRBjTKSqkM08APteJf4h9FqiQvrwIYCTEIjuQxj9cMNyBZ9hdHAHjcYsFjIBRy37iDylZY1owEzBeqSQR05qMRIxEjCy+agQ6iZjKxzjiY5W/3srY+QhKrwwYJ0zs2GOvd8tA3f5QZVMmttWdtF1jijeGoA06iO2vATGGvRhB7UsUcDd4AqL7aojstoEqofY1CntZw/D15a3WtCnj+4JRHUXAeBATMAJGLZkkYiRiJGI2ECjeHAIcBTAEDF/bBtv1z9sDcFa1wGS0PgeDV1YC23ezYdtzTOm5UT/NBm3xg1UkT5eCmne1XVsw9lIEK/f6/5x0/RoBA9OriIw2PSb4+XTxdd/XDta7BKy3uq8E/WgZ+jHL165XDHzBuELMNzrKuYSnpsThCozjZq9oDjTPQGDcniqfYjBfG+DyegEExbkOJD5WDTRYLxkFBuOKYpNgvddR/RxF7EANiSNlaEmV/bx30CiB6R1Z/z9TAePBUMAIGLX0kojxihgpA2lNRqodJGIU1xhJJe9Ukhq8DWy44K4xTwGcVQu00FsvSJ1vq3tMmJDK8H/ArFWGu/9/T1/VDf41D8Jk6JOknUDirMl9l9a+JWjYFidnzoC1GQbGAbhfn2yHlicgZwP3d2XvPmsI/g1W7iVytHurIQAAAABJRU5ErkJggg=='
-    },
-    {
-      code: 'de',
-      iso: 'de-DE',
-      name: 'Deutsch',
-      label: 'German',
-      file: 'de.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlElEQVRoQ+2bQUsCQRiG388uqdegv1KdZAyzhQ7FWpekIqLf1CUEvcRWQgfJ0rplP6UQT+Fup51wY2ElV/iu0zunBUfhfXzmXV1mBJlR9Rp1AJeA3QCwDkCyrzt4bQF8AvIO4GrYCx7TjEnwSuV0daX01QLkyMHwikj2JiwXzkZBECVgqp7fBnCs+ASXp3aGvdummF2/JoK+y0m12azFjhjPvxPgQPtmp+dbdKXq+WMAa04H1Yf7mIGZNTPHPIGYYHKUIBiC0bUFjaExNEZHgMboeLFjaIzSmEnjgr98FzATgllsEsHkdQyNoTGq9uVS4lJSCQMaQ2NojI4AjdHxYsfQGBqjI0BjdLzYMXnGhM+Gz2MWPY8hmJx/1wRDMKr2FRpDY2iMigBv1zpc7JglxnAP3l84EwkH5h4W+zrRHJ8t6Mr3k6nF3Oc7903HsPVkZ3g4MG1Y7gxP6Ag6pe2XZgLGvm0Wo2mxBeDQ8UWyPJ4gKJaiE9ka/Z4lSMe0b/akIOeZ0yf/gVNy+sTa+Lpce31IA/8AoCOjA2863CcAAAAASUVORK5CYII='
-    },
-    {
-      code: 'fr',
-      iso: 'fr-FR',
-      name: 'Français',
-      label: 'French',
-      file: 'fr.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlUlEQVRoQ+3bv07CUBTH8d/BQYlxEuPkezi62LI4aIKUxL9xcPBhnNFESHSwVCFx0jfgUSTGxQFY5BgaSioq4cQy3OTHROBScj/59ky3gtTLrzSKGOg5BJsA1gFI+nvr+2Zt1/qTmdf3jy5mXjtloQLaEUhbkauuRtXnZG288a2T2tJiP18HpJzFvyXXcABmYrsSdrF8uhFd9mIYLwhvBTjIEmV4LfdgAFW5KzxcHcp2+d7LibxkjeIqTOyg4osfNB4B3SPMN4GW+EH4BqBAmLSAvg5hdB4oTt9KwIAwf1RBGMLYBgaLYTEsxibAYmxenDEshsXYBFiMzYszhsWwGJsAi7F5ccawGBZjE2AxNi/OGBbDYmwCLMbmxRnDYliMTYDF2Lw4Y1gMi7EJsBibF2cMi2ExNoEpxfAM3g8cfRcvCJsCzOUIt4vnfEdGLZ7z/e1WEhR5MnwCZnwyfPh5qdTIfyxoHcB+JpNrdBHnbiXRqKsrx+NnCRIMrxLuiMoZoMnTJ/9ycgSmI0D7E7hZi66fkg1/AbUZOZSg4ulvAAAAAElFTkSuQmCC'
-    },
-    /*
-    {
-      code: 'id',
-      iso: 'id-ID',
-      name: 'Indonesian',
-      label: 'Indonesian',
-      file: 'id.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABkUlEQVRoQ+2bzUpCURSF17Iwf6BJQaPeoycwJw0KrUlREenjNLZBCDoJK6FRvYFv0TSpO+vqRckdKoKQBtvhaZ3RhXvOhfWdb+/B5RxibkTlapEYVQ22B3AHAOffB/hsgHUJdgyp2lar9jLLOAn+dnGR2YzTdcBOAgzviMT7HvKXu62b/gTMZ6nSIO3U8YVgp5qxuf1we8aoVCmA9hps0lWCGfcZlSuPgB2tsj7gNW1G5esPANsBh1whmr2PwdgKK0NfMhKYJVssMALjq34ZI2NkjI+AjPHxUo+RMTLGR0DG+Hipx8gYGeMjIGN8vNRjlhkT9wf6UbUADgVmsTICo1JyNl+VkkrJpYx6jHqMSxjIGBkjY3wEZIyPl3qMjJExPgIyxsdLPUbG+I3RGbzfzCLGyfAJZoc+noHPJtv8SoYFms75zm+1kcXJyfBef9AwQCfDp5cnmrls+mwCxsyycTKsEzgOvEj+jke2chvr5ySndwlmI06SA4zWrsDx7ROMb5/8h9GFsYPU910+k3meBf4BpGnMswrpLPcAAAAASUVORK5CYII='
-    },
-    {
-      code: 'it',
-      iso: 'it-IT',
-      name: 'Italiano',
-      label: 'Italian',
-      file: 'it.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlElEQVRoQ+3bzUoCYRTG8efoJolokdGq++gKyk1EgTMFfVgTtOhiWoYFJhSlTR/Qqu7AS0mirbbREzM0Mo0VHJwWLzyuRN8ZeX/856xeBanX1nVQGRZwBGAJwAIASX9vfd9YO7VeYlr/sXtsWv/DYgW0K5COolCfC+vPyZp447WL2lS/VGwC8Cf9pfT1DsBktivtHqb3F8OTfgyzeRNcqmA7T5ToXu7BAKpyVb472xG/dbAMyEveKK7CxA4qK+K3gnsAG4T5JvAYwbwBKBMmLaCvEYz+B4rTjxIwJMwvVRCGMLaBwWJYDIuxCbAYmxdnDIthMTYBFmPz4oxhMSzGJsBibF6cMSyGxdgEWIzNizOGxbAYmwCLsXlxxrAYFmMTYDE2L84YFsNibAIsxubFGcNiWIxN4I9ieAZvDEffxWsfPojqei7MmZu4eM73awvRqU2e8x2LQlDhyfCMyuhkePR59bZaKg5mmyrq5flIOfcoiYY9ndkb/ZcgwfDawaoogtS/TyZycgSmK0BnADTmw/OnZMOfF1o7lACMC0QAAAAASUVORK5CYII='
-    },
-    {
-      code: 'ru',
-      iso: 'ru-RU',
-      name: 'Pусский',
-      label: 'Russian',
-      file: 'ru.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABoElEQVRoQ+2bz0oCURTGvyMYarUzWvUePoFF0KJQ2yQRoq17jFatKwhBNzGV0KrewIdo1yapaeWfwSFPzIRg5Ihne/vuamDmCt9vfueMM9wrmBn9INwR4BQ6KQCyCUBmzzt4rID2IKmuApdrmfTTNGMcXFUzgyBsCnDoYPilIylwu5pJn4jIKAYzHI1bChwt/QsOXyhAO5ddqUo/CIui+uxwVnM0FdmWQRDeQ/XAPNvlCSIdGYzG7wDyLue0Z9O3CIzaJzo/Y0IwCfeYYAjGVv40hsbQGBsBGmPjxR5DY4zG7J6/8J/vHGZCMPNNIpikHkNjaIyp+7KUWEomYUBjaAyNsRGgMTZe7DE0hsbYCNAYGy/xy3V+dpj32YFgEl4iCYZgTE2GPSbpqcRSYimxlEwEWEo2XGy+C4zhGrw/cNSPjHkAsG8TzfmrO+KXGkUI1/n+utWCaOsA8FFqtESUK8Pj7QPSzt9dVWMwr+WzbE77TQgqzhfJooCi3lDXj7e8i5+9BNPxWantQVM1BQoAot0n/2H0BOh+ATcb3vXjNPA3aXbDMxesJIYAAAAASUVORK5CYII='
-    },
-    */
-    {
-      code: 'se',
-      iso: 'se-SE',
-      name: 'Svenska',
-      label: 'Swedish',
-      file: 'se.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABr0lEQVRoQ+2bPUvDUBSG3yNUrV0FJyf1Pzi6qG3FQfFjUUQc3B2qo2Ps4O4igi5SVBBaFP9Ap/6BRhxcLOIoIqJHEkmtsWk5dZCGN1NJLk3u0+e8Tci5goYtm3fTUGwCGAcwBEAajzf7XJzcaTlk5sZp9xX/eVwB1ACUITgo5UavgovxJz6xe9c/kHw/ArBsvcouBxOe7mkq0bde2Bp+8cFk87fHUF2xQvHGxwwMIHJSyo2sSiZfnRKV606gxBIMABWdluyeewZgnmC+CajiwgPzCGCQYH4QePDAeMnc8Ra7jPki8UEwEUoQDMHY0oLG0BgaYyNAY2y8mDE0hsbYCNAYGy9mDI0xGqOVhT89XdtO1z2jhWCa/1gEE5UxNIbGmAKOpcRSMgkDGsMbPKMxfH0S8a9EMARjqiU+XTN8TcKAxtAYGmMjQGNsvJgxNIbG2Ai0MIY9eCE4CjxJxnHPRTDXKeY49uD5XZvs8/2thKim2Rke5hJ0hnv7F/fvk89vr95agiVrScWrlKSQSvSu1dcSBDAyTnVWemQDWl990pZTDMDUICiL6mFxe+wymPAnwmQnZu8TaGQAAAAASUVORK5CYII='
-    },
-    {
-      code: 'sr',
-      iso: 'sr-Latn-RS',
-      name: 'Srpski',
-      label: 'Serbian (Latin)',
-      file: 'sr-latn.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEWUlEQVRoQ+2bW2wUZRTH/2e2e5ldty22EatiUUiooEYSDSVqa4xAvdRYoBYTkKJh6+3BNzEmKImJPJhgfFEaQwkUTC1YIl4gvAAptRI1JJKU2KhFErDIatvd2V32Mp/5tlm3k9rufDPT3XadeWpnz/mf8/99l53dnSFMOILNbQ0EtY2B1QI0HwBNfL0I/2YAGyZQP4O0u6J797GMx7Tx31pbPaWKay/AWorQvIAl6orAt2VB965oGsy19YH9RGyjgELRhjJGnZWH2jdRcH1gNYgdL1qnRowxWkPB5sBhgK01kl/EOT0UbN76J4DKIjZpwBr7g4NhBjKLPUW1wUwxxDYYG4zY6heeMSW3JuFrVOCYp/5bKXGxBKGD/vT/814fAcnZbUsNSVCOe5EYdIp1VuBoITDkYijbOgapNAuF968qEkY+LEufL391dJIlliCMdfiRCjoKbFd/eSEwvoYI3Muv/6f63x+Ug88mf3NY8zqHghSQvOpA6FM/oGWqv9M8RwqBkcrHXbmXxSHXRTWtjnX64VyQhFyvPR89JSPa58mzLfPlhMBkynkfi8DzgHbmKMe8cC5MwlUT13QVH3AhfMRnvtM8KxgC498QhvOOhKbV2PduOO9MwnFjSnOe7yuj7aV5tmW+HK3Z0CV85dv58peo9GuXzIXLFVhS9ReItHIqIzyzqwnx5NzZeDnWnGBW3T0EpyO7Y0oSw2urfpz8zsNoEpRM0IG+pQiG5Ozbe0rCifMLzQ/rDCrkBPPm0/2or7lkaQsnB27HzqMrLNW0WiwnmOXVw3iv5bSldbd11ePcxZss1bRaLCcYvmd0BL7BzWWKJbWvjPjwQvsTEN7YLKmuXyQnGC713MoBbH74vH7VaSI7Tt+Drv4aS7RmUkQXmIobotj30ldwSObGOaUSnv/4SQTD2Y14Js2Z0dYFhhfYsa4XKxZdMVML3w7egh09D5rSyFeybjC1iy/jnbVnTPW1/fBDOPtLlSmNfCXrBsOXEV9OfFkZOa6F5PQy4hd8c+HQDYab2VL3E1pqLxjydbBvKfb1LjOUW4gkITBV5Qr2BL4W/t2WMUJr++MYHp07HyaFwPCR29lyCvdVXxUaxB+G5uOtz+qEcgodLAzmkbt+x7bG74T6fvfISvT+fJtQTqGDhcHwD5QHXjmKUln7vctURkYibmz86CkkU1KhvQrVFwbD1dsePYem+wd1FTp0dgk+OXmvrtjZFERKNC58OStdvwTPr2/o8EGILXofqmtuXLtMNGQIDBfwDL0NKTr9rFG9NYhVb9cBcPaFGAYz+6xY25ENZgqeNhgbjNhSs2eMPWPsGSNGYJoZY9+DNxlOkJRY4nMw1mQJ5mIRIeqhcCyxmph9n+/EMWVEDenvGSPR+H4G2HeGjz880emVXZvSYBhjshJL7CXg2WJZDYZ8EHV73SWbiWj8WYLMocRijVAdL4L40yfgT5/8H45hMOqHlNrj83i+yBj+B4PTjpvAw2+MAAAAAElFTkSuQmCC'
-    },
-/*
-    {
-      code: 'sr-cyrl',
-      iso: 'sr-Latn-RS',
-      name: 'Српски',
-      label: 'Serbian (Cyrillic)',
-      file: 'sr-cyrl.js',
-      flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEWUlEQVRoQ+2bW2wUZRTH/2e2e5ldty22EatiUUiooEYSDSVqa4xAvdRYoBYTkKJh6+3BNzEmKImJPJhgfFEaQwkUTC1YIl4gvAAptRI1JJKU2KhFErDIatvd2V32Mp/5tlm3k9rufDPT3XadeWpnz/mf8/99l53dnSFMOILNbQ0EtY2B1QI0HwBNfL0I/2YAGyZQP4O0u6J797GMx7Tx31pbPaWKay/AWorQvIAl6orAt2VB965oGsy19YH9RGyjgELRhjJGnZWH2jdRcH1gNYgdL1qnRowxWkPB5sBhgK01kl/EOT0UbN76J4DKIjZpwBr7g4NhBjKLPUW1wUwxxDYYG4zY6heeMSW3JuFrVOCYp/5bKXGxBKGD/vT/814fAcnZbUsNSVCOe5EYdIp1VuBoITDkYijbOgapNAuF968qEkY+LEufL391dJIlliCMdfiRCjoKbFd/eSEwvoYI3Muv/6f63x+Ug88mf3NY8zqHghSQvOpA6FM/oGWqv9M8RwqBkcrHXbmXxSHXRTWtjnX64VyQhFyvPR89JSPa58mzLfPlhMBkynkfi8DzgHbmKMe8cC5MwlUT13QVH3AhfMRnvtM8KxgC498QhvOOhKbV2PduOO9MwnFjSnOe7yuj7aV5tmW+HK3Z0CV85dv58peo9GuXzIXLFVhS9ReItHIqIzyzqwnx5NzZeDnWnGBW3T0EpyO7Y0oSw2urfpz8zsNoEpRM0IG+pQiG5Ozbe0rCifMLzQ/rDCrkBPPm0/2or7lkaQsnB27HzqMrLNW0WiwnmOXVw3iv5bSldbd11ePcxZss1bRaLCcYvmd0BL7BzWWKJbWvjPjwQvsTEN7YLKmuXyQnGC713MoBbH74vH7VaSI7Tt+Drv4aS7RmUkQXmIobotj30ldwSObGOaUSnv/4SQTD2Y14Js2Z0dYFhhfYsa4XKxZdMVML3w7egh09D5rSyFeybjC1iy/jnbVnTPW1/fBDOPtLlSmNfCXrBsOXEV9OfFkZOa6F5PQy4hd8c+HQDYab2VL3E1pqLxjydbBvKfb1LjOUW4gkITBV5Qr2BL4W/t2WMUJr++MYHp07HyaFwPCR29lyCvdVXxUaxB+G5uOtz+qEcgodLAzmkbt+x7bG74T6fvfISvT+fJtQTqGDhcHwD5QHXjmKUln7vctURkYibmz86CkkU1KhvQrVFwbD1dsePYem+wd1FTp0dgk+OXmvrtjZFERKNC58OStdvwTPr2/o8EGILXofqmtuXLtMNGQIDBfwDL0NKTr9rFG9NYhVb9cBcPaFGAYz+6xY25ENZgqeNhgbjNhSs2eMPWPsGSNGYJoZY9+DNxlOkJRY4nMw1mQJ5mIRIeqhcCyxmph9n+/EMWVEDenvGSPR+H4G2HeGjz880emVXZvSYBhjshJL7CXg2WJZDYZ8EHV73SWbiWj8WYLMocRijVAdL4L40yfgT5/8H45hMOqHlNrj83i+yBj+B4PTjpvAw2+MAAAAAElFTkSuQmCC'
-    },
-*/
-  ],
+import { isProd } from '../utils/env'
+import locales from './locales'
+
+const config = {
+  locales: isProd
+    ? locales.prod
+    : locales.temp,
   defaultLocale: 'en',
   seo: false,
   lazy: true,
   detectBrowserLanguage: false, // Better let Netlify handle that via _redirects.js
-  langDir: 'i18n/',
+  langDir: 'i18n/lang/',
   vueI18n: {
     fallbackLocale: 'en'
   },
@@ -128,3 +17,8 @@ export default {
     translations: false
   }
 }
+
+// eslint-disable-next-line no-console
+console.log(`Including translations: ${config.locales.map(locale => locale.code).join(' ')}`)
+
+export default config

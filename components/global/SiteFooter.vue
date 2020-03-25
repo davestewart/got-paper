@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="siteFooter">
     <!-- footer logos -->
     <img
       src="/images/social/splash-og.png"
@@ -17,7 +17,7 @@
     >
 
     <!-- amazon -->
-    <div class="footer__amazon">
+    <div class="siteFooter__amazon">
       <AdDesktop class="my-2" />
 
       <AdMobile />
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="footer__kofi">
+    <div class="siteFooter__kofi">
       <div class="inner">
         <ClientOnly>
           <KofiButton />
@@ -39,7 +39,7 @@
 
     <SiteLinks />
 
-    <div class="footer__sharing">
+    <div class="siteFooter__sharing">
       <div class="inner">
         <ClientOnly>
           <ShareLinks />
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="footer__twitter h-links hide-lg">
+    <div class="siteFooter__twitter h-links hide-lg">
       <div class="inner">
         <ul>
           <li>
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer {
+.siteFooter {
 
   &__kofi {
     background: rgba(240, 244, 245, .5);
@@ -92,17 +92,12 @@ export default {
     text-align: center;
   }
 
-  &__nav {
-    background: $grey-light;
-    padding: 15px 0;
-  }
-
   &__twitter {
     background: darken($grey-light, 10%);
     padding: 15px;
   }
 
-  .footer__amazon {
+  &__amazon {
     background: rgba(240, 244, 245, .5);
     padding: 1.5rem 0;
     font-family: $display-font;

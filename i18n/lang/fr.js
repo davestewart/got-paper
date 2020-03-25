@@ -1,15 +1,15 @@
 export default {
   site: {
-    title: 'Tu as du PQ?',
+    title: 'Tu as de PQ?',
     subtitle: 'Calculer tes besoins réelles en papier de toilette',
-    description: null
+    description: 'Une application mobile choux pour calculer tes besoins en papier toilette et ceux de ta famille pendant la pandémie de coronavirus. Dispo sur ordi, tablette et mobile!'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Accueil',
+    about: 'Nous Connaître',
+    press: 'Actualités',
+    contact: 'Contactez-nous',
+    privacy: 'Confidentialité'
   },
   headings: {
     people: 'Personnes',
@@ -31,7 +31,7 @@ export default {
     sheetsPerDay: 'Feuilles par jour',
     numSheetsDay: '1 feuille / jour | {n} feuilles / jour',
     forDailyCleanup: 'Totale pour les nettoyages quotidiennes',
-    sheetsPerMonth: 'Feuilles par mois',
+    sheetsPerMonth: 'Feuilles par mois en plus',
     forMonthlyCleanup: 'Totale pour les nettoyages mensuelles',
     sheetsPerRoll: 'Feuilles par PQ individuelle',
     packInformation: 'Cette information ce trouve sur le packaging',
@@ -45,11 +45,11 @@ export default {
   results: {
     buy: 'Acheter 1 rouleau | Acheter {n} rouleaux',
     share: 'Partager 1 rouleau | Partager {n} rouleaux',
-    need: 'Vous avez besoin d\'un rouleau | Vous avez besoin de {n} rouleaux',
-    days: 'Vous durerez 1 jour | Vous durerez {n} jours',
-    weeks: 'Vous durerez 1 semaine | Vous durerez {n} semaines',
-    months: 'Vous durerez 1 mois | Vous durerez {n} mois',
-    years: 'Vous durerez 1 an | Vous durerez {n} ans'
+    need: 'Tu as besoin d\'un rouleau | Tu as besoin de {n} rouleaux',
+    days: 'Tu survivreras 1 jour | Tu survivreras {n} jours',
+    weeks: 'Tu survivreras 1 semaine | Tu survivreras {n} semaines',
+    months: 'Tu survivreras 1 mois | Tu survivreras {n} mois',
+    years: 'Tu survivreras 1 an | Tu survivreras {n} ans'
   },
   cta: {
     restart: 'Recommencer',

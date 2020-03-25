@@ -1,6 +1,5 @@
+import { isProd } from './utils/env'
 import i18n from './i18n'
-
-const isProd = process.env.NODE_ENV === 'production'
 
 export const site = {
   url: isProd ? 'https://got-paper.com' : 'http://localhost:3000',

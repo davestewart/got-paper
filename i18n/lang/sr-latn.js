@@ -46,10 +46,10 @@ export default {
     buy: 'Kupi {n} rolni | Kupi {n} rolnu | Kupi {n} rolne',
     share: 'Deli {n} rolni | Deli {n} rolnu | Deli {n} rolne',
     need: 'Treba ti {n} rolni | Treba ti {n} rolna | Trebaju ti {n} rolne',
-    days: 'Imaš {n} dana | Imaš {n} dan | Imaš {n} dana',
-    weeks: 'Imaš {n} nedelja | Imaš {n} nedelju | Imaš {n} nedelje',
-    months: 'Imaš {n} meseci | Imaš {n} mesec | Imaš {n} meseca',
-    years: 'Imaš {n} godina | Imaš {n} godinu | Imaš {n} godine'
+    days: 'Imaš za {n} dana | Imaš za {n} dan | Imaš za {n} dana',
+    weeks: 'Imaš za {n} nedelja | Imaš za {n} nedelju | Imaš za {n} nedelje',
+    months: 'Imaš za {n} meseci | Imaš za {n} mesec | Imaš za {n} meseca',
+    years: 'Imaš za {n} godina | Imaš za {n} godinu | Imaš za {n} godine'
   },
   cta: {
     restart: 'Počni ponovo',

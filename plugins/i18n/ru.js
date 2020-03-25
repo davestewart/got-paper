@@ -1,19 +1,18 @@
-export function ruChoiceIndex (choice, choicesLength) {
+// see http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+// https://gist.github.com/zolotyh/49f76d143b6d1a41832b82fd9edc85fc
+export function ruChoiceIndex (value, numValues) {
   // '0 машин | {n} машина | {n} машины | {n} машин'
-  if (choice === 0) {
-    return 0
-  }
-
-  const teen = choice > 10 && choice < 20
-  const endsWithOne = choice % 10 === 1
-
-  if (!teen && endsWithOne) {
-    return 1
-  }
-
-  if (!teen && choice % 10 >= 2 && choice % 10 <= 4) {
+  let v = Math.abs(value)
+  v %= 100
+  if (v >= 5 && v <= 20) {
     return 2
   }
-
-  return (choicesLength < 4) ? 2 : 3
+  v %= 10
+  if (v === 1) {
+    return 0
+  }
+  if (v >= 2 && v <= 4) {
+    return 1
+  }
+  return 2
 }
