@@ -37,7 +37,7 @@ export default {
     packInformation: 'Diese Information finden Sie seitlich der Verpackung',
     daysPerRoll: 'Toilettenpapierrollenreichweite (in Tagen)',
     calculation: 'Berechnung',
-    timeInQuarantine: 'Quarantänen Zeitraum (in Tagen)',
+    timeInQuarantine: 'Quarantänezeitraum (in Tagen)',
     rollsBought: 'Gekaufte Rollen',
     personYou: 'Für Sie',
     personNum: 'Personen {n}'
