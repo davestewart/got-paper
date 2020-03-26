@@ -101,7 +101,7 @@
     </div>
 
     <div class="button-container">
-      <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">
+      <button type="reset" class="btn btn-primary reset mt-2" @click="reset">
         {{ $t('cta.restart') }}
       </button>
     </div>

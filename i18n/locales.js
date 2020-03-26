@@ -45,6 +45,14 @@ const prod = [
     flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlUlEQVRoQ+3bv07CUBTH8d/BQYlxEuPkezi62LI4aIKUxL9xcPBhnNFESHSwVCFx0jfgUSTGxQFY5BgaSioq4cQy3OTHROBScj/59ky3gtTLrzSKGOg5BJsA1gFI+nvr+2Zt1/qTmdf3jy5mXjtloQLaEUhbkauuRtXnZG288a2T2tJiP18HpJzFvyXXcABmYrsSdrF8uhFd9mIYLwhvBTjIEmV4LfdgAFW5KzxcHcp2+d7LibxkjeIqTOyg4osfNB4B3SPMN4GW+EH4BqBAmLSAvg5hdB4oTt9KwIAwf1RBGMLYBgaLYTEsxibAYmxenDEshsXYBFiMzYszhsWwGJsAi7F5ccawGBZjE2AxNi/OGBbDYmwCLMbmxRnDYliMTYDF2Lw4Y1gMi7EJsBibF2cMi2ExNoEpxfAM3g8cfRcvCJsCzOUIt4vnfEdGLZ7z/e1WEhR5MnwCZnwyfPh5qdTIfyxoHcB+JpNrdBHnbiXRqKsrx+NnCRIMrxLuiMoZoMnTJ/9ycgSmI0D7E7hZi66fkg1/AbUZOZSg4ulvAAAAAElFTkSuQmCC'
   },
   {
+    code: 'gr',
+    iso: 'gr-GR',
+    name: 'Ελληνικά',
+    label: 'Greek',
+    file: 'gr.js',
+    flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAB40lEQVRoQ+2bsU4CQRCG/zFBRVoTK23Qd7C0UsBYaKI2GGMs7CwssLXUK+xtjIk2hiiJCUTfgHcAYmEjMZYEleiYI7kTlYObeIFbmavgbtid+Xb+vVmyS2i5UlY5AcYOgFkAEwCo9Xk+E2/96n5etCpt7xtwkwFUARRBOClkpm8dn5uBzx3cj45F388ArHcK5h+C+RnuZSwyspXdm6w3waSsyjmY091GeADAAEQXhUx8g5JWaZ6Y7rpBsZ8PBBgATLxAqaPyFYAVBfNFgBk5G8wTgHEF843Aow3Gnpl9XX+VUnZ3ylc/ITD6UDAeo6BgFIxMoJoxXhnDzL4nXxnz39YmLR1IwbQfbgWjUpJNBJoxmjHCjNElgcfkq2AUjEhLWvmGYa0kGrI+G/c0Y/ocq6h7BaNSEiUMNGM0Y4QZU6u/9ez/GJlr/bUmBeNR+SoYBSPSpkopiLeSCLnhxqI6xvBYRe4rGJWSKGFkSwJZ02Zbq5S8pKQFnhZ4Im1rgddBSr734ImQm238TLWXxjWYl82OI2DviXKifb4Bdx/a5og5IdoZHtpIgnTM2Rlut7l6/BCtNV7tswRrQfZhXluUjUWGN92zBE4AycPSEg3RNtg9fWJebHKPqyAUifk0vz9z4/z8E9d/FfC3GKRRAAAAAElFTkSuQmCC'
+  },
+  {
     code: 'se',
     iso: 'se-SE',
     name: 'Svenska',
