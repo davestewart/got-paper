@@ -58,10 +58,10 @@ select option {
 }
 
 .btn-primary {
-  background-color: $blue-dark;
-  border-color: $blue-dark;
+  background-color: $primary-color;
+  border-color: $primary-color;
   &:hover {
-    background-color: lighten($blue-dark, 10%)
+    background-color: lighten($primary-color, 10%)
   }
 }
 

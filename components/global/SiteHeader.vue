@@ -33,7 +33,7 @@ export default {
 <style lang="scss">
 .siteHeader {
   .banner {
-    background: $blue-dark;
+    background: $primary-color;
     display: block;
     text-align: center;
   }

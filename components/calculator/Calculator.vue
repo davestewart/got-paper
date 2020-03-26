@@ -455,7 +455,7 @@ function getResultHtml (text = '') {
   }
 
   h3 {
-    color: #1660A6;
+    color: $primary-color;
   }
 
   h2, h3, h4 {
@@ -554,7 +554,7 @@ function getResultHtml (text = '') {
 }
 
 .detail {
-  color: $blue-dark;
+  color: $primary-color;
 
   &:before {
     content: ': ';
