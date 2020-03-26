@@ -2,7 +2,7 @@
   <div class="uiNumber form-group row">
     <div class="col-6 col-form-label">
       <label class="uiNumber__label">{{ label }}</label>
-      <div v-if="hint" class="small text-muted font-italic">
+      <div v-if="hint" class="hint">
         {{ hint }}
       </div>
     </div>

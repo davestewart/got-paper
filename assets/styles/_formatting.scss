@@ -58,3 +58,15 @@ iframe {
   border: none;
   margin: 0;
 }
+
+.hint {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 80%;
+  font-weight: 400;
+}
+
+article > .hint:first-child {
+  margin-top: -.75rem !important;
+  margin-bottom: .75rem !important;
+}
