@@ -1,88 +1,88 @@
 export default {
   site: {
-    title: null,
-    subtitle: null,
-    description: null
+    title: 'Máš papír?',
+    subtitle: 'Vypočítej kolik papíru opravdu potřebuješ. ',
+    description: 'Počítač pro desktopy, tablety a mobilní aplikace pro výpočet potřeby toaletního papíru vaší rodiny během pandemie Coronavirus'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Doma',
+    about: 'O nás ',
+    press: 'Tisk',
+    contact: 'Kontakt',
+    privacy: 'Soukromí údajů '
   },
   headings: {
-    people: null,
-    usage: null,
-    paper: null,
-    quarantine: null
+    people: 'Lidé ',
+    usage: 'Používání ',
+    paper: 'Záchodový papír ',
+    quarantine: 'Karanténa '
   },
   subHeadings: {
-    poops: null,
-    pees: null,
-    extras: null
+    poops: 'Hovínka',
+    pees: 'Čůrat',
+    extras: 'Doplňky'
   },
   labels: {
-    poopsPerDay: null,
-    wipesPerPoop: null,
-    sheetsPerWipe: null,
-    peesPerDay: null,
-    sheetsPerPee: null,
-    sheetsPerDay: null,
-    numSheetsDay: null,
-    forDailyCleanup: null,
-    sheetsPerMonth: null,
-    forMonthlyCleanup: null,
-    sheetsPerRoll: null,
-    packInformation: null,
-    daysPerRoll: null,
-    calculation: null,
-    timeInQuarantine: null,
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    poopsPerDay: 'Hovínek za den',
+    wipesPerPoop: 'Kolikrát se utřeš',
+    sheetsPerWipe: 'Kolik čtverečků na každé utření',
+    peesPerDay: 'Kolikrát čůráš za den',
+    sheetsPerPee: 'Kolik čtverečků na každé utření',
+    sheetsPerDay: 'Čtverečků za den',
+    numSheetsDay: '{n} čtvereček / den | {n} čtverečky / den | {n} čtverečků  / den',
+    forDailyCleanup: 'Na utření každý den ',
+    sheetsPerMonth: 'Čtverečků za měsíc',
+    forMonthlyCleanup: 'Na utření každý měsíc ',
+    sheetsPerRoll: 'Čtverečků na ruličce ',
+    packInformation: 'Tuto informaci najdeš na obalu',
+    daysPerRoll: 'Kolik dní vydrží rulička ',
+    calculation: 'Výpočet ',
+    timeInQuarantine: 'Jak dlouho v karanténě',
+    rollsBought: 'Kolik ruliček jsi koupil',
+    personYou: 'Ty',
+    personNum: 'Další osoby {n}'
   },
   results: {
-    buy: 'Buy 0 rolls | Buy 1 roll | Buy {n} rolls',
-    share: 'Share 0 rolls | Share 1 roll | Share {n} rolls',
-    need: 'You need 0 rolls | You need 1 roll | You need {n} rolls',
-    days: 'You\'ll last 0 days | You\'ll last 1 day | You\'ll last {n} days',
-    weeks: 'You\'ll last 0 weeks | You\'ll last 1 week | You\'ll last {n} weeks',
-    months: 'You\'ll last 0 months | You\'ll last 1 month | You\'ll last {n} months',
-    years: 'You\'ll last 0 years | You\'ll last 1 year | You\'ll last {n} years'
+    buy: 'Kup {n} ruličku | Kup {n} ruličky | Kup {n} ruliček',
+    share: 'Poděl se o {n} ruličku | Poděl se o {n} ruličky | Poděl se o {n} ruliček',
+    need: 'Potřebuješ {n} ruličku | Potřebuješ {n} ruličky | Potřebuješ {n} ruliček',
+    days: 'Vydrží ti {n} den | Vydrží ti {n} dny | Vydrží ti {n} dnů',
+    weeks: 'Vydrží ti {n} týden  | Vydrží ti {n} týdny  | Vydrží ti {n} týdnů',
+    months: 'Vydrží ti {n} měsíc | Vydrží ti {n} měsíce | Vydrží ti {n} měsíců',
+    years: 'Vydrží ti {n} rok | Vydrží ti {n} roky | Vydrží ti {n} roků'
   },
   cta: {
-    restart: null,
-    buy: null,
-    share: null
+    restart: 'Začni znova',
+    buy: 'Kup teď ',
+    share: 'Sdílej'
   },
   prompts: {
-    buttonTip: null,
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    buttonTip: 'Přibrat a ubrat rychle, zmáčkni a drž +/- ',
+    chooseLanguage: 'Jazyk',
+    offerTranslation: 'Můžeš přeložit do další řeči?',
+    commission: 'Pokud koupíš,  je možné že my obdržíme malou provizi. Vás to více stát nebude.',
+    donate: 'Tak mi kup kávu!'
   },
   durations: {
-    twoWeeks: null,
-    threeWeeks: null,
-    oneMonth: null,
-    sixWeeks: null,
-    twoMonths: null,
-    threeMonths: null,
-    sixMonths: null,
-    nineMonths: null,
-    oneYear: null
+    twoWeeks: 'Dva týdny',
+    threeWeeks: 'Tři týdny ',
+    oneMonth: 'Jeden měsíc ',
+    sixWeeks: 'Šest týdnů ',
+    twoMonths: 'Dva měsíce ',
+    threeMonths: 'Tři měsíce ',
+    sixMonths: 'Šest měsíců ',
+    nineMonths: 'Devět měsíců ',
+    oneYear: 'Jeden rok'
   },
   actions: {
-    addPerson: null,
-    rename: null,
-    remove: null,
-    cancel: null
+    addPerson: 'Přidej osoby',
+    rename: 'Přejmenuj',
+    remove: 'Oddělej',
+    cancel: 'Zruš'
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Kupovaní',
+    sharing: 'Sdílení ',
+    hoarding: 'Hromadění'
   }
 }
