@@ -29,8 +29,8 @@
       <h4>Complete</h4>
       <p>These translations are done or being done:</p>
       <ul>
-        <li v-for="language in done" :key="language">
-          {{ language }}
+        <li v-for="locale in done" :key="locale.code">
+          <nuxt-link :to="`/${locale.code}`">{{ locale.label }}</nuxt-link>
         </li>
       </ul>
     </section>
@@ -39,23 +39,12 @@
 
 <script>
 import page from '@/plugins/page-plugin'
-
+import locales from '@/i18n/locales'
 export default {
   extends: page('translations'),
   data () {
     return {
-      done: [
-        'German',
-        'Italian',
-        'French',
-        'Swedish',
-        'Spanish',
-        'Russian',
-        'Serbian',
-        'Indonesian',
-        'Czech',
-        'Chinese (Traditional)'
-      ],
+      done: locales.all.filter(locale => locale.code !== 'en'),
       wanted: [
         'Chinese (Mandarin)',
         'Romanian',

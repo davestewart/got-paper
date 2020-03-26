@@ -121,19 +121,26 @@ const temp = [
   },
 ]
 
-const en = prod.find(locale => locale.code === 'en')
-
-const locales = {
-  all: sortOn([...prod, ...temp], 'code'),
-  basic: [en, temp[0]],
-  temp: [en, ...temp],
-  prod,
-  only (strCodes = '') {
-    const arrCodes = strCodes.match(/[-\w]+/g)
-    return this.all.filter(locale => arrCodes.includes(locale.code))
-  }
+function sort (arr) {
+  return sortOn(arr, 'label')
 }
 
-locales.safe = locales.all.filter(locale => locale.code !== 'xx')
+function find (code) {
+  return all.find(locale => locale.code === code)
+}
+
+function only (codes = 'en') {
+  return codes.match(/[-\w]+/g).map(find)
+}
+
+const all = sort([...prod, ...dev]).filter(l => l.code !== 'xx')
+
+const locales = {
+  prod: sort(prod),
+  dev: sort([find('en'), ...dev]),
+  all,
+  find,
+  only,
+}
 
 export default locales
