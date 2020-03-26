@@ -27,11 +27,16 @@ export default {
     const baseUrl = process.env.baseUrl
     const { path } = this.$route
     const pathWithSlash = path.endsWith('/') ? path : `${path}/`
+    const title = this.$t('site.title')
+    const description = this.$t('site.description')
     return {
       htmlAttrs: i18nSeo.htmlAttrs,
       meta: [
         ...i18nSeo.meta,
-        { hid: 'description', name: 'description', content: this.$t('site.description') }
+        { hid: 'title', name: 'title', content: title },
+        { hid: 'og:title', name: 'og:title', content: title },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og:description', name: 'og:description', content: description },
       ],
       link: [
         { rel: 'canonical', href: `${baseUrl}${pathWithSlash}` },
