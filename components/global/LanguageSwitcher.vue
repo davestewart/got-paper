@@ -32,7 +32,9 @@
                 </ul>
               </div>
               <div class="modal-footer">
-                <p class="mb-0"><NuxtLink :to="localePath('/translations')">{{ $t('prompts.offerTranslation') }}</NuxtLink></p>
+                <p class="mb-0">
+                  <NuxtLink :to="localePath('/translations')">{{ $t('prompts.offerTranslation') }}</NuxtLink>
+                </p>
               </div>
             </div>
           </div>
@@ -74,13 +76,20 @@ export default {
 
 <style lang="scss">
 .locale {
+
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-right: -.5em;
+  text-align: right;
+
   &__picker {
     a {
-      display: block;
+      display: inline-block;
       line-height: 20px;
       text-decoration: none;
       padding: 5px 7px;
       border-radius: 4px;
+
       &:hover {
         background-color: $grey-light;
       }
@@ -127,10 +136,12 @@ export default {
       border-radius: 6px;
       vertical-align: baseline;
       color: #333;
+
       &.active {
         font-weight: bold;
         color: black;
       }
+
       &.active, &:hover {
         background-color: $grey-light;
         text-decoration: none;

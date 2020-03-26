@@ -1,17 +1,19 @@
 <template>
   <div class="calculator">
+
     <!-- alert -->
     <client-only>
-      <UiAlert v-if="options.welcome" class="mb-4" @close="options.welcome = false">
-        {{ $t('prompts.buttonTip') }}
-      </UiAlert>
-    </client-only>
+      <div class="mt-4">
+        <UiAlert v-if="options.buttonTip" class="mb-4" @close="options.buttonTip = false">
+          {{ $t('prompts.buttonTip') }}
+        </UiAlert>
+      </div>
 
-    <LanguageSwitcher/>
+    </client-only>
 
     <!-- usage -->
     <div style="position: relative">
-      <a id="usage" style="position: absolute; top: -15px"/>
+      <a id="usage" style="position: absolute; top: -12px"/>
     </div>
     <h2 class="d-flex justify-content-between">
       <span>{{ $t('headings.usage') }}
@@ -85,36 +87,17 @@
 
     <!-- result -->
     <div class="result" :data-mode="form.mode">
-      <div v-if="form.mode === 'buying'" v-html="htmlBuy">
-<!--
-        <span class="text">Buy</span>
-        <span class="value">{{ rollsRequired }}</span>
-        <span class="text">{{ plural(rollsRequired, 'roll') }}</span>
--->
-      </div>
+      <!-- buy -->
+      <div v-if="form.mode === 'buying'" v-html="htmlBuy"></div>
 
+      <!-- share -->
       <template v-if="form.mode === 'sharing'">
-        <div v-html="htmlShare">
-<!--
-          <span class="text">{{ rollsOverall > 0 ? 'Share' : 'Buy' }}</span>
-          <span class="value">{{ Math.abs(rollsOverall) }}</span>
-          <span class="text">{{ plural(rollsOverall, 'roll') }}</span>
--->
-        </div>
-        <span class="info" v-html="htmlNeed">
-<!--
-          <span class="info">You need {{ rollsRequired }} {{ plural(rollsRequired, 'roll') }}</span>
--->
-        </span>
+        <div v-html="htmlShare"></div>
+        <span class="info" v-html="htmlNeed"></span>
       </template>
 
-      <div v-if="form.mode === 'hoarding'" v-html="htmlTime">
-<!--
-        <span class="text">You'll last</span>
-        <span class="value">{{ timeRequired.value }}</span>
-        <span class="text">{{ timeRequired.unit }}</span>
--->
-      </div>
+      <!-- hoard -->
+      <div v-if="form.mode === 'hoarding'" v-html="htmlTime"></div>
     </div>
 
     <div class="button-container">
@@ -138,7 +121,6 @@
 import { clone } from '@/utils/object'
 import storage from '@/utils/storage'
 import assignDeep from 'assign-deep'
-import LanguageSwitcher from '../global/LanguageSwitcher'
 import CalculatorUsage from './CalculatorUsage'
 import UiPerson from './UiPerson'
 import { getPaperData } from './utils'
@@ -164,7 +146,7 @@ const durations = [
 ]
 
 const options = {
-  welcome: true,
+  buttonTip: true,
   totals: false
 }
 
@@ -186,10 +168,15 @@ function getData (name = '') {
     ]
   }
 }
+function makeWatch (handler) {
+  return {
+    deep: true,
+    handler
+  }
+}
 
 export default {
   components: {
-    LanguageSwitcher,
     CalculatorUsage,
     UiPerson
   },
@@ -314,32 +301,27 @@ export default {
   },
 
   watch: {
+    options: makeWatch('saveOptions'),
+
+    form: makeWatch('save'),
+
+    people: makeWatch('save'),
+
     personId (value) {
       if (!value) {
         this.addPerson()
       }
+      this.save()
     },
 
-    options: {
-      deep: true,
-      handler (value) {
-        storage.set('options-data', value)
-      }
-    },
-
-    $data: {
-      deep: true,
-      handler: 'save'
+    '$i18n.locale' () {
+      this.options.buttonTip = true
+      this.saveOptions()
     }
   },
 
   created () {
-    if (process.client) {
-      const options = storage.get('options-data')
-      if (options) {
-        this.options = options
-      }
-    }
+    this.loadOptions()
   },
 
   mounted () {
@@ -379,7 +361,7 @@ export default {
       this.$refs.usage.setData(this.getPerson().data)
       if (scroll) {
         setTimeout(() => {
-          document.querySelector('main').scrollIntoView({ behavior: 'smooth' })
+          document.querySelector('#usage').scrollIntoView({ behavior: 'smooth' })
         }, 250)
       }
     },
@@ -403,6 +385,7 @@ export default {
     },
 
     save () {
+      console.log('saving data')
       const { version, personId, people, form } = this
       storage.set('paper-data', {
         version,
@@ -410,6 +393,19 @@ export default {
         people,
         form
       })
+    },
+
+    loadOptions () {
+      if (process.client) {
+        const options = storage.get('options-data')
+        if (options) {
+          this.options = options
+        }
+      }
+    },
+
+    saveOptions () {
+      storage.set('options-data', this.options)
     },
 
     reset () {
@@ -437,12 +433,6 @@ function getResultHtml (text = '') {
 <style lang="scss">
 .calculator {
   position: relative;
-
-  .locale {
-    position: absolute;
-    right: -7px;
-    top: -1.3rem;
-  }
 
   article {
     border-left: 2px dashed #CCC;
@@ -535,22 +525,6 @@ function getResultHtml (text = '') {
     font-weight: bold;
   }
 
-}
-
-.form-check-right {
-  position: absolute;
-  top: -1rem;
-  right: 0;
-
-  label {
-    line-height: .8em;
-  }
-
-  input {
-    margin-top: .3rem;
-    margin-left: .3rem;
-    cursor: pointer;
-  }
 }
 
 .detail {
