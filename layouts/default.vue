@@ -29,6 +29,7 @@ export default {
     const pathWithSlash = path.endsWith('/') ? path : `${path}/`
     const title = this.$t('site.title')
     const description = this.$t('site.description')
+    const url = `${baseUrl}${pathWithSlash}`
     return {
       htmlAttrs: i18nSeo.htmlAttrs,
       meta: [
@@ -37,9 +38,10 @@ export default {
         { hid: 'og:title', name: 'og:title', content: title },
         { hid: 'description', name: 'description', content: description },
         { hid: 'og:description', name: 'og:description', content: description },
+        { hid: 'og:url', name: 'og:url', content: url },
       ],
       link: [
-        { rel: 'canonical', href: `${baseUrl}${pathWithSlash}` },
+        { rel: 'canonical', href: url },
         ...i18nSeo.link
       ]
     }
