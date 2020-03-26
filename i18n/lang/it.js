@@ -2,20 +2,20 @@ export default {
   site: {
     title: 'Serve della carta?',
     subtitle: 'Calcola il tuo attuale bisogno di carta igenica',
-    description: null
+    description: 'Una simpatica app per calcolare il tuo fabbisogno di carta igienica durante la pandemia di Coronavirus'
   },
   nav: {
-    home: null,
-    about: null,
-    press: null,
-    contact: null,
-    privacy: null
+    home: 'Home',
+    about: 'About',
+    press: 'Dicono di noi',
+    contact: 'Contattaci',
+    privacy: 'Provacy'
   },
   headings: {
     people: 'Persone',
-    usage: 'Utilizzo',
-    paper: 'Caerta Igenica',
-    quarantine: 'Quarantina'
+    usage: 'Utilizzo/Uso',
+    paper: 'Carta Igenica',
+    quarantine: 'Quarantena'
   },
   subHeadings: {
     poops: 'Popò',
@@ -23,45 +23,45 @@ export default {
     extras: 'Extra'
   },
   labels: {
-    poopsPerDay: 'Popò al giorno',
+    poopsPerDay: 'Popò al giorno or Popò / giorno',
     wipesPerPoop: 'Salviette umidificate per popò',
-    sheetsPerWipe: 'Numero di salviette giornalieri',
+    sheetsPerWipe: 'Numero di salviette umidificate al giorno',
     peesPerDay: 'Pipí al giorno',
-    sheetsPerPee: 'Numero di pezzi di carta igenica per una pipí',
-    sheetsPerDay: 'Panni di carta giornalieri',
-    numSheetsDay: null,
-    forDailyCleanup: null,
-    sheetsPerMonth: 'Panni di carta utilizzati mensilmente per le pulizie di casa',
-    forMonthlyCleanup: null,
-    sheetsPerRoll: 'Panni di carta in ogni rotolo',
-    packInformation: 'Cerca l\'informazione sul lato della confezione',
+    sheetsPerPee: 'Pezzi di carta igenica per pipí',
+    sheetsPerDay: 'Panni di carta giornalieri (or al giorno)',
+    numSheetsDay: '1 panno / giorno | {n} panni / giorno',
+    forDailyCleanup: 'Per la pulizia quotidiana',
+    sheetsPerMonth: 'Panni di carta utilizzati mensilmente (or al mese) per le pulizie di casa',
+    forMonthlyCleanup: 'Per la pulizia mensile',
+    sheetsPerRoll: 'Panni di carta per rotolo',
+    packInformation: 'Cerca questa informazione sul lato della confezione',
     daysPerRoll: 'Durata di un rotolo',
-    calculation: null,
-    timeInQuarantine: 'Durata durante la quarantina',
-    rollsBought: null,
-    personYou: null,
-    personNum: null
+    calculation: 'Calcola',
+    timeInQuarantine: 'Da quanto tempo in quarantena',
+    rollsBought: 'Rotoli comprati',
+    personYou: 'Tu',
+    personNum: 'Persona {n}'
   },
   results: {
-    buy: null,
-    share: null,
-    need: null,
-    days: null,
-    weeks: null,
-    months: null,
-    years: null
+    buy: 'Compra 1 rotolo | Compra {n} rotoli',
+    share: 'Condividi 1 rotolo | Condividi {n} rotoli',
+    need: 'Hay bisogno di 1 rotolo | Hai bisogno di {n} rotoli',
+    days: 'Dura 1 giorno | Dura {n} giorni',
+    weeks: 'Dura 1 settiman | Dura {n} settimane',
+    months: 'Dura 1 mese | Dura {n} mesi',
+    years: 'Dura 1 anno | Dura {n} anni'
   },
   cta: {
-    restart: null,
-    buy: null,
-    share: null
+    restart: 'Comincia di nuovo',
+    buy: 'Compra ora ',
+    share: 'Condividi'
   },
   prompts: {
-    buttonTip: 'Premi a tieni premuto +/- per addizzionare o sottrarre velocemente!',
-    chooseLanguage: null,
-    offerTranslation: null,
-    commission: null,
-    donate: null
+    buttonTip: 'Premi e tieni premuto +/- per aggiungere o sottrarre velocemente!',
+    chooseLanguage: 'Lingua',
+    offerTranslation: 'Aiutaci a tradurlo in un\'altra lingua',
+    commission: 'Se acquisti tramite il sito, riceveremo una piccola commissione senza costo aggiuntivo (extra costo) per te',
+    donate: 'Comprami un caffe!'
   },
   durations: {
     twoWeeks: 'Due settimane',
@@ -78,11 +78,11 @@ export default {
     addPerson: 'Aggiungi una persona',
     rename: 'Rinomina',
     remove: 'Rimuovi',
-    cancel: null
+    cancel: 'Cancella'
   },
   modes: {
-    buying: null,
-    sharing: null,
-    hoarding: null
+    buying: 'Compra',
+    sharing: 'Condividi',
+    hoarding: 'Tabellone'
   }
 }

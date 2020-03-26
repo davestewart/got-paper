@@ -53,6 +53,14 @@ const prod = [
     flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAB40lEQVRoQ+2bsU4CQRCG/zFBRVoTK23Qd7C0UsBYaKI2GGMs7CwssLXUK+xtjIk2hiiJCUTfgHcAYmEjMZYEleiYI7kTlYObeIFbmavgbtid+Xb+vVmyS2i5UlY5AcYOgFkAEwCo9Xk+E2/96n5etCpt7xtwkwFUARRBOClkpm8dn5uBzx3cj45F388ArHcK5h+C+RnuZSwyspXdm6w3waSsyjmY091GeADAAEQXhUx8g5JWaZ6Y7rpBsZ8PBBgATLxAqaPyFYAVBfNFgBk5G8wTgHEF843Aow3Gnpl9XX+VUnZ3ylc/ITD6UDAeo6BgFIxMoJoxXhnDzL4nXxnz39YmLR1IwbQfbgWjUpJNBJoxmjHCjNElgcfkq2AUjEhLWvmGYa0kGrI+G/c0Y/ocq6h7BaNSEiUMNGM0Y4QZU6u/9ez/GJlr/bUmBeNR+SoYBSPSpkopiLeSCLnhxqI6xvBYRe4rGJWSKGFkSwJZ02Zbq5S8pKQFnhZ4Im1rgddBSr734ImQm238TLWXxjWYl82OI2DviXKifb4Bdx/a5og5IdoZHtpIgnTM2Rlut7l6/BCtNV7tswRrQfZhXluUjUWGN92zBE4AycPSEg3RNtg9fWJebHKPqyAUifk0vz9z4/z8E9d/FfC3GKRRAAAAAElFTkSuQmCC'
   },
   {
+    code: 'it',
+    iso: 'it-IT',
+    name: 'Italiano',
+    label: 'Italian',
+    file: 'it.js',
+    flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlElEQVRoQ+3bzUoCYRTG8efoJolokdGq++gKyk1EgTMFfVgTtOhiWoYFJhSlTR/Qqu7AS0mirbbREzM0Mo0VHJwWLzyuRN8ZeX/856xeBanX1nVQGRZwBGAJwAIASX9vfd9YO7VeYlr/sXtsWv/DYgW0K5COolCfC+vPyZp447WL2lS/VGwC8Cf9pfT1DsBktivtHqb3F8OTfgyzeRNcqmA7T5ToXu7BAKpyVb472xG/dbAMyEveKK7CxA4qK+K3gnsAG4T5JvAYwbwBKBMmLaCvEYz+B4rTjxIwJMwvVRCGMLaBwWJYDIuxCbAYmxdnDIthMTYBFmPz4oxhMSzGJsBibF6cMSyGxdgEWIzNizOGxbAYmwCLsXlxxrAYFmMTYDE2L84YFsNibAIsxubFGcNiWIxN4I9ieAZvDEffxWsfPojqei7MmZu4eM73awvRqU2e8x2LQlDhyfCMyuhkePR59bZaKg5mmyrq5flIOfcoiYY9ndkb/ZcgwfDawaoogtS/TyZycgSmK0BnADTmw/OnZMOfF1o7lACMC0QAAAAASUVORK5CYII='
+  },
+  {
     code: 'se',
     iso: 'se-SE',
     name: 'Svenska',
@@ -104,14 +112,6 @@ const temp = [
     flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABkUlEQVRoQ+2bzUpCURSF17Iwf6BJQaPeoycwJw0KrUlREenjNLZBCDoJK6FRvYFv0TSpO+vqRckdKoKQBtvhaZ3RhXvOhfWdb+/B5RxibkTlapEYVQ22B3AHAOffB/hsgHUJdgyp2lar9jLLOAn+dnGR2YzTdcBOAgzviMT7HvKXu62b/gTMZ6nSIO3U8YVgp5qxuf1we8aoVCmA9hps0lWCGfcZlSuPgB2tsj7gNW1G5esPANsBh1whmr2PwdgKK0NfMhKYJVssMALjq34ZI2NkjI+AjPHxUo+RMTLGR0DG+Hipx8gYGeMjIGN8vNRjlhkT9wf6UbUADgVmsTICo1JyNl+VkkrJpYx6jHqMSxjIGBkjY3wEZIyPl3qMjJExPgIyxsdLPUbG+I3RGbzfzCLGyfAJZoc+noHPJtv8SoYFms75zm+1kcXJyfBef9AwQCfDp5cnmrls+mwCxsyycTKsEzgOvEj+jke2chvr5ySndwlmI06SA4zWrsDx7ROMb5/8h9GFsYPU910+k3meBf4BpGnMswrpLPcAAAAASUVORK5CYII='
   },
   {
-    code: 'it',
-    iso: 'it-IT',
-    name: 'Italiano',
-    label: 'Italian',
-    file: 'it.js',
-    flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABlElEQVRoQ+3bzUoCYRTG8efoJolokdGq++gKyk1EgTMFfVgTtOhiWoYFJhSlTR/Qqu7AS0mirbbREzM0Mo0VHJwWLzyuRN8ZeX/856xeBanX1nVQGRZwBGAJwAIASX9vfd9YO7VeYlr/sXtsWv/DYgW0K5COolCfC+vPyZp447WL2lS/VGwC8Cf9pfT1DsBktivtHqb3F8OTfgyzeRNcqmA7T5ToXu7BAKpyVb472xG/dbAMyEveKK7CxA4qK+K3gnsAG4T5JvAYwbwBKBMmLaCvEYz+B4rTjxIwJMwvVRCGMLaBwWJYDIuxCbAYmxdnDIthMTYBFmPz4oxhMSzGJsBibF6cMSyGxdgEWIzNizOGxbAYmwCLsXlxxrAYFmMTYDE2L84YFsNibAIsxubFGcNiWIxN4I9ieAZvDEffxWsfPojqei7MmZu4eM73awvRqU2e8x2LQlDhyfCMyuhkePR59bZaKg5mmyrq5flIOfcoiYY9ndkb/ZcgwfDawaoogtS/TyZycgSmK0BnADTmw/OnZMOfF1o7lACMC0QAAAAASUVORK5CYII='
-  },
-  {
     code: 'ru',
     iso: 'ru-RU',
     name: 'Pусский',
@@ -123,7 +123,7 @@ const temp = [
 
 const en = prod.find(locale => locale.code === 'en')
 
-export default {
+const locales = {
   all: sortOn([...prod, ...temp], 'code'),
   basic: [en, temp[0]],
   temp: [en, ...temp],
@@ -133,3 +133,7 @@ export default {
     return this.all.filter(locale => arrCodes.includes(locale.code))
   }
 }
+
+locales.safe = locales.all.filter(locale => locale.code !== 'xx')
+
+export default locales
