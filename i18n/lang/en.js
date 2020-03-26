@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Language',
     offerTranslation: 'Can you translate another language?',
     commission: 'If you make a purchase we may receive a small commission at no extra cost to you.',
-    donate: 'Or if you fancy, you can buy me a coffee!'
+    donate: 'Buy me a coffee!'
   },
   durations: {
     twoWeeks: 'Two weeks',

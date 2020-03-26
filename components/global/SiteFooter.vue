@@ -16,19 +16,6 @@
       alt="Got Paper icon"
     >
 
-    <!-- amazon -->
-    <div class="siteFooter__amazon">
-      <AdDesktop class="my-2" />
-
-      <AdMobile />
-
-      <div class="inner text-center">
-        <div class="col-12">
-          <p>{{ $t('prompts.commission') }}</p>
-        </div>
-      </div>
-    </div>
-
     <div class="siteFooter__kofi">
       <div class="inner">
         <ClientOnly>
@@ -37,8 +24,6 @@
       </div>
     </div>
 
-    <SiteLinks />
-
     <div class="siteFooter__sharing">
       <div class="inner">
         <ClientOnly>
@@ -46,6 +31,8 @@
         </ClientOnly>
       </div>
     </div>
+
+    <SiteLinks />
 
     <div class="siteFooter__twitter h-links hide-lg">
       <div class="inner">
@@ -60,15 +47,11 @@
 </template>
 
 <script>
-import AdDesktop from '../ads/AdDesktop'
-import AdMobile from '../ads/AdMobile'
 import SiteLinks from './SiteLinks'
 
 export default {
   components: {
     SiteLinks,
-    AdDesktop,
-    AdMobile,
     KofiButton: () => import('@/components/global/KofiButton'),
     ShareLinks: () => import('@/components/global/ShareLinks')
   }
@@ -83,13 +66,11 @@ export default {
   }
 
   &__sharing {
-    background: darken($grey-light, 3%);
+    background: darken($grey-light, 2%);
   }
 
-  &__site {
+  .siteLinks {
     background: darken($grey-light, 6%);
-    padding: 20px 0 50px;
-    text-align: center;
   }
 
   &__twitter {

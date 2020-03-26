@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Idioma',
     offerTranslation: 'Puedes traducir en otro Idioma',
     commission: 'Si compras algo, posiblemente nos llegue una pequeña comision sin cargo para ti',
-    donate: 'O si te sientes generoso, un cafe!!!'
+    donate: 'Cómprame un café!'
   },
   durations: {
     twoWeeks: '2 Semanas',

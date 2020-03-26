@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Språk',
     offerTranslation: 'Kan du översätta till andra språk?',
     commission: 'Vid köp så kan vi möjligen få liten provision, men inte på din bekostnad.',
-    donate: 'Om du vill så får du gärna köpa mig en kaffe'
+    donate: 'Köpa mig en kaffe!'
   },
   durations: {
     twoWeeks: 'Två veckor',

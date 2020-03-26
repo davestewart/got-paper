@@ -43,13 +43,13 @@ export default {
     personNum: null
   },
   results: {
-    buy: 'Buy 0 rolls | Buy 1 roll | Buy {n} rolls',
-    share: 'Share 0 rolls | Share 1 roll | Share {n} rolls',
-    need: 'You need 0 rolls | You need 1 roll | You need {n} rolls',
-    days: 'You\'ll last 0 days | You\'ll last 1 day | You\'ll last {n} days',
-    weeks: 'You\'ll last 0 weeks | You\'ll last 1 week | You\'ll last {n} weeks',
-    months: 'You\'ll last 0 months | You\'ll last 1 month | You\'ll last {n} months',
-    years: 'You\'ll last 0 years | You\'ll last 1 year | You\'ll last {n} years'
+    buy: '',
+    share: '',
+    need: '',
+    days: '',
+    weeks: '',
+    months: '',
+    years: ''
   },
   cta: {
     restart: null,

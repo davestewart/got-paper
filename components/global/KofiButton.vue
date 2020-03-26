@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss">
 .kofi {
-  padding: 10px 0 60px;
+  padding: 40px 0;
   text-align: center;
 
   @media only screen and (min-width: 600px) {

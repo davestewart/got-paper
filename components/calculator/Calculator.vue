@@ -101,15 +101,6 @@
     </div>
 
     <div class="button-container">
-      <a class="btn btn-primary w-100" target="_blank" href="https://www.amazon.co.uk/gp/search?ie=UTF8&tag=gotpaper-21&linkCode=ur2&linkId=39896c3b99b347027d53d0de81e051cf&camp=1634&creative=6738&index=grocery&keywords=toilet roll">{{ $t('cta.buy') }}</a>
-      <img
-        src="//ir-uk.amazon-adsystem.com/e/ir?t=gotpaper-21&l=ur2&o=2"
-        width="1"
-        height="1"
-        border="0"
-        alt=""
-        style="border:none !important; margin:0 !important;"
-      >
       <button type="reset" class="btn btn-secondary reset mt-2" @click="reset">
         {{ $t('cta.restart') }}
       </button>

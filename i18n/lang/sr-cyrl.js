@@ -61,7 +61,7 @@ export default {
     chooseLanguage: 'Језик',
     offerTranslation: 'Можеш ли да преведеш на још неки језик?',
     commission: 'Ако купиш нешто, добијамо малу провизију која тебе ништа не кошта.',
-    donate: 'Или, ако желиш, можеш да ме частиш кафом!'
+    donate: 'Купи ми кафу!'
   },
   durations: {
     twoWeeks: 'Две недеље',

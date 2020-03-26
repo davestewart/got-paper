@@ -7,19 +7,16 @@
     <div v-if="title" class="strapline">
       <h5 v-html="title" />
     </div>
-    <AdDesktop class="mt-4" />
   </header>
 </template>
 
 <script>
-import AdDesktop from '../ads/AdDesktop'
 import SiteLinks from './SiteLinks'
 import { getTitle } from '@/plugins/page-plugin'
 
 export default {
   components: {
     SiteLinks,
-    AdDesktop
   },
 
   computed: {
