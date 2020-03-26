@@ -8,6 +8,7 @@ import { srChoiceIndex } from './sr'
 const choices = {
   ru: ruChoiceIndex,
   sr: srChoiceIndex,
+  'sr-cyrl': srChoiceIndex,
 }
 
 // extend
