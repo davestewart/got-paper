@@ -38,10 +38,18 @@ import { site } from '../../nuxt.config.js'
 export default {
   data () {
     return {
-      url: encodeURIComponent(site.url),
-      title: encodeURIComponent(site.title),
-      description: encodeURIComponent(site.description),
+      url: encodeURIComponent(process.client ? location.href : site.url),
       hashtags: encodeURIComponent(site.hashtags)
+    }
+  },
+
+  computed: {
+    title () {
+      return encodeURIComponent(this.$t('site.title'))
+    },
+
+    description () {
+      return encodeURIComponent(this.$t('site.description'))
     }
   }
 }
