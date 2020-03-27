@@ -463,7 +463,7 @@ function getResultHtml (text = '') {
     span.value {
       vertical-align: middle;
       font-size: 2em;
-      color: #df0f1b;
+      color: $dark-red;
       padding: 0 .1em;
       line-height: 1em;
     }

@@ -21,6 +21,7 @@
           </li>
         </ul>
       </template>
+      <p>There's a little video to show off <a href="/media">here</a>!</p>
     </section>
 
     <section>

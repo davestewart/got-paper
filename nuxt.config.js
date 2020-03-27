@@ -88,6 +88,10 @@ export default {
   },
 
   build: {
+    transpile: [
+      'vue-agile'
+    ],
+
     loaders: {
       vue: {
         compilerOptions: {
@@ -120,7 +124,9 @@ export default {
 
       // assets
       link('stylesheet', 'https://use.typekit.net/lvl2shj.css'),
-      link('stylesheet', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+      link('stylesheet', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'),
+      link('stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'),
+      link('stylesheet', 'https://unpkg.com/vue-agile@latest/dist/VueAgile.css'),
     ],
 
     meta: [
@@ -175,6 +181,7 @@ export default {
   plugins: [
     '@/plugins/polyfills.client.js',
     '@/plugins/global-components.js',
+    '@/plugins/proportional-resize.js',
     '@/plugins/portal-vue.js',
     '@/plugins/i18n/index.js',
   ],

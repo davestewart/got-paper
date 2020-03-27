@@ -1,7 +1,7 @@
 export default {
   about: '/about',
   press: '/press',
-  // media: '/media',
+  media: '/media',
   contact: '/contact',
   privacy: '/privacy',
   translations: '/translations',

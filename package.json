@@ -20,6 +20,7 @@
     "smoothscroll-polyfill": "^0.4.4",
     "sort-on": "^4.1.0",
     "vee-validate": "^3.2.5",
+    "vue-agile": "^1.0.11",
     "vue-i18n": "^8.15.6"
   },
   "devDependencies": {
