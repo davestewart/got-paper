@@ -1,6 +1,7 @@
 <template>
   <div class="calculator__usage">
     <article>
+      <!-- <p class="hint m-0">{{ $t('headings.usageHint') }}</p>-->
       <section>
         <h3>{{ $t('subHeadings.poops') }}</h3>
         <UiNumber v-model="poops.poopsDay" :label="$t('labels.poopsPerDay')" :min="1" />

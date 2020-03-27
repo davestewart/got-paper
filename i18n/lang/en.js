@@ -9,11 +9,14 @@ export default {
     about: 'About',
     press: 'Press',
     contact: 'Contact',
-    privacy: 'Privacy'
+    privacy: 'Privacy',
+    media: 'Media',
+    translations: 'Translations',
+    sitemap: 'Site Map'
   },
   headings: {
+    usage: 'Activity',
     people: 'People',
-    usage: 'Usage',
     paper: 'Toilet Paper',
     quarantine: 'Quarantine'
   },

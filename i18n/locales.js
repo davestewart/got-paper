@@ -1,8 +1,8 @@
 import sortOn from 'sort-on'
 
-/**
- * Flags from: https://www.iconfinder.com/iconsets/195-flat-flag-psd-icons
- */
+// Flags from: https://www.iconfinder.com/iconsets/195-flat-flag-psd-icons
+
+// complete
 const prod = [
   {
     code: 'en',
@@ -99,18 +99,11 @@ const prod = [
     label: 'Serbian (Cyrillic)',
     file: 'sr-cyrl.js',
     flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEWUlEQVRoQ+2bW2wUZRTH/2e2e5ldty22EatiUUiooEYSDSVqa4xAvdRYoBYTkKJh6+3BNzEmKImJPJhgfFEaQwkUTC1YIl4gvAAptRI1JJKU2KhFErDIatvd2V32Mp/5tlm3k9rufDPT3XadeWpnz/mf8/99l53dnSFMOILNbQ0EtY2B1QI0HwBNfL0I/2YAGyZQP4O0u6J797GMx7Tx31pbPaWKay/AWorQvIAl6orAt2VB965oGsy19YH9RGyjgELRhjJGnZWH2jdRcH1gNYgdL1qnRowxWkPB5sBhgK01kl/EOT0UbN76J4DKIjZpwBr7g4NhBjKLPUW1wUwxxDYYG4zY6heeMSW3JuFrVOCYp/5bKXGxBKGD/vT/814fAcnZbUsNSVCOe5EYdIp1VuBoITDkYijbOgapNAuF968qEkY+LEufL391dJIlliCMdfiRCjoKbFd/eSEwvoYI3Muv/6f63x+Ug88mf3NY8zqHghSQvOpA6FM/oGWqv9M8RwqBkcrHXbmXxSHXRTWtjnX64VyQhFyvPR89JSPa58mzLfPlhMBkynkfi8DzgHbmKMe8cC5MwlUT13QVH3AhfMRnvtM8KxgC498QhvOOhKbV2PduOO9MwnFjSnOe7yuj7aV5tmW+HK3Z0CV85dv58peo9GuXzIXLFVhS9ReItHIqIzyzqwnx5NzZeDnWnGBW3T0EpyO7Y0oSw2urfpz8zsNoEpRM0IG+pQiG5Ozbe0rCifMLzQ/rDCrkBPPm0/2or7lkaQsnB27HzqMrLNW0WiwnmOXVw3iv5bSldbd11ePcxZss1bRaLCcYvmd0BL7BzWWKJbWvjPjwQvsTEN7YLKmuXyQnGC713MoBbH74vH7VaSI7Tt+Drv4aS7RmUkQXmIobotj30ldwSObGOaUSnv/4SQTD2Y14Js2Z0dYFhhfYsa4XKxZdMVML3w7egh09D5rSyFeybjC1iy/jnbVnTPW1/fBDOPtLlSmNfCXrBsOXEV9OfFkZOa6F5PQy4hd8c+HQDYab2VL3E1pqLxjydbBvKfb1LjOUW4gkITBV5Qr2BL4W/t2WMUJr++MYHp07HyaFwPCR29lyCvdVXxUaxB+G5uOtz+qEcgodLAzmkbt+x7bG74T6fvfISvT+fJtQTqGDhcHwD5QHXjmKUln7vctURkYibmz86CkkU1KhvQrVFwbD1dsePYem+wd1FTp0dgk+OXmvrtjZFERKNC58OStdvwTPr2/o8EGILXofqmtuXLtMNGQIDBfwDL0NKTr9rFG9NYhVb9cBcPaFGAYz+6xY25ENZgqeNhgbjNhSs2eMPWPsGSNGYJoZY9+DNxlOkJRY4nMw1mQJ5mIRIeqhcCyxmph9n+/EMWVEDenvGSPR+H4G2HeGjz880emVXZvSYBhjshJL7CXg2WJZDYZ8EHV73SWbiWj8WYLMocRijVAdL4L40yfgT5/8H45hMOqHlNrj83i+yBj+B4PTjpvAw2+MAAAAAElFTkSuQmCC'
-  },
+  }
 ]
 
-const dev = [
-  {
-    code: 'xx',
-    iso: 'xx-US',
-    name: 'Test',
-    label: 'Test',
-    file: 'xx.js',
-    flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEsElEQVRoge2bXyi8WRjHH+PPGJYRixoTbsjPyP8ykhoupqVsKS5ExA0SF0SKGKG0k0m5YCOlkda6sOVqCNm9IX8mc4EkucBidl2YaPJnnu2c5n13xgxLeN8dM986mTnnnWfO+cx5nvOc877giX4AgDkA+BMALACAX7xYrGOds47dQf4A8IsbgPivQhiIbOFoPVDYomWgKD0wHIrSGwB+AoBvzvzLjfWdFwAYAeB7dyfxROde1mnkkb0sHjDPyIevLw4PDweFQgFKpRLS09NBIpGAQCCAy8tL2NnZgeXlZdDpdHB6espXF7mN+N7e3tja2oqv1cjICPr7+/OxMnH3ZQKBAPf3918NhdHNzQ36+fl9XTDDw8NvhsJoenqaUzCcBV+RSAS3t7fvtmE2mz+sTy9JwMm3AEBsbOy7bchksg/py2vEGZjHx8d327i4uPiQvrxWnPhscHAwGy/MZjOWlJRgeno6VlRU4P39Pdv28PCA1dXVmJiYiEVFRXh9fU3r7+7u6Ir2JYPv+fk5HSSBYlvf39/PgqmqqrJrI5CIxsbGOA2+nLkSUUdHB/27t7dnV398fMy+Xltbs2tjXLC9vZ2TPtqKs1/By8sLDQYD6nQ6FAqFtE4sFuPBwQE7Y0ZHR1mXCQwMRKPRiAMDA5zOFs5diZTGxkYKgMSVubk5FkhycjImJSXR11dXV3ZtWVlZXx+MQqFwSN7IFoFpb2lpcWiXyWScgyEHVSou/ZbEk83NTTg8PIS0tDQQCoVgNBrpJlIul9MNZUpKChwdHYFKpYKenh7Q6/VcdpEVH9MUpVIpxsTE4MLCgsMMmZqawtjYWAwJCeGlb7zMGEYTExMglUqhrq4ODAYDmEwmulqp1Wro7e0FjUYDYrEYtra2+OgeFS+/CJkNRH19fRgQEIBBQUE0CSS7aJVKRdt8fHx4mzG8gSElOjqadR+LxUILo9DQUD6hcAPmpbMUX19fGlMYaTQamu88d31cXBxGRES4Ppiuri66FSgrK3vxuqioKIyMjHzxmry8PIpvcXHR9cHYan5+HuPj4+lJ3ltsiEQiVCqVrCVix6XBlJaWOjmLQzw5OcHKysoXXYIE44KCAlxZWXFqIz8/33XBdHd309R/fHwcU1NTsby8nO6TbDU7O4sZGRlsXCFZLtkv2WpoaAizs7MxMzMTJycn0WQyYVNTk+uCAeuy/LSOrDiFhYU4MzPDDl+v1+Pq6ir7fnBwkEJytmST5f2z+83rck1miVqtdnATksfw2S9ewcjlctze3qYgiLsVFxdjTU0NC2d9fZ26n1uAITMkISEBl5aWWADNzc3s2QxYg25nZyfbrtVqMSws7OuByc3NpfGCBF1ySMVoY2MDJRLJs58jeQ2JO4zIPan6+nq6GnGUFX+ecZLFOlNDQ8OrZ1hbW5tTGwSUy4LJycnBs7MzuwGRY4a32rG9i8CI5EguCwaseyGS7e7u7tJbIeQI8602SNZLPktKbW0ttfnZ/fY8H/OMOL194koiYP5ydwhO9DcB88f/rlv863cCZtTdKTjRz0yV58nwf4vWlhN5fn7GAwV+ffq/BIyKAOA38gCwG8EgYyVj/pGlAAD/ADStESSerY49AAAAAElFTkSuQmCC'
-  },
+// being worked on
+const temp = [
   {
     code: 'id',
     iso: 'id-ID',
@@ -118,8 +111,18 @@ const dev = [
     label: 'Indonesian',
     file: 'id.js',
     flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAABkUlEQVRoQ+2bzUpCURSF17Iwf6BJQaPeoycwJw0KrUlREenjNLZBCDoJK6FRvYFv0TSpO+vqRckdKoKQBtvhaZ3RhXvOhfWdb+/B5RxibkTlapEYVQ22B3AHAOffB/hsgHUJdgyp2lar9jLLOAn+dnGR2YzTdcBOAgzviMT7HvKXu62b/gTMZ6nSIO3U8YVgp5qxuf1we8aoVCmA9hps0lWCGfcZlSuPgB2tsj7gNW1G5esPANsBh1whmr2PwdgKK0NfMhKYJVssMALjq34ZI2NkjI+AjPHxUo+RMTLGR0DG+Hipx8gYGeMjIGN8vNRjlhkT9wf6UbUADgVmsTICo1JyNl+VkkrJpYx6jHqMSxjIGBkjY3wEZIyPl3qMjJExPgIyxsdLPUbG+I3RGbzfzCLGyfAJZoc+noHPJtv8SoYFms75zm+1kcXJyfBef9AwQCfDp5cnmrls+mwCxsyycTKsEzgOvEj+jke2chvr5ySndwlmI06SA4zWrsDx7ROMb5/8h9GFsYPU910+k3meBf4BpGnMswrpLPcAAAAASUVORK5CYII='
-  },
+  }
 ]
+
+// test locale to see all placeholders
+const test = {
+  code: 'xx',
+  iso: 'xx-US',
+  name: 'Test',
+  label: 'Test',
+  file: 'xx.js',
+  flag: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAEsElEQVRoge2bXyi8WRjHH+PPGJYRixoTbsjPyP8ykhoupqVsKS5ExA0SF0SKGKG0k0m5YCOlkda6sOVqCNm9IX8mc4EkucBidl2YaPJnnu2c5n13xgxLeN8dM986mTnnnWfO+cx5nvOc877giX4AgDkA+BMALACAX7xYrGOds47dQf4A8IsbgPivQhiIbOFoPVDYomWgKD0wHIrSGwB+AoBvzvzLjfWdFwAYAeB7dyfxROde1mnkkb0sHjDPyIevLw4PDweFQgFKpRLS09NBIpGAQCCAy8tL2NnZgeXlZdDpdHB6espXF7mN+N7e3tja2oqv1cjICPr7+/OxMnH3ZQKBAPf3918NhdHNzQ36+fl9XTDDw8NvhsJoenqaUzCcBV+RSAS3t7fvtmE2mz+sTy9JwMm3AEBsbOy7bchksg/py2vEGZjHx8d327i4uPiQvrxWnPhscHAwGy/MZjOWlJRgeno6VlRU4P39Pdv28PCA1dXVmJiYiEVFRXh9fU3r7+7u6Ir2JYPv+fk5HSSBYlvf39/PgqmqqrJrI5CIxsbGOA2+nLkSUUdHB/27t7dnV398fMy+Xltbs2tjXLC9vZ2TPtqKs1/By8sLDQYD6nQ6FAqFtE4sFuPBwQE7Y0ZHR1mXCQwMRKPRiAMDA5zOFs5diZTGxkYKgMSVubk5FkhycjImJSXR11dXV3ZtWVlZXx+MQqFwSN7IFoFpb2lpcWiXyWScgyEHVSou/ZbEk83NTTg8PIS0tDQQCoVgNBrpJlIul9MNZUpKChwdHYFKpYKenh7Q6/VcdpEVH9MUpVIpxsTE4MLCgsMMmZqawtjYWAwJCeGlb7zMGEYTExMglUqhrq4ODAYDmEwmulqp1Wro7e0FjUYDYrEYtra2+OgeFS+/CJkNRH19fRgQEIBBQUE0CSS7aJVKRdt8fHx4mzG8gSElOjqadR+LxUILo9DQUD6hcAPmpbMUX19fGlMYaTQamu88d31cXBxGRES4Ppiuri66FSgrK3vxuqioKIyMjHzxmry8PIpvcXHR9cHYan5+HuPj4+lJ3ltsiEQiVCqVrCVix6XBlJaWOjmLQzw5OcHKysoXXYIE44KCAlxZWXFqIz8/33XBdHd309R/fHwcU1NTsby8nO6TbDU7O4sZGRlsXCFZLtkv2WpoaAizs7MxMzMTJycn0WQyYVNTk+uCAeuy/LSOrDiFhYU4MzPDDl+v1+Pq6ir7fnBwkEJytmST5f2z+83rck1miVqtdnATksfw2S9ewcjlctze3qYgiLsVFxdjTU0NC2d9fZ26n1uAITMkISEBl5aWWADNzc3s2QxYg25nZyfbrtVqMSws7OuByc3NpfGCBF1ySMVoY2MDJRLJs58jeQ2JO4zIPan6+nq6GnGUFX+ecZLFOlNDQ8OrZ1hbW5tTGwSUy4LJycnBs7MzuwGRY4a32rG9i8CI5EguCwaseyGS7e7u7tJbIeQI8602SNZLPktKbW0ttfnZ/fY8H/OMOL194koiYP5ydwhO9DcB88f/rlv863cCZtTdKTjRz0yV58nwf4vWlhN5fn7GAwV+ffq/BIyKAOA38gCwG8EgYyVj/pGlAAD/ADStESSerY49AAAAAElFTkSuQmCC'
+}
 
 function sort (arr) {
   return sortOn(arr, 'label')
@@ -133,14 +136,15 @@ function only (codes = 'en') {
   return codes.match(/[-\w]+/g).map(find)
 }
 
-const all = sort([...prod, ...dev]).filter(l => l.code !== 'xx')
+const all = sort([...prod, ...temp]).filter(l => l.code !== 'xx')
 
 const locales = {
   prod: sort(prod),
-  dev: sort([find('en'), ...dev]),
+  temp,
+  dev: sort([find('en'), ...temp, test]),
   all,
   find,
-  only,
+  only
 }
 
 export default locales

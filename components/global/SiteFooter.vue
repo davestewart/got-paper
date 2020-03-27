@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <SiteLinks />
+    <SiteLinks menu="footer" />
 
     <div class="siteFooter__twitter h-links hide-lg">
       <div class="inner">

@@ -1,38 +1,37 @@
 <template>
   <div class="page page__translations">
     <h1>Translations</h1>
-    <section>
-      <p>Currently looking for translations. Can you help!?</p>
-      <p>You will need:</p>
-      <ul>
-        <li>A <strong>Gmail account</strong> to access the document</li>
-        <li>To be a <strong>native or expert speaker</strong> with a good level of English</li>
-        <li>To have a <strong>sense of humour</strong>!</li>
-      </ul>
-    </section>
-
-    <section>
-      <h4>Wanted</h4>
-      <p>If you can help with these, click the link to email:</p>
-      <ul>
-        <li v-for="language in wanted" :key="language">
-          <a :href="mailTo(`I can do the ${language} translation`)">{{ language }}</a>
-        </li>
-        <li>
-          <a :href="mailTo('I can translate...')">Any other language</a>
-        </li>
-      </ul>
-      <p>I'll then mail you a sharing link to the document and we can go from there.</p>
-    </section>
 
     <section>
       <h4>Complete</h4>
-      <p>These translations are done or being done:</p>
+      <p>You can currently use the site in these languages:</p>
       <ul>
         <li v-for="locale in done" :key="locale.code">
-          <nuxt-link :to="`/${locale.code}`">{{ locale.label }}</nuxt-link>
+          <nuxt-link :to="`/${locale.code === 'en' ? '/' : locale.code}`">{{ locale.label }}</nuxt-link>
         </li>
       </ul>
+
+      <template v-if="temp && temp.length">
+        <p>These languages are being worked on:</p>
+        <ul>
+          <li v-for="locale in temp" :key="locale.code">
+            {{ locale.label }}
+          </li>
+        </ul>
+      </template>
+    </section>
+
+    <section>
+      <h4>Further translations</h4>
+      <p>I'd love to add more translations!</p>
+      <p>If you think you can help, you will need:</p>
+      <ul>
+        <li>A <strong>Gmail account</strong> to access the a shared translation spreadsheet</li>
+        <li>To be a <strong>native or expert speaker</strong> with a good level of English</li>
+        <li>To have a <strong>sense of humour</strong>!</li>
+      </ul>
+      <p>Click <a :href="mailTo('I can translate...')">here</a> to get in contact.</p>
+      <p>Thanks!</p>
     </section>
   </div>
 </template>
@@ -40,16 +39,13 @@
 <script>
 import page from '@/plugins/page-plugin'
 import locales from '@/i18n/locales'
+
 export default {
   extends: page('translations'),
   data () {
     return {
-      done: locales.all.filter(locale => locale.code !== 'en'),
-      wanted: [
-        'Chinese (Mandarin)',
-        'Romanian',
-        'Polish'
-      ]
+      done: this.$i18n.locales,
+      temp: locales.temp,
     }
   },
 

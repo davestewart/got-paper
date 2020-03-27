@@ -12,8 +12,10 @@
     <section>
       <h4>Other pages in English</h4>
       <ul>
-        <li v-for="page in pages" :key="page.path">
-          <nuxt-link :to="page.path">{{ page.label }}</nuxt-link>
+        <li v-for="(path, name) in links" :key="name" :class="`link__${name}`">
+          <NuxtLink :to="localePath(path)">
+            {{ $t(`nav.${name}`) }}
+          </NuxtLink>
         </li>
       </ul>
     </section>
@@ -22,28 +24,19 @@
 
 <script>
 import page from '@/plugins/page-plugin'
-
-function link (path, label) {
-  return { label, path }
-}
+import links from '@/config/links'
 
 export default {
   extends: page('sitemap'),
   data () {
     return {
+      links,
       locales: this.$i18n.locales.map((locale) => {
         return {
           label: locale.label,
           code: locale.code === 'en' ? '' : locale.code
         }
       }),
-      pages: [
-        link('/about', 'About'),
-        link('/press', 'Press'),
-        link('/contact', 'Contact'),
-        link('/translations', 'Translations'),
-        link('/sitemap', 'Site Map'),
-      ]
     }
   }
 }
