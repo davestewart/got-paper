@@ -20,9 +20,12 @@ const logic = [
   'Kupi {n} rolni', // whatever is left
 ]
 
-// const choices = '{n} rolni | {n} rolnu | {n} rolne'.split('|')
+const src = 'Kупи {n} ролни | Kупи {n} ролну | Kупи {n} ролне'
+const sr = '{n} rolni | {n} rolnu | {n} rolne'
+const ru = 'купить {n} рулон | купить {n} рулона | купить  {n} рулонов'
 
-const choices = 'купить {n} рулон | купить {n} рулона | купить  {n} рулонов'.split('|')
+
+const choices = src.split('|')
 
 function log (from, to) {
   for (let i = from; i < to; i++) {
@@ -42,3 +45,4 @@ log(0, 40)
 log(100, 140)
 
 console.log(results.join('\n'))
+
