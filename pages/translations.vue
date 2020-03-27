@@ -7,7 +7,7 @@
       <p>You can currently use the site in these languages:</p>
       <ul>
         <li v-for="locale in done" :key="locale.code">
-          <nuxt-link :to="`/${locale.code === 'en' ? '/' : locale.code}`">{{ locale.label }}</nuxt-link>
+          <nuxt-link :to="`/${locale.code === 'en' ? '' : locale.code}`">{{ locale.label }}</nuxt-link>
         </li>
       </ul>
 
