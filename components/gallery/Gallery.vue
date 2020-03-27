@@ -44,12 +44,11 @@ export default {
   computed: {
     images () {
       return [
-        image('splash', 'Have you got paper?'),
-        image('desktop', 'Runs on desktop and tablet'),
+        image('mobile', 'Got Paper is optimised for mobile'),
         image('features', 'Customise your "activity" and family members'),
-        image('mobile', 'Optimised for mobile'),
         image('modes', 'Buy, hoard or share paper'),
-        image('translations', `Available in ${this.$i18n.locales.length} languages`)
+        image('translations', `Available in ${this.$i18n.locales.length} languages`),
+        image('desktop', 'Also runs on desktop and tablet'),
       ]
     },
 

@@ -22,6 +22,12 @@
       <Gallery/>
     </section>
 
+    <section>
+      <h1>Brand</h1>
+      <p>Best-looking bog roll brand this side of Aldi</p>
+      <img src="/images/ui/splash.png" alt="The Got Paper logo" class="screenshot" >
+    </section>
+
   </div>
 </template>
 
@@ -33,3 +39,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.page__media {
+  .screenshot {
+    display: block;
+    width: 100%;
+  }
+}
+</style>
