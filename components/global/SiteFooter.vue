@@ -1,20 +1,5 @@
 <template>
   <footer class="siteFooter">
-    <!-- footer logos -->
-    <img
-      src="/images/social/splash-og.png"
-      width="1"
-      height="1"
-      style="visibility: hidden; font-size: 1px;"
-      alt="Got Paper logo"
-    >
-    <img
-      src="/images/social/splash-og.png"
-      width="1"
-      height="1"
-      style="visibility: hidden; font-size: 1px;"
-      alt="Got Paper icon"
-    >
 
     <div class="siteFooter__kofi">
       <div class="inner">

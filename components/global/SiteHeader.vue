@@ -1,7 +1,7 @@
 <template>
   <header class="siteHeader">
     <NuxtLink class="banner" :to="localePath('/')">
-      <img class="image" alt="Got Paper logo" src="~assets/images/logo.svg" width="100%">
+      <img class="image" alt="Got Paper logo" src="/images/site/site-logo.png" width="100%">
     </NuxtLink>
     <SiteLinks />
     <div v-if="title" class="strapline">
@@ -48,7 +48,6 @@ export default {
   }
 
   .image {
-    padding: 40px;
     max-width: 600px;
   }
 
