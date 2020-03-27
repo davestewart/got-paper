@@ -3,7 +3,7 @@
 
     <section>
       <h1>Videos</h1>
-      <p>Got Paper has gone multilingual – currently supporting <a href="/translations">{{ $i18n.locales.length }} languages</a>!</p>
+      <p>Got Paper is available in <a href="/translations">{{ $i18n.locales.length }} languages</a>.</p>
       <div class="embed">
         <iframe
           v-proportion="9 / 16"
@@ -18,13 +18,13 @@
 
     <section>
       <h1>Screenshots</h1>
-      <p>Got Paper looks great as well as being useful!</p>
+      <p>Got Paper looks great as well as being useful.</p>
       <Gallery/>
     </section>
 
     <section>
       <h1>Brand</h1>
-      <p>Best-looking bog roll brand this side of Aldi</p>
+      <p>Who doesn't love a pun when wiping their bum?</p>
       <img src="/images/ui/splash.png" alt="The Got Paper logo" class="screenshot" >
     </section>
 

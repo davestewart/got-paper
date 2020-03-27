@@ -35,6 +35,7 @@ export default {
           home: '/',
           about: links.about,
           press: links.press,
+          media: links.media,
           contact: links.contact
         }
       }
