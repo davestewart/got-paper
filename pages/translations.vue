@@ -5,16 +5,18 @@
     <section>
       <h4>Complete</h4>
       <p>You can currently use the site in these languages:</p>
-      <ul>
+      <ul class="translations__list">
         <li v-for="locale in done" :key="locale.code">
+          <img :src="locale.flag" :alt="`${label} flag`">
           <nuxt-link :to="`/${locale.code === 'en' ? '' : locale.code}`">{{ locale.label }}</nuxt-link>
         </li>
       </ul>
 
       <template v-if="temp && temp.length">
         <p>These languages are being worked on:</p>
-        <ul>
+        <ul class="translations__list">
           <li v-for="locale in temp" :key="locale.code">
+            <img :src="locale.flag" :alt="`${label} flag`">
             {{ locale.label }}
           </li>
         </ul>
@@ -56,3 +58,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.translations {
+  &__list {
+    padding: 0 0 0 1.5rem;
+    li {
+      list-style: none;
+    }
+    img {
+      height: 14px;
+      margin-right: .5em;
+    }
+  }
+}
+</style>
