@@ -134,7 +134,10 @@ export default {
       meta('name', site.name),
       meta('description', site.description),
       meta('image', image('/social/splash.png')),
+
+      // verification
       meta('google-site-verification', 'wcnVSEcUUMF3HtSUc-NQ2AudFRJbVzf-uw1Yt5JT99w'),
+      meta('ahrefs-site-verification', '60595a106a8b0fe484256bc465e16ff2ef5ce50f252951f364d45cacdc9c959b'),
 
       // twitter
       meta('twitter:image:src', image('/social/splash-twitter.png')),
