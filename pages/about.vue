@@ -8,24 +8,24 @@
 
 <!--        <p>[gallery]</p>-->
 
-        <p>It has a <nuxt-link to="/press#quotes">cheeky tone</nuxt-link>, and aims to bring some light relief to a serious situation, whilst being moderately <strong>useful</strong> and a little <strong>enlightening</strong> <em>(clue - you don&#39;t need that much toilet paper!)</em></p>
+        <p>It has a <nuxt-link to="/press#quotes">cheeky tone</nuxt-link> and aims to bring some light relief to a serious situation, whilst being moderately <strong>useful</strong> and a little <strong>enlightening</strong> (clue - <em>you don&#39;t need that much toilet paper!</em>)</p>
       </section>
 
       <section>
         <h2>Features</h2>
-        <p><strong class="text-danger">Got Paper is the most powerful, configurable and user-friendly toilet paper calculator!</strong></p>
+        <p><strong class="text-danger">Got Paper is the most accurate, configurable and useful toilet paper calculator.</strong></p>
         <h5>Core features</h5>
         <ul>
           <li>supports <strong>multiple people</strong>, such as family or flatmates</li>
           <li>additional support for <strong>women</strong> (monthly use) and <strong>horny teenagers</strong> (daily use)</li>
           <li>desktop, tablet and <strong>mobile</strong> ready</li>
           <li>save to your phone&#39;s home screen to <strong>use as an app</strong></li>
-          <li>has been translated into <a href="/translations">12 languages</a></li>
+          <li>has been translated into <nuxt-link to="/translations">12 languages</nuxt-link></li>
 
         </ul>
         <h5>Calculations</h5>
         <ul>
-          <li><strong>poos, pees, and extras</strong> (once a day, once a month)</li>
+          <li><strong>poos, pees and extras</strong> (once a day, once a month)</li>
           <li>number of <strong>visits</strong> for each session</li>
           <li><strong>wipes</strong> per session</li>
           <li><strong>sheets</strong> per wipe</li>
@@ -62,7 +62,8 @@
         <p>Got Paper was created by London web developer <a href="https://twitter.com/dave_stewart">Dave Stewart</a>.</p>
         <p>The initial version of Got Paper was thought of in the first weekend of social distancing here in the UK, in the first online meetup of <a href="https://weekendclub.co/">Weekend Club</a>, a London <a href="https://www.indiehackers.com/">Indie Hacker</a>&#39;s meetup. The initial calculation for how much toilet paper people actually need <strong>was written in Excel in about 3 minutes</strong>, then floated as an idea for something useful for the wider community.</p>
         <p>The initial idea was to <strong>share</strong> the spreadsheet, perhaps on Google sheets, but because this is what I do for a living, I thought why not built it as an app? Got Paper was then <strong>developed and put online in 24 hours</strong>, including programming, branding and initial marketing.</p>
-        <p>Over the next week, additional functionality was added, including calculations for <strong>multiple people</strong>, and <strong>adidtional modes</strong> for &quot;hoarding&quot; and &quot;sharing&quot;. The following week, it was <strong>translated</strong> into <a href="/translations">12 languages</a> by popular request.</p>
+        <p>Over the next week, additional functionality was added, including calculations for <strong>multiple people</strong> and <strong>adidtional modes</strong> for &quot;hoarding&quot; and &quot;sharing&quot;. The following week, it was <strong>translated</strong> into <a href="/translations">12 languages</a> by popular request.</p>
+        <p>If you would like to show your appreciation you can <a href="https://ko-fi.com/gotpaper">"buy me a coffee"</a> by making a small donation via the website Ko-fi.</p>
 <!--        <p>Got Paper has now been released as an <a href="https://github.com/davestewart/got-paper">Open Source</a> project, so you can play with it, learn from it, or even repurpose it to build your own useful (Coronvirus or otherwise) tool. See the repo&#39;s readme file for more information.</p>-->
         <h5>Links:</h5>
         <ul>
