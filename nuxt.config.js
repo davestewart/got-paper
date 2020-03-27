@@ -134,6 +134,7 @@ export default {
       meta('name', site.name),
       meta('description', site.description),
       meta('image', image('/social/splash.png')),
+      meta('google-site-verification', 'wcnVSEcUUMF3HtSUc-NQ2AudFRJbVzf-uw1Yt5JT99w'),
 
       // twitter
       meta('twitter:image:src', image('/social/splash-twitter.png')),
