@@ -4,7 +4,7 @@
     <template>
       <section>
         <h1>About</h1>
-        <p>Got paper? is a <strong>free</strong> online web app to <strong>calculate yours and your family&#39;s toilet paper needs</strong> during the Coronavirus pandemic, created by London web developer <a href="https://twitter.com/dave_stewart">Dave Stewart</a>.</p>
+        <p>Got paper? is a <strong>free</strong> online web app to <strong>calculate yours and your family&#39;s toilet paper needs</strong> during the Coronavirus pandemic.</p>
 
 <!--        <p>[gallery]</p>-->
 
@@ -59,6 +59,7 @@
 
       <section>
         <h1>Story</h1>
+        <p>Got Paper was created by London web developer <a href="https://twitter.com/dave_stewart">Dave Stewart</a>.</p>
         <p>The initial version of Got Paper was thought of in the first weekend of social distancing here in the UK, in the first online meetup of <a href="https://weekendclub.co/">Weekend Club</a>, a London <a href="https://www.indiehackers.com/">Indie Hacker</a>&#39;s meetup. The initial calculation for how much toilet paper people actually need <strong>was written in Excel in about 3 minutes</strong>, then floated as an idea for something useful for the wider community.</p>
         <p>The initial idea was to <strong>share</strong> the spreadsheet, perhaps on Google sheets, but because this is what I do for a living, I thought why not built it as an app? Got Paper was then <strong>developed and put online in 24 hours</strong>, including programming, branding and initial marketing.</p>
         <p>Over the next week, additional functionality was added, including calculations for <strong>multiple people</strong>, and <strong>adidtional modes</strong> for &quot;hoarding&quot; and &quot;sharing&quot;. The following week, it was <strong>translated</strong> into <a href="/translations">12 languages</a> by popular request.</p>
