@@ -26,6 +26,8 @@
       <h1>Brand</h1>
       <p>Who doesn't love a pun when wiping their bum?</p>
       <img src="/images/ui/splash.png" alt="The Got Paper logo" class="screenshot" >
+      <p>The domain.com</p>
+      <img src="/images/social/domain-og.png" alt="The Got Paper domain" class="screenshot" >
     </section>
 
   </div>
@@ -42,6 +44,10 @@ export default {
 
 <style lang="scss">
 .page__media {
+  p {
+    margin: 1rem 0 .5rem;
+  }
+
   .screenshot {
     display: block;
     width: 100%;
