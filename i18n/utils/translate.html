@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Translation</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <style>
   textarea {
     font-size: 11px;
@@ -16,13 +15,6 @@
 <body class="d-flex h-100 p-2">
 <textarea id="input" class="p-2 w-50 h-100" placeholder="Paste translation text" onchange="update()" oninput="update()"></textarea>
 <textarea id="output" class="p-2 ml-2 w-50 h-100" placeholder="View JSON output" onfocus="output.select()"></textarea>
-
-<!--
-# Instructions
-
-Paste text in from
--->
-
 <script>
 function update () {
   // elements
@@ -51,7 +43,6 @@ function update () {
     if (key) {
       data[lastArea][key] = translation
     }
-    return ''
   })
 
   // output

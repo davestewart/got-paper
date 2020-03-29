@@ -63,7 +63,7 @@ To save you creating the redirects by hand, a small Node script in the utilities
 Just run this command from the route:
 
 ```
-node i18n/utils/make-redirects.js
+node i18n/utils/netlify.js
 ```
 
 Copy and paste the output into the file:

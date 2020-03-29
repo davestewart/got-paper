@@ -1,6 +1,5 @@
-function getCountries (url) {
+function fetchText (url) {
   const http = require('http')
-
   return new Promise((resolve, reject) => {
     http.get(url, (res) => {
       let data = ''
@@ -65,7 +64,7 @@ function makeData (text) {
 }
 
 async function process () {
-  const countries = await getCountries('http://download.geonames.org/export/dump/countryInfo.txt').then(makeData)
+  const countries = await fetchText('http://download.geonames.org/export/dump/countryInfo.txt').then(makeData)
   const locales = getLocales()
 
   // get redirects hash
