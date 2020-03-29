@@ -1,1 +1,16 @@
 /*    /index.html   200
+
+# country redirects
+# @see https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language
+/  /cs     302  Country=cz
+/  /de     302  Country=at,ch,de,li
+/  /es     302  Country=ar,bo,cl,co,cr,cu,do,ec,es,gq,gt,hn,mx,ni,pa,pe,py,sv,uy,ve
+/  /fr     302  Country=bf,bi,bj,bl,cd,cf,cg,ci,dj,fr,ga,gf,gn,gp,mc,mf,mg,ml,mq,nc,ne,pf,pm,re,sn,td,tf,tg,yt
+/  /gr     302  Country=gr
+/  /id     302  Country=id
+/  /it     302  Country=it,sm
+/  /ru     302  Country=ru
+/  /se     302  Country=se
+/  /sr     302  Country=me,rs,sr
+/  /xx     302  Country=
+/  /zh     302  Country=cn,hk,mo,tw

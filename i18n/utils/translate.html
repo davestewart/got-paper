@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <title>Translation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+  textarea {
+    font-size: 11px;
+    white-space: nowrap;
+    font-family: monospace;
+  }
+  </style>
+</head>
+<body class="d-flex h-100 p-2">
+<textarea id="input" class="p-2 w-50 h-100" placeholder="Paste translation text" onchange="update()" oninput="update()"></textarea>
+<textarea id="output" class="p-2 ml-2 w-50 h-100" placeholder="View JSON output" onfocus="output.select()"></textarea>
+
+<!--
+# Instructions
+
+Paste text in from
+-->
+
+<script>
+function update () {
+  // elements
+  var $input = document.querySelector('#input')
+  var $output = document.querySelector('#output')
+
+  // reset
+  var data = {}
+  var lastArea = ''
+  var input = $input.value
+  var lines = input.trim().split('\n')
+  var headers = lines.shift().match(/\w+/g)
+
+  // process
+  lines.forEach(function process (input) {
+    if (!input.match(/\w/g)) {
+      return ''
+    }
+    const [area, key, english, translation] = input.split('\t')
+    if (area) {
+      lastArea = area
+      if (!data[area]) {
+        data[area] = {}
+      }
+    }
+    if (key) {
+      data[lastArea][key] = translation
+    }
+    return ''
+  })
+
+  // output
+  $output.value = 'export default ' + JSON.stringify(data, null, '  ')
+      .replace(/"(\w+)":/g, '$1:')
+      .replace(/"(.*)"/g, (match, text) => `'${text.replace(/'/g, '\\\'')}'`)
+    + '\n'
+}
+</script>
+</body>
+
+</html>
