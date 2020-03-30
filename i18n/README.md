@@ -52,6 +52,23 @@ Save the text to a file in the `locales/` folder named after the country code, i
 
 For language variants, name the file `<lang>-<variant>.js` 
 
+
+## Development
+
+The `index.js` file allows you to choose which translation routes / pages to generate in development (note that showing *more* translations **slows down** the development server).
+
+Simply choose the translations to be worked on using the `only()` method:
+
+```js
+const config = {
+  locales: isProd
+    ? locales.prod
+    : locales.only('en cs'), // choose translations here
+  ...
+}
+```
+
+
 ## Netlify redirects
 
 Netlify can redirect to the correct path based on the visitor's IP:
