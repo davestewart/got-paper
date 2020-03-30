@@ -21,10 +21,12 @@
     "sort-on": "^4.1.0",
     "vee-validate": "^3.2.5",
     "vue-agile": "^1.0.11",
-    "vue-i18n": "^8.15.6"
+    "vue-i18n": "^8.15.6",
+    "dotenv": "latest"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/netlify-files": "^1.0.0",

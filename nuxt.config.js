@@ -1,5 +1,6 @@
 import { isProd } from './utils/env'
 import i18n from './i18n'
+require('dotenv').config()
 
 export const site = {
   url: isProd ? 'https://got-paper.com' : 'http://localhost:3000',
@@ -98,6 +99,12 @@ export default {
           whitespace: 'condense'
         }
       }
+    },
+
+    extend (config) {
+      config.node = {
+        fs: 'empty'
+      }
     }
   },
 
@@ -194,7 +201,8 @@ export default {
     // https://nuxtjs.org/api/configuration-modules
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
-    '@nuxtjs/netlify-files'
+    '@nuxtjs/netlify-files',
+    '@nuxtjs/dotenv',
   ],
 
   modules: [
