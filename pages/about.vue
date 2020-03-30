@@ -42,22 +42,13 @@
 
         </ul>
         <h2>Bonus!</h2>
-        <p>The app is now <strong>ad-free</strong>!</p>
-<!--        and <strong>open source</strong>-->
+        <p>The app is now <strong>ad-free</strong> and <strong>open source</strong>!</p>
         <p>This means:</p>
         <ul>
           <li>if you are a user, you can just use the app <strong>without distractions</strong></li>
-<!--          <li>if you are a developer, you can see <a href="https://github.com/davestewart/got-paper">how it was put together</a></li>-->
+          <li>if you are a developer, you can see <a href="https://github.com/davestewart/got-paper">how it was put together</a></li>
         </ul>
-<!--
--->
       </section>
-
-<!--
-      <section>
-        <h2>Screenshots</h2>
-      </section>
--->
 
       <section>
         <h1>Story</h1>
@@ -66,7 +57,7 @@
         <p>The initial idea was to <strong>share the spreadsheet</strong> but because this is what I do for a living, I thought why not built it as an app? Got Paper was then <strong>developed and put online in 24 hours</strong> – including programming, branding and initial marketing.</p>
         <p>Over the next week, additional functionality was added, including calculations for <strong>multiple people</strong> and <strong>additional modes</strong> for &quot;hoarding&quot; and &quot;sharing&quot;. The following week, it was <strong>translated</strong> into <a href="/translations">12 languages</a> by popular request.</p>
         <p>If you would like to show your appreciation you can <a href="https://ko-fi.com/gotpaper">"buy me a coffee"</a> by making a small donation via the website Ko-fi.</p>
-<!--        <p>Got Paper has now been released as an <a href="https://github.com/davestewart/got-paper">Open Source</a> project, so you can play with it, learn from it, or even repurpose it to build your own useful (Coronvirus or otherwise) tool. See the repo&#39;s readme file for more information.</p>-->
+        <p>Got Paper has now been released as an <a href="https://github.com/davestewart/got-paper">Open Source</a> project, so you can play with it, learn from it, or even re-purpose it to build your own useful (Coronvirus or otherwise) tool. See the repo&#39;s readme file for more information.</p>
         <h5>Links:</h5>
         <ul>
           <li><a href="https://twitter.com/haveyougotpaper">Twitter</a></li>
