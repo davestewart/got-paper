@@ -5,21 +5,11 @@
     <section>
       <h4>Complete</h4>
       <p>You can currently use the site in these languages:</p>
-      <ul class="translations__list">
-        <li v-for="locale in done" :key="locale.code">
-          <img :src="locale.flag" :alt="`${label} flag`">
-          <nuxt-link :to="`/${locale.code === 'en' ? '' : locale.code}`">{{ locale.label }}</nuxt-link>
-        </li>
-      </ul>
+      <TranslationsList :locales="done" />
 
       <template v-if="temp && temp.length">
         <p>These languages are being worked on:</p>
-        <ul class="translations__list">
-          <li v-for="locale in temp" :key="locale.code">
-            <img :src="locale.flag" :alt="`${label} flag`">
-            {{ locale.label }}
-          </li>
-        </ul>
+        <TranslationsList :locales="temp" :link="false" />
       </template>
       <p>There's a little video to show off <a href="/media">here</a>!</p>
     </section>
@@ -42,9 +32,15 @@
 <script>
 import page from '@/plugins/page-plugin'
 import locales from '@/i18n/locales'
+import TranslationsList from '@/components/global/TranslationsList'
 
 export default {
+  components: {
+    TranslationsList,
+  },
+
   extends: page('translations'),
+
   data () {
     return {
       done: this.$i18n.locales,
@@ -59,18 +55,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.translations {
-  &__list {
-    padding: 0 0 0 1.5rem;
-    li {
-      list-style: none;
-    }
-    img {
-      height: 14px;
-      margin-right: .5em;
-    }
-  }
-}
-</style>
