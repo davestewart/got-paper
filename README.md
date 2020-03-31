@@ -85,7 +85,7 @@ Got Paper was created and released over a very short time period:
 | [Beta](https://github.com/davestewart/got-paper/releases/tag/v1.0-beta) | 9 hours   | Initial Vue SPA / PWA                                        |
 | [1.0](https://github.com/davestewart/got-paper/releases/tag/v1.0) | 24 hours  | Additional pages, branding, polish, etc                      |
 | 1.x                                                          | 5 days    | Multi-person calculations, buy / share / hoard modes, press page, etc |
-| [2.0](https://github.com/davestewart/got-paper/releases/tag/v2.0) | 1 week    | Migration to SSR / Next                                      |
+| [2.0](https://github.com/davestewart/got-paper/releases/tag/v2.0) | 1 week    | Migration to SSR / Nuxt                                      |
 | 2.x                                                          | 2 weeks   | Translation to 12 languages, media, video                    |
 
 What is missing above is the additional effort to manage design, branding, press and translations, etc but it gives a rough idea of the development timeline between 15th and 26th March 2020.
