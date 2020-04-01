@@ -32,7 +32,7 @@ Application:
 - Highly granular controls / calculation
 - Supports varying usage, people and product
 - 3 modes: buying, sharing, hoarding
-- Custom UI, design and branding 
+- Custom UI, design and branding
 
 Technical:
 
@@ -45,7 +45,7 @@ Technical:
 Build
 
 - [Vue JS](https://vuejs.org/) - application framework
-- [Nuxt](https://nuxtjs.org/) - static site generation (a huge thanks to [Alex Lichter](https://github.com/manniL)!)
+- [Nuxt](https://nuxtjs.org/) - static site generation
 
 Packages
 
@@ -53,6 +53,7 @@ Packages
 - [Vue Agile](https://lukaszflorczak.github.io/vue-agile/) - carousel component
 - [Vue i18n](https://kazupon.github.io/vue-i18n/) - translations library
 - [Portal Vue](https://portal-vue.linusb.org/) - for modals
+- [Vue Proportion Directive](https://github.com/MarxJiao/vue-proportion-directive) - proportional scaling directive
 
 Resources
 
@@ -86,30 +87,62 @@ Got Paper was created and released over a very short time period:
 | [1.0](https://github.com/davestewart/got-paper/releases/tag/v1.0) | 24 hours  | Additional pages, branding, polish, etc                      |
 | 1.x                                                          | 5 days    | Multi-person calculations, buy / share / hoard modes, press page, etc |
 | [2.0](https://github.com/davestewart/got-paper/releases/tag/v2.0) | 1 week    | Migration to SSR / Next                                      |
-| 2.x                                                          | 2 weeks   | Translation to 12 languages, media, video                    |
+| [2.2](https://github.com/davestewart/got-paper/releases/tag/v2.2) | 2 weeks   | Translation to 12 languages, media, video                    |
+| [2.3](https://github.com/davestewart/got-paper/releases/tag/v2.3) | +2 days   | Marketing release                                            |
+| [2.3.1](https://github.com/davestewart/got-paper/releases/tag/v2.3.1) | +2 days   | Final release with last tweaks                               |
 
 What is missing above is the additional effort to manage design, branding, press and translations, etc but it gives a rough idea of the development timeline between 15th and 26th March 2020.
 
-Tagged releases (with screenshots) available here:
+See all releases (with screenshots) here:
 
 -  https://github.com/davestewart/got-paper/releases
 
-
 ## Development
 
-v2.x (Nuxt SSR)
+#### v2.x – Nuxt SSR
+
+Nuxt uses the [Yarn](https://yarnpkg.com/) package manager
 
 ```bash
 # development server
-yarn run dev
-``` 
+yarn dev
 
-v1.x (Vue SPA)
+# generate static site
+yarn generate
+
+# add new package
+yarn add <package name>
+```
+
+#### v1.x – Vue SPA
+
+Vue uses the [NPM](https://www.npmjs.com/) package manager
 
 ```bash
 # development server
 npm run serve
-``` 
+
+# build app
+npm run build
+
+# add new package
+npm install <package name>
+```
+
+## Tools and Assets
+
+The `i18n/utils` folder has two tools to aid with translations:
+
+- a spreadsheet converter
+- a Netlify redirects creator
+
+See the [README](./i18n/README.md) in that folder for more info.
+
+The `assets/sketch` folder has:
+
+- a [Sketch](https://www.sketch.com/) document with all the icons laid out
+
+*The [Nuxt PWA module](https://github.com/nuxt-community/pwa-module) did unfortunately not support Android masked icons at the time of publishing, but may do now.*
 
 ## License
 
@@ -125,6 +158,26 @@ This software is MIT licenced, which means you can pretty much do whatever you w
     - Google AdSense
 
 - any emails or URLs that relate or refer to Got Paper or http://got-paper.com
+
+## Thanks
+
+This project has benefitted from the help of various people.
+
+A very special thanks to [Alex Lichter](https://github.com/manniL) for the Nuxt translation and initial i18n setup.
+
+Those who took the time to provide translations:
+
+
+- **German** - Daniella Somerscales and Alex Lichter
+- **Swedish** - Sanna Porter Öhman
+- **Czech** - Petra Kovarova
+- **Spanish** - Fernanda Sandoval
+- **French** - Aoife Hegarty and Arianna Giguere Crosher
+- **Chinese** - Chiu Wong
+- **Italian** - Paolo Coruzzi and Alessia Musciano
+- **Russian** - Aleksei Zolotykh and Zaneta Priscepionkaite
+- **Greek** - Apostolos Pistolas
+- **Serbian** - Ivana Matosevic
 
 ## Last words
 
