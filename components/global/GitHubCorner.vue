@@ -16,12 +16,17 @@
   }
 
   svg {
-    fill: black;
+    fill: #FFF;
     color: $primary-color;
     position: absolute;
     top: 0;
     border: 0;
     right: 0;
+    opacity: .2;
+    transition: .2s opacity;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
