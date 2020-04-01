@@ -1,5 +1,6 @@
 <template>
   <header class="siteHeader">
+    <GitHubCorner/>
     <NuxtLink class="banner" :to="localePath('/')">
       <img class="image" alt="Got Paper logo" src="/images/site/site-logo.png" width="100%">
     </NuxtLink>
@@ -11,11 +12,13 @@
 </template>
 
 <script>
+import GitHubCorner from './GitHubCorner'
 import SiteLinks from './SiteLinks'
 import { getTitle } from '@/plugins/page-plugin'
 
 export default {
   components: {
+    GitHubCorner,
     SiteLinks,
   },
 
