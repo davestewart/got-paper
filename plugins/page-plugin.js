@@ -28,7 +28,8 @@ export default function (key) {
 }
 
 export function getTitle (key, stripHTML = true) {
-  const title = titles[key] || ''
+  const [formattedKey] = key.split('__')
+  const title = titles[formattedKey] || ''
   return stripHTML
     ? title.replace(/<(\w+)>|<\/\w+>/g, '')
     : title
