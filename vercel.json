@@ -4,62 +4,158 @@
     {
       "source": "/",
       "destination": "/cs/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "cs"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/de/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "de"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/es/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "es"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/fr/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "fr"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/gr/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "gr"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/id/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "id"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/it/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "it"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/ru/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "ru"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/se/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "se"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/sr/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "sr"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/sr-cyrl/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "sr-cyrl"
+        }
+      ]
     },
     {
       "source": "/",
       "destination": "/zh/",
-      "permanent": false
+      "permanent": false,
+      "statusCode": 302,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-language",
+          "value": "zh"
+        }
+      ]
     }
   ]
 }
