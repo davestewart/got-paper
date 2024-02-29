@@ -1,0 +1,65 @@
+{
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/cs/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/de/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/es/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/fr/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/gr/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/id/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/it/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/ru/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/se/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/sr/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/sr-cyrl/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/zh/",
+      "permanent": false
+    }
+  ]
+}
