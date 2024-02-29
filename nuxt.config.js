@@ -195,7 +195,7 @@ export default {
     '@/plugins/global-components.js',
     '@/plugins/proportional-resize.js',
     '@/plugins/portal-vue.js',
-    '@/plugins/i18n/index.js',
+    '@/plugins/vue-i18n.js',
   ],
 
   buildModules: [
@@ -213,6 +213,10 @@ export default {
     ['nuxt-i18n', i18n],
     'portal-vue/nuxt'
   ],
+
+  i18n: {
+    vueI18n: '~/plugins/vue-i18n.js',
+  },
 
   loading: {
     color: '#fff'
