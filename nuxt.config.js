@@ -118,10 +118,11 @@ export default {
   },
 
   // ---------------------------------------------------------------------------------------------------------------------
-  // styles
+  // head
 
   head: {
     titleTemplate: c => c ? `${c} - Got Paper?` : 'Got Paper? - Calculate your actual toilet paper needs',
+
     link: [
       // icons
       link('icon', '/favicon.png'),

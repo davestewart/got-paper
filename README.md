@@ -105,13 +105,13 @@ Nuxt uses the [Yarn](https://yarnpkg.com/) package manager
 
 ```bash
 # development server
-yarn dev
+npm run dev
 
 # generate static site
-yarn generate
+npm run generate
 
 # add new package
-yarn add <package name>
+npm i <package name>
 ```
 
 #### v1.x – Vue SPA

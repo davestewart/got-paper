@@ -26,7 +26,7 @@
     "vue-proportion-directive": "^1.1.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/typescript-build": "^3.0.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
@@ -35,8 +35,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "node-sass": "^4.13.1",
     "raw-loader": "^4.0.0",
-    "sass-loader": "^8.0.2"
+    "sass": "^1.71.1",
+    "sass-loader": "^10.4.1"
   }
 }
