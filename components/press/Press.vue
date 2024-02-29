@@ -1,7 +1,7 @@
 <template>
   <div class="press ml-4 mb-4">
     <a class="press__link" :href="link" target="_blank">
-      <img width="50" height="50" class="press__image mr-3" :src="image" :alt="name">
+      <img width="24" height="24" class="press__image mr-3" :src="image" :alt="name">
       <h4 class="press__title">{{ title }}</h4>
     </a>
   </div>
@@ -36,8 +36,8 @@ export default {
   }
 
   &__image {
-    height: 50px;
-    min-width: 50px;
+    // height: 50px;
+    // min-width: 50px;
   }
 }
 </style>

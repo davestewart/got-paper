@@ -129,7 +129,7 @@ export default {
       'https://twitter.com/SpaceStoryLC/status/1240646916016226304'),
     twitter(
       '@Assam_in_china',
-      'Awesome bog roll calculator! 🚽🧻 My 9-pack should last us 2+ weeks... 🙌🏻',
+      'Awesome bog roll calculator! My 9-pack should last us 2+ weeks... 🙌🏻',
       'https://twitter.com/Assam_in_china/status/1239807986341761024'),
     mail(
       'Jedi-NZ, Auckland, New Zealand',
@@ -145,17 +145,17 @@ export default {
       'Twitter',
       'Twitter',
       'https://twitter.com/search?q=https%3A%2F%2Fgot-paper.com&src=typed_query',
-      'https://pbs.twimg.com/profile_images/875168599299637248/84CkAq6s_200x200.jpg'),
+      '/images/sharing/Twitter.svg'),
     press(
       'Facebook',
       'Facebook',
       'https://www.facebook.com/search/top/?q=got-paper.com',
-      'https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/O2aKM2iSbOw.png'),
+      '/images/sharing/Facebook.svg'),
     press(
       'Google',
       'Google',
       'https://www.facebook.com/search/top/?q=got-paper.com',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/50px-Google_%22G%22_Logo.svg.png')
+      '/images/sharing/Google.svg'),
   ]
 }
 </script>
