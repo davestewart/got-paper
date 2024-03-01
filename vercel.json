@@ -1,6 +1,6 @@
 {
   "outputDirectory": "dist",
-  "redirects": [
+  "_redirects": [
     {
       "source": "/",
       "destination": "/cs/",
